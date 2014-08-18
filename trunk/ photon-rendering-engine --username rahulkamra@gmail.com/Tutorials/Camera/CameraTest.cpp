@@ -231,7 +231,8 @@ int main(int argc, char** argv)
 	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2,50,5))));
 	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis())));
 	light->transform.translate(vec3(0, 0, -6.0f));
-	light->transform.rotate(90,vec3(0,1,0));
+	light->transform.rotate(180,vec3(0,1,0));
+	light->transform.rotate(45, vec3(1, 0, 0));
 	light->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(light);
 

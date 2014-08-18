@@ -83,7 +83,6 @@
     <ClCompile Include="Common\Materials\MaterialsManager.cpp" />
     <ClCompile Include="Common\ShapeGenerator.cpp" />
     <ClCompile Include="DiffuseMaterial.cpp" />
-    <ClCompile Include="MeshRenderingComponent.cpp" />
     <ClCompile Include="ogldev_util.cpp" />
     <ClCompile Include="MeshData.cpp" />
     <ClCompile Include="Utils\StringUtils.cpp" />

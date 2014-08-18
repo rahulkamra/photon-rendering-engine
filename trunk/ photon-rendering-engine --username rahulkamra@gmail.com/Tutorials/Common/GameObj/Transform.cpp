@@ -36,7 +36,7 @@ glm::mat4 Transform::modelTransformtionMatrix() const
 
 glm::vec3 Transform::forward()
 {
-	glm::vec3 forward =  (glm::vec3)(glm::vec4(0, 0, 1, 0) * this->rotationMatrix);
+	glm::vec3 forward = (glm::vec3)(modelTransformtionMatrix()*glm::vec4(0, 0, 1, 0));
 	forward = glm::normalize(forward);
 	return forward;
 }
