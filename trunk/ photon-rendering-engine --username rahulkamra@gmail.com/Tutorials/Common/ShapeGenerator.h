@@ -42,5 +42,7 @@ public:
 	static MeshData* makeTorus(uint tesselation = 20);
 	static MeshData generateNormals(const MeshData& data);
 	static MeshData* makePyramid();
+
+	static MeshData* createAxis(float length = 1.0f);
 };
 

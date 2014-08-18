@@ -2,7 +2,6 @@ c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\vc120.pd
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\vc120.idb
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\camera.obj
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\cameracontroller.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\cameratest.obj
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\debugutils.obj
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\electron.obj
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\gamecomponent.obj
@@ -18,16 +17,35 @@ c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\diffusem
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\ogldev_util.obj
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\meshdata.obj
 c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\stringutils.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\debug\tutorials.pdb
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\cl.command.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\cl.read.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\cl.write.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.1056-cvtres.read.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.1056-cvtres.write.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.1056-rc.read.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.1056-rc.write.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.1056.read.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.1056.write.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.command.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.read.1.tlog
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\tutorials.tlog\link.write.1.tlog
+c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\cameratest.obj
+d:\work\renderer\tutorials\debug\vc120.pdb
+d:\work\renderer\tutorials\debug\vc120.idb
+d:\work\renderer\tutorials\debug\camera.obj
+d:\work\renderer\tutorials\debug\cameracontroller.obj
+d:\work\renderer\tutorials\debug\cameratest.obj
+d:\work\renderer\tutorials\debug\debugutils.obj
+d:\work\renderer\tutorials\debug\electron.obj
+d:\work\renderer\tutorials\debug\gamecomponent.obj
+d:\work\renderer\tutorials\debug\gameobj.obj
+d:\work\renderer\tutorials\debug\transform.obj
+d:\work\renderer\tutorials\debug\mesh.obj
+d:\work\renderer\tutorials\debug\lights.obj
+d:\work\renderer\tutorials\debug\material.obj
+d:\work\renderer\tutorials\debug\materialslist.obj
+d:\work\renderer\tutorials\debug\materialsmanager.obj
+d:\work\renderer\tutorials\debug\shapegenerator.obj
+d:\work\renderer\tutorials\debug\diffusematerial.obj
+d:\work\renderer\tutorials\debug\ogldev_util.obj
+d:\work\renderer\tutorials\debug\meshdata.obj
+d:\work\renderer\tutorials\debug\stringutils.obj
+c:\users\rahul.kumar\google drive\work\opengl\tutorials\debug\tutorials.ilk
+c:\users\rahul.kumar\google drive\work\opengl\tutorials\debug\tutorials.exe
+d:\work\renderer\debug\tutorials.ilk
+d:\work\renderer\debug\tutorials.exe
+d:\work\renderer\debug\tutorials.pdb
+d:\work\renderer\tutorials\debug\tutorials.tlog\cl.command.1.tlog
+d:\work\renderer\tutorials\debug\tutorials.tlog\cl.read.1.tlog
+d:\work\renderer\tutorials\debug\tutorials.tlog\cl.write.1.tlog
+d:\work\renderer\tutorials\debug\tutorials.tlog\link.command.1.tlog
+d:\work\renderer\tutorials\debug\tutorials.tlog\link.read.1.tlog
+d:\work\renderer\tutorials\debug\tutorials.tlog\link.write.1.tlog

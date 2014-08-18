@@ -1,5 +1,6 @@
 #pragma once
 #include "Common\GameObj\GameComponent.h"
+#include "Electron.h"
 class Material;
 class MeshRenderingComponent : public GameComponent
 {
@@ -9,6 +10,7 @@ private:
 	Material* material;
 
 public:
+	int phase = Electron::PHASE_FORWARD_RENDERING;
 	MeshRenderingComponent(Mesh* mesh, Material* material)
 	{
 		this->mesh = mesh;
@@ -24,8 +26,26 @@ public:
 
 	virtual void render()
 	{
+		
+		Electron::addRenderingComponent(this);
+	}
+
+	virtual void draw()
+	{
 		material->bind();
 		material->addUniforms(parent->transform);
 		mesh->draw(parent->transform, *material);
+	}
+
+};
+
+
+
+class WidgetRenderingComponent : public MeshRenderingComponent
+{
+public:
+	WidgetRenderingComponent(Mesh* mesh, Material* material) :MeshRenderingComponent(mesh,material)
+	{
+		phase = Electron::PHASE_WIDGETS_RENDERING;
 	}
 };

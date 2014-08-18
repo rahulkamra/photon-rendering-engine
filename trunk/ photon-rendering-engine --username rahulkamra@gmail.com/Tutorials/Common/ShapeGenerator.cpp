@@ -938,3 +938,44 @@ MeshData* ShapeGenerator::makePyramid()
 	return meshData;
 }
 
+
+MeshData* ShapeGenerator::createAxis(float length)
+{
+	GLuint numVertices = 4;
+	Vertex* vertices = new Vertex[numVertices];
+
+
+	vertices[0].position = vec3(0,0,0);
+
+	vertices[1].position = vec3(length,0,0);
+	vertices[1].color = vec3(1,0,0);
+	vertices[1].normal = vec3(0, 0, 0);
+
+
+	vertices[2].position = vec3(0 , 0 + length,  0);
+	vertices[2].color = vec3(0, 1, 0);
+	vertices[2].normal = vec3(0, 0, 0);
+
+
+	vertices[3].position = vec3(0, 0, 0 + length);
+	vertices[3].color = vec3(0, 0, 1);
+	vertices[3].normal = vec3(0, 0, 0);
+
+	GLushort numIndices = 6;
+
+
+	GLushort* indices = new GLushort[numIndices];
+	indices[0] = 0;
+	indices[1] = 1;
+
+	indices[2] = 0;
+	indices[3] = 2;
+
+	indices[4] = 0;
+	indices[5] = 3;
+
+
+	MeshData* meshData = new MeshData(vertices, numVertices, indices, numIndices);
+	return meshData;
+}
+

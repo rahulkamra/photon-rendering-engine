@@ -192,32 +192,34 @@ int main(int argc, char** argv)
 
 	GameObj* arrow = new GameObj();
 	arrow->transform.translate(vec3(0, -2.0f, -6.0f));
-	arrow->addComponent(new MeshRenderingComponent(new Arrow(), new Material()));
+	arrow->addComponent(new MeshRenderingComponent(new Arrow(), new DiffuseMaterial()));
 	Electron::add(arrow);
 
 
 	
 	GameObj* plane = new GameObj();
 	plane->transform.translate(vec3(0, -2.0f, -6.0f));
-	plane->addComponent(new MeshRenderingComponent(new Plane(), new Material()));
+	plane->addComponent(new MeshRenderingComponent(new Plane(), new DiffuseMaterial()));
+	plane->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()), new DiffuseMaterial()));
 	Electron::add(plane);
 
 
 	GameObj* teapot = new GameObj();
-	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new Material()));
+	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
+	teapot->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()), new DiffuseMaterial()));
 	teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
 	teapot->transform.rotate(270.0f, vec3(1.0f, 0.0f, 0.0f));
 	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(teapot);
 
 	GameObj* pyramid = new GameObj();
-	pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new Material()));
+	pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new DiffuseMaterial()));
 	pyramid->transform.translate(vec3(-2.5f, -1.8f, -6.0f));
 	pyramid->transform.scale(vec3(0.5f, 0.5f, 0.5f));
-	//Electron::add(pyramid);
+	Electron::add(pyramid);
 
 	GameObj* torus = new GameObj();
-	torus->addComponent(new MeshRenderingComponent(new Torus(), new Material()));
+	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial()));
 	torus->transform.translate(vec3(-2.5f, -1.8f, -6.0f));
 	torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(torus);
@@ -228,7 +230,8 @@ int main(int argc, char** argv)
 	GameObj* light = new GameObj();
 	light->addComponent(new DirectionalLight());
 	light->addComponent(new MeshRenderingComponent(new Arrow(), new Material()));
-	light->transform.rotate(90.0f,vec3(0,1,0));
+	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()), new Material()));
+	light->transform.rotate(45.0f,vec3(0,1,1));
 	light->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	light->transform.translate(vec3(0, 2.0f, -6.0f));
 	Electron::add(light);
