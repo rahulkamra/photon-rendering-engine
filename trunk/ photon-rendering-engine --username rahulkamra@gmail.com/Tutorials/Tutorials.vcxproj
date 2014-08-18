@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{48A30AD7-9A3F-4353-BEE5-E8B59430B1AC}</ProjectGuid>
+    <RootNamespace>Tutorials</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\AdditionalIncludes;$(SolutionDir)\package\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\AdditionalLibs;$(SolutionDir)\package\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;freeglut.lib;CORE_DB_Magick++_.lib;CORE_RL_Magick++_.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraController.h" />
+    <ClCompile Include="Camera\CameraTest.cpp" />
+    <ClCompile Include="Common\Debug\DebugUtils.cpp" />
+    <ClCompile Include="Common\Electron.cpp" />
+    <ClCompile Include="Common\GameObj\GameComponent.cpp" />
+    <ClCompile Include="Common\GameObj\GameObj.cpp" />
+    <ClCompile Include="Common\GameObj\Transform.cpp" />
+    <ClCompile Include="Common\Geometry\Mesh.cpp" />
+    <ClCompile Include="Common\Lights\Lights.cpp" />
+    <ClCompile Include="Common\Materials\Material.cpp" />
+    <ClCompile Include="Common\Materials\MaterialsList.cpp" />
+    <ClCompile Include="Common\Materials\MaterialsManager.cpp" />
+    <ClCompile Include="Common\ShapeGenerator.cpp" />
+    <ClCompile Include="DiffuseMaterial.cpp" />
+    <ClCompile Include="ogldev_util.cpp" />
+    <ClCompile Include="MeshData.cpp" />
+    <ClCompile Include="Utils\StringUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Common\Debug\DebugUtils.h" />
+    <ClInclude Include="Common\GameObj\GameComponent.h" />
+    <ClInclude Include="Common\GameObj\GameObj.h" />
+    <ClInclude Include="Common\GameObj\Transform.h" />
+    <ClInclude Include="Common\Geometry\Mesh.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Arrow.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Cube.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Plane.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Premitives.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Pyramid.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Teapot.h" />
+    <ClInclude Include="Common\Geometry\Premitives\TeapotData.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Torus.h" />
+    <ClInclude Include="Common\Geometry\Premitives\Triangle.h" />
+    <ClInclude Include="Common\Geometry\MeshData.h" />
+    <ClInclude Include="Common\Lights\DiffuseLightManager.h" />
+    <ClInclude Include="Common\Lights\Lights.h" />
+    <ClInclude Include="Common\Materials\Material.h" />
+    <ClInclude Include="Common\Materials\MaterialsList.h" />
+    <ClInclude Include="Common\Materials\MaterialsManager.h" />
+    <ClInclude Include="Common\Renderer\BasicMeshRenderer.h" />
+    <ClInclude Include="Common\Renderer\NormalsRenderer.h" />
+    <ClInclude Include="Common\ShapeGenerator.h" />
+    <ClInclude Include="Common\Vertex.h" />
+    <ClInclude Include="DiffuseMaterial.h" />
+    <ClInclude Include="Electron.h" />
+    <ClInclude Include="Electron_std.h" />
+    <ClInclude Include="LightData.h" />
+    <ClInclude Include="MeshRenderingComponent.h" />
+    <ClInclude Include="MyClass.h" />
+    <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="Utils\ColorUtils.h" />
+    <ClInclude Include="Utils\StringUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Camera\shader.fs" />
+    <None Include="Camera\shader.vs" />
+    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.fs" />
+    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.vs" />
+    <None Include="Common\Materials\BasicMaterial\BasicMaterial.fs" />
+    <None Include="Common\Materials\BasicMaterial\BasicMaterial.vs" />
+    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.fs" />
+    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.vs" />
+    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.fs" />
+    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.vs" />
+    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.fs" />
+    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.vs" />
+    <None Include="Shaders\electron.fsh" />
+    <None Include="Shaders\electron.vsh" />
+    <None Include="Shaders\forward_ambient.fs" />
+    <None Include="Shaders\forward_ambient.vs" />
+    <None Include="Shaders\Hello Triangle\shader.fs" />
+    <None Include="Shaders\Hello Triangle\shader.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

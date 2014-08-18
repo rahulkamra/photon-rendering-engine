@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{71fdcc9f-c33f-4b27-abad-62cbec839dc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{5c7bd8e1-3adb-4bdf-8574-0ce1b962ecc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Hello Triangle">
+      <UniqueIdentifier>{092b9514-2fca-4c73-9c96-1ad64c6314cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UniformVariables">
+      <UniqueIdentifier>{941997b4-5067-4ec0-b288-b8c1821825aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Translation">
+      <UniqueIdentifier>{c600975c-254b-45eb-98df-7b6d59808ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IndexBuffer">
+      <UniqueIdentifier>{1cc5a583-42d4-4e6d-8ff0-cab12edb91b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AllTransformations">
+      <UniqueIdentifier>{c53675c4-6873-47ce-825a-f7771c173afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AllTransformations\core">
+      <UniqueIdentifier>{9bbe1937-f775-40c8-8019-08f6af885842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cube">
+      <UniqueIdentifier>{f1303a65-52ef-4247-91cb-8d37d684656d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{1770bc57-b736-4a8a-8642-a4934928ce0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Geometry">
+      <UniqueIdentifier>{102223e9-5bd4-43ef-b175-4fc13ebba56d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\GameObj">
+      <UniqueIdentifier>{99f431d8-7fe1-4dab-ac8b-e046cd2225a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Renderer">
+      <UniqueIdentifier>{ad255101-fac0-48df-a3ef-b4c1bfc9c4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{58fad441-1659-4c3f-95a4-c2c71bb0eed5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Geometry\Premitives">
+      <UniqueIdentifier>{013cb1c6-a097-4420-9efe-3544e5f814fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Debug">
+      <UniqueIdentifier>{bbfc1ae7-699d-48b0-8cfc-98f6a4b0eb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Materials">
+      <UniqueIdentifier>{b04c7d0d-4b48-438c-ba03-0aa9ca76d432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Materials\BasicMeterial">
+      <UniqueIdentifier>{fc7504d8-b403-47fe-9910-2623d072d790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Materials\AmbientMaterial">
+      <UniqueIdentifier>{6513342a-bd3b-4b08-b32c-7fe5c4898003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Lights">
+      <UniqueIdentifier>{3170ea23-27ef-4a3c-86da-5a845a621c32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Materials\DiffuseMaterial">
+      <UniqueIdentifier>{20d47afc-3b8d-490f-8978-f69b57c84152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Materials\SpecularMaterial">
+      <UniqueIdentifier>{45a0dbb8-b41f-4159-bd40-d51bd75ab7ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\Materials\SpecularDiffuseAmbientPerVertex">
+      <UniqueIdentifier>{c990fcf5-c141-4433-a7c7-f2ec6bb484d3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ogldev_util.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\CameraTest.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraController.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ShapeGenerator.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Electron.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Debug\DebugUtils.cpp">
+      <Filter>Source Files\common\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Materials\MaterialsManager.cpp">
+      <Filter>Source Files\common\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Materials\MaterialsList.cpp">
+      <Filter>Source Files\common\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Geometry\Mesh.cpp">
+      <Filter>Source Files\common\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\GameObj\GameObj.cpp">
+      <Filter>Source Files\common\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\GameObj\Transform.cpp">
+      <Filter>Source Files\common\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\GameObj\GameComponent.cpp">
+      <Filter>Source Files\common\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshData.cpp">
+      <Filter>Source Files\common\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Materials\Material.cpp">
+      <Filter>Source Files\common\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Lights\Lights.cpp">
+      <Filter>Source Files\common\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\StringUtils.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="DiffuseMaterial.cpp">
+      <Filter>Source Files\common\Materials</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ShapeGenerator.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Vertex.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Renderer\BasicMeshRenderer.h">
+      <Filter>Source Files\common\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Electron.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Electron_std.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Cube.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Premitives.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Arrow.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Plane.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Teapot.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\TeapotData.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Torus.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Renderer\NormalsRenderer.h">
+      <Filter>Source Files\common\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Triangle.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Debug\DebugUtils.h">
+      <Filter>Source Files\common\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Materials\MaterialsManager.h">
+      <Filter>Source Files\common\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Materials\MaterialsList.h">
+      <Filter>Source Files\common\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Lights\DiffuseLightManager.h">
+      <Filter>Source Files\common\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Premitives\Pyramid.h">
+      <Filter>Source Files\common\Geometry\Premitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\GameObj\GameObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\GameObj\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\GameObj\GameComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshRenderingComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Geometry\MeshData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Materials\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Lights\Lights.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\StringUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ColorUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LightData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiffuseMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\Hello Triangle\shader.vs">
+      <Filter>Source Files\Shaders\Hello Triangle</Filter>
+    </None>
+    <None Include="Shaders\Hello Triangle\shader.fs">
+      <Filter>Source Files\Shaders\Hello Triangle</Filter>
+    </None>
+    <None Include="Camera\shader.fs">
+      <Filter>Source Files\Camera</Filter>
+    </None>
+    <None Include="Camera\shader.vs">
+      <Filter>Source Files\Camera</Filter>
+    </None>
+    <None Include="Common\Materials\BasicMaterial\BasicMaterial.fs">
+      <Filter>Source Files\common\Materials\BasicMeterial</Filter>
+    </None>
+    <None Include="Common\Materials\BasicMaterial\BasicMaterial.vs">
+      <Filter>Source Files\common\Materials\BasicMeterial</Filter>
+    </None>
+    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.fs">
+      <Filter>Source Files\common\Materials\AmbientMaterial</Filter>
+    </None>
+    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.vs">
+      <Filter>Source Files\common\Materials\AmbientMaterial</Filter>
+    </None>
+    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.fs">
+      <Filter>Source Files\common\Materials\DiffuseMaterial</Filter>
+    </None>
+    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.vs">
+      <Filter>Source Files\common\Materials\DiffuseMaterial</Filter>
+    </None>
+    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.fs">
+      <Filter>Source Files\common\Materials\SpecularMaterial</Filter>
+    </None>
+    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.vs">
+      <Filter>Source Files\common\Materials\SpecularMaterial</Filter>
+    </None>
+    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.fs">
+      <Filter>Source Files\common\Materials\SpecularDiffuseAmbientPerVertex</Filter>
+    </None>
+    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.vs">
+      <Filter>Source Files\common\Materials\SpecularDiffuseAmbientPerVertex</Filter>
+    </None>
+    <None Include="Shaders\electron.fsh">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\electron.vsh">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\forward_ambient.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\forward_ambient.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

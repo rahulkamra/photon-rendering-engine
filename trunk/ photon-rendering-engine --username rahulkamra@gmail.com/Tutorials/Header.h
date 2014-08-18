@@ -1,0 +1,20 @@
+#pragma once
+#include <GL/glew.h>
+#include <assert.h>
+#include <ogldev_util.h>
+#include <ogldev_types.h>
+#include <GL/freeglut.h>
+#include <iostream>
+#include <stdio.h>
+#include <math_3d.h>
+#include "MyClass.h"
+#include <Common\Vertex.h>
+#include <Common\ShapeGenerator.h>
+#include <glm\vec3.hpp>
+#include <glm\vec2.hpp>
+#include <glm\glm.hpp>
+#include <glm\gtc\matrix_transform.hpp>
+#include <Camera.h>
+#include <Common\Geometry\BasicMesh.h>
+#include <Common\GameObj\GameObj.h>
+
