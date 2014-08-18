@@ -1,4 +1,4 @@
-﻿Build started 8/18/2014 1:16:55 PM.
+﻿Build started 8/18/2014 6:51:26 PM.
      1>Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Work\Renderer\\AdditionalIncludes /ID:\Work\Renderer\\package\include /ID:\Work\Renderer\Tutorials\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera\CameraTest.cpp
@@ -139,6 +139,7 @@
      1>d:\work\renderer\tutorials\common\renderer\basicmeshrenderer.h(164): warning C4018: '<' : signed/unsigned mismatch
      1>d:\work\renderer\tutorials\camera\cameratest.cpp(30): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>d:\work\renderer\tutorials\camera\cameratest.cpp(31): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(231): warning C4305: 'argument' : truncation from 'double' to 'float'
          GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Work\Renderer\Debug\Tutorials.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\Work\Renderer\\AdditionalLibs /LIBPATH:D:\Work\Renderer\\package\lib glew32.lib freeglut.lib CORE_DB_Magick++_.lib CORE_RL_Magick++_.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Work\Renderer\Debug\Tutorials.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\Renderer\Debug\Tutorials.lib" /MACHINE:X86 Debug\Camera.obj
@@ -165,4 +166,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.33
+Time Elapsed 00:00:01.32

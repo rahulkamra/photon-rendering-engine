@@ -4,6 +4,7 @@
 #include <Utils\ColorUtils.h>
 #include <glm\gtc\matrix_transform.hpp>
 #include <iostream>
+#include <math.h>
 #define PI 3.14159265359
 
 #define NUM_ARRAY_ELEMENTS(a) sizeof(a) / sizeof(*a)
@@ -941,25 +942,40 @@ MeshData* ShapeGenerator::makePyramid()
 
 MeshData* ShapeGenerator::createAxis(float length)
 {
-	GLuint numVertices = 4;
+	GLuint numVertices = 6;
 	Vertex* vertices = new Vertex[numVertices];
 
 
-	vertices[0].position = vec3(0,0,0);
+	//Red
+	vertices[0].position = vec3(0 ,0, 0);
+	vertices[0].color = vec3(1, 0, 0);
+	vertices[0].normal = vec3(0, 0, 0);
 
 	vertices[1].position = vec3(length,0,0);
-	vertices[1].color = vec3(1,0,0);
+	vertices[1].color = vec3(1 , 0 , 0);
 	vertices[1].normal = vec3(0, 0, 0);
 
 
-	vertices[2].position = vec3(0 , 0 + length,  0);
+	//Green
+
+	vertices[2].position = vec3(0, 0, 0);
 	vertices[2].color = vec3(0, 1, 0);
 	vertices[2].normal = vec3(0, 0, 0);
 
 
-	vertices[3].position = vec3(0, 0, 0 + length);
-	vertices[3].color = vec3(0, 0, 1);
+	vertices[3].position = vec3(0 , 0 + length,  0);
+	vertices[3].color = vec3(0, 1, 0);
 	vertices[3].normal = vec3(0, 0, 0);
+
+
+	//Blue
+	vertices[4].position = vec3(0, 0, 0);
+	vertices[4].color = vec3(0, 0, 1);
+	vertices[4].normal = vec3(0, 0, 0);
+
+	vertices[5].position = vec3(0, 0, 0 + length);
+	vertices[5].color = vec3(0, 0, 1);
+	vertices[5].normal = vec3(0, 0, 0);
 
 	GLushort numIndices = 6;
 
@@ -968,14 +984,79 @@ MeshData* ShapeGenerator::createAxis(float length)
 	indices[0] = 0;
 	indices[1] = 1;
 
-	indices[2] = 0;
-	indices[3] = 2;
+	indices[2] = 2;
+	indices[3] = 3;
 
-	indices[4] = 0;
-	indices[5] = 3;
+	indices[4] = 4;
+	indices[5] = 5;
 
 
 	MeshData* meshData = new MeshData(vertices, numVertices, indices, numIndices);
 	return meshData;
 }
 
+
+
+
+MeshData* ShapeGenerator::createDirectionalWidget(float radius, int numSegments, int numDirectionalElements , vec3 color)
+{
+	GLuint numVertices = numSegments + numDirectionalElements;
+	GLuint numIndices = 2*numSegments + 2*numDirectionalElements;
+
+	Vertex* vertices = new Vertex[numVertices];
+	GLushort* indices = new GLushort[numIndices];
+
+	assert(numSegments % numDirectionalElements == 0);
+
+	int alreadyFilledVertices = 0;
+	int alreadyFilledIndices = 0;
+
+	for (int count = 0; count < numSegments; count++)
+	{
+		float theta = 2.0f * PI * float(count) / float(numSegments);
+		
+		vertices[count].position = vec3(radius * cosf(theta), radius * sinf(theta), 0);
+		vertices[count].color = color;
+
+		alreadyFilledVertices++;
+
+		if (count == numSegments-1)
+		{
+			indices[2 * count] = count;
+			indices[2 * count + 1] = 0;
+		}
+		else
+		{
+			indices[2 * count] = count;
+			indices[2 * count + 1] = count + 1;
+		}
+
+		alreadyFilledIndices += 2;
+	}
+
+	int step = numSegments / numDirectionalElements;
+
+	assert(step != 0);
+
+	for (int count = 0; count < numDirectionalElements; count++)
+	{
+		int index = step*count;
+		float theta = 2.0f * PI * float(index) / float(numSegments);
+
+		vertices[alreadyFilledVertices].position = vec3(radius * cosf(theta), radius * sinf(theta), 1);
+		vertices[alreadyFilledVertices].color = color;
+
+		indices[alreadyFilledIndices] = index;
+		indices[alreadyFilledIndices + 1] = alreadyFilledVertices;
+
+		alreadyFilledVertices++;
+		alreadyFilledIndices += 2;
+	}
+	
+	assert(alreadyFilledIndices == numIndices);
+	assert(alreadyFilledVertices == numVertices);
+
+	MeshData* meshData = new MeshData(vertices, numVertices, indices, numIndices);
+	return meshData;
+
+}

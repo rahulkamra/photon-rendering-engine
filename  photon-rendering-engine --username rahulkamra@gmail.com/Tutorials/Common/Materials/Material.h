@@ -3,6 +3,7 @@
 #include <GL\glew.h>
 #include <glm\gtc\matrix_transform.hpp>
 #include <Common\GameObj\Transform.h>
+
 class Material
 {
 public:
@@ -15,6 +16,14 @@ public:
 	void virtual addUniforms(Transform transform);
 	virtual void bind();
 
+
+};
+
+
+class AmbientMaterial : public Material
+{
+public:
+	void virtual addUniforms(Transform transform);
 
 };
 

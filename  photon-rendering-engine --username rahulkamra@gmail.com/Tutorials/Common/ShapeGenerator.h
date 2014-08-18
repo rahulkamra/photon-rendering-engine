@@ -44,5 +44,8 @@ public:
 	static MeshData* makePyramid();
 
 	static MeshData* createAxis(float length = 1.0f);
+
+	static MeshData* ShapeGenerator::createDirectionalWidget(float radius, int numSegments, int numDirectionalElements, glm::vec3 color = glm::vec3(1,0,0));
+	
 };
 
