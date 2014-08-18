@@ -1,23 +1,3 @@
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\vc120.pdb
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\vc120.idb
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\camera.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\cameracontroller.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\debugutils.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\electron.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\gamecomponent.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\gameobj.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\transform.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\mesh.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\lights.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\material.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\materialslist.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\materialsmanager.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\shapegenerator.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\diffusematerial.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\ogldev_util.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\meshdata.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\stringutils.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\tutorials\debug\cameratest.obj
 d:\work\renderer\tutorials\debug\vc120.pdb
 d:\work\renderer\tutorials\debug\vc120.idb
 d:\work\renderer\tutorials\debug\camera.obj
@@ -38,14 +18,36 @@ d:\work\renderer\tutorials\debug\diffusematerial.obj
 d:\work\renderer\tutorials\debug\ogldev_util.obj
 d:\work\renderer\tutorials\debug\meshdata.obj
 d:\work\renderer\tutorials\debug\stringutils.obj
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\debug\tutorials.ilk
-c:\users\rahul.kumar\google drive\work\opengl\tutorials\debug\tutorials.exe
+d:\work\renderer\tutorials\debug\meshrenderingcomponent.obj
+f:\work\opengl\renderer\tutorials\debug\vc120.pdb
+f:\work\opengl\renderer\tutorials\debug\vc120.idb
+f:\work\opengl\renderer\tutorials\debug\camera.obj
+f:\work\opengl\renderer\tutorials\debug\cameracontroller.obj
+f:\work\opengl\renderer\tutorials\debug\cameratest.obj
+f:\work\opengl\renderer\tutorials\debug\debugutils.obj
+f:\work\opengl\renderer\tutorials\debug\electron.obj
+f:\work\opengl\renderer\tutorials\debug\gamecomponent.obj
+f:\work\opengl\renderer\tutorials\debug\gameobj.obj
+f:\work\opengl\renderer\tutorials\debug\transform.obj
+f:\work\opengl\renderer\tutorials\debug\mesh.obj
+f:\work\opengl\renderer\tutorials\debug\lights.obj
+f:\work\opengl\renderer\tutorials\debug\material.obj
+f:\work\opengl\renderer\tutorials\debug\materialslist.obj
+f:\work\opengl\renderer\tutorials\debug\materialsmanager.obj
+f:\work\opengl\renderer\tutorials\debug\shapegenerator.obj
+f:\work\opengl\renderer\tutorials\debug\diffusematerial.obj
+f:\work\opengl\renderer\tutorials\debug\ogldev_util.obj
+f:\work\opengl\renderer\tutorials\debug\meshdata.obj
+f:\work\opengl\renderer\tutorials\debug\stringutils.obj
 d:\work\renderer\debug\tutorials.ilk
 d:\work\renderer\debug\tutorials.exe
 d:\work\renderer\debug\tutorials.pdb
-d:\work\renderer\tutorials\debug\tutorials.tlog\cl.command.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\cl.read.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\cl.write.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\link.command.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\link.read.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\link.write.1.tlog
+f:\work\opengl\renderer\debug\tutorials.pdb
+f:\work\opengl\renderer\debug\tutorials.exe
+f:\work\opengl\renderer\debug\tutorials.ilk
+f:\work\opengl\renderer\tutorials\debug\tutorials.tlog\cl.command.1.tlog
+f:\work\opengl\renderer\tutorials\debug\tutorials.tlog\cl.read.1.tlog
+f:\work\opengl\renderer\tutorials\debug\tutorials.tlog\cl.write.1.tlog
+f:\work\opengl\renderer\tutorials\debug\tutorials.tlog\link.command.1.tlog
+f:\work\opengl\renderer\tutorials\debug\tutorials.tlog\link.read.1.tlog
+f:\work\opengl\renderer\tutorials\debug\tutorials.tlog\link.write.1.tlog
