@@ -138,6 +138,9 @@
     <ClCompile Include="DiffuseMaterial.cpp">
       <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
+    <ClCompile Include="MeshRenderingComponent.cpp">
+      <Filter>Source Files\common\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h">

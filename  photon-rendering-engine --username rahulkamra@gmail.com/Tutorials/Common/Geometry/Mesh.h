@@ -22,7 +22,10 @@ public:
 
 class LineMesh :public Mesh
 {
+	
+public:
 	void virtual draw(Transform modelToWorld, Material& material);
+	LineMesh(MeshData* meshData);
 };
 
 

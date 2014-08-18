@@ -6,7 +6,12 @@
 #include <Common\Geometry\Premitives\Cube.h>
 #include <Common\Materials\MaterialsList.h>
 #include <Common\Materials\MaterialsManager.h>
+#include <MeshRenderingComponent.h>
 #include "Lights\Lights.h"
+
+const int Electron::PHASE_FORWARD_RENDERING = 100;
+const int Electron::PHASE_DEFFERED_RENDERING = 200;
+const int Electron::PHASE_WIDGETS_RENDERING = 300;
 
 
 glm::vec3 Electron::ambientLight(1.0f, 1.0f, 1.0f);
@@ -16,79 +21,93 @@ BaseLight* Electron::activeLight;
 
 vector<GameObj*> Electron::gameObjs;
 
+vector<MeshRenderingComponent*> Electron::forwardRenderingComponents;
+vector<MeshRenderingComponent*> Electron::deferredRenderingComponents;
+vector<MeshRenderingComponent*> Electron::widgetsRenderingComponents;
+
+
+
 GameObj* Electron::root;
+int Electron::currentPhaseRendering;
 
 
 
 void Electron::render()
 {
-	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
-	addLightsAttrib();
+	forwardRenderingComponents.clear();
+	deferredRenderingComponents.clear();
+	widgetsRenderingComponents.clear();
 
+	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	root->render(); // the rendering compoenents will be rendered later
 
 	if (lights.size() == 0)
 	{
-		root->render();
+		drawPhase(forwardRenderingComponents);
 	}
 	else
 	{
 		for (int count = 0; count < lights.size(); count++)
 		{
 			activeLight = lights.at(count);
-			root->render();
+			drawPhase(forwardRenderingComponents);
 		}
 	}
+
+	drawPhase(deferredRenderingComponents);
+
+	glClear(GL_DEPTH_BUFFER_BIT);
+	drawPhase(widgetsRenderingComponents);
 
 	glutSwapBuffers();
 }
 
 
+void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents)
+{
+	for (int count = 0; count < renderingComponents.size(); count++)
+	{
+		MeshRenderingComponent* eachComponent = renderingComponents.at(count);
+		eachComponent->draw();
+	}
+}
+
+
+void Electron::addRenderingComponent(MeshRenderingComponent* meshRenderingComponent)
+{
+	switch (meshRenderingComponent->phase)
+	{
+		case Electron::PHASE_FORWARD_RENDERING:
+		{
+		   forwardRenderingComponents.push_back(meshRenderingComponent);
+		   break;
+		}
+		case Electron::PHASE_DEFFERED_RENDERING:
+		{
+			deferredRenderingComponents.push_back(meshRenderingComponent);
+			break;
+		}
+
+		case Electron::PHASE_WIDGETS_RENDERING:
+		{
+			widgetsRenderingComponents.push_back(meshRenderingComponent);
+			break;
+		}
+	}
+}
 void Electron::add(GameObj* gameObj)
 {
 	root->addChild(gameObj);
-
-	//gameObjs.push_back(gameObj);
 }
 
-
-void Electron::addLightsAttrib()
-{
-	/*if (lights.size() > 0)
-	{
-		vec3 light = lights.at(0);
-		GLuint directionalLightUniformLocation = glGetUniformLocation(basicrenderer.shaderProgramId, "directionalLight");
-		glUniform3fv(directionalLightUniformLocation, 1, &light[0]);
-	}*/
-
-}
 
 void Electron::addLight(BaseLight* light)
 {
-	
 	lights.push_back(light);
-	//if (showGadget)
-	//{
-		//Cube gadget;
-		//gadget.translate(lightSource);
-		//gadget.scale(vec3(0.05f, 0.05f, 0.05f));
-		//basicrenderer.addItem(gadget);
-	//}
-	
 }
 
 
 void Electron::init()
 {
-	lights;
 	root = new GameObj();
-	/*for (int count = 0; count < MaterialsList::allShaders.size(); count++)
-	{
-		string eachItem = MaterialsList::allShaders.at(count);
-
-		string shaderName = eachItem;
-		string vertexShaderFileName = VERTEX_SHADER_PATH(shaderName);
-		string fragmentShaderFileName = FRAGMENT_SHADER_PATH(shaderName);
-
-		MaterialsManager::registerMaterial(shaderName.c_str(), vertexShaderFileName.c_str(), fragmentShaderFileName.c_str());
-	}*/
 }

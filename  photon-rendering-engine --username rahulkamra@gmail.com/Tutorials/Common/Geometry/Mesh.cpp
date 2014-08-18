@@ -42,6 +42,9 @@ void Mesh::draw(Transform modelToWorld,Material& material)
 	//DiffuseLightManager::addAttribs(shaderProgramId);
 	
 	glDrawElements(GL_TRIANGLES, meshData->numIndices, GL_UNSIGNED_SHORT, (void *)0);
+
+
+	
 }
 
 
@@ -52,5 +55,10 @@ void LineMesh::draw(Transform modelToWorld, Material& material)
 }
 
 
+
+LineMesh::LineMesh(MeshData* meshData) :Mesh(meshData)
+{
+	
+}
 
 
