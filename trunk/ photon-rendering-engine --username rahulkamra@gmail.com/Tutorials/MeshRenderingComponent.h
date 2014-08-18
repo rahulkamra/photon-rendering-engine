@@ -44,7 +44,7 @@ public:
 class WidgetRenderingComponent : public MeshRenderingComponent
 {
 public:
-	WidgetRenderingComponent(Mesh* mesh, Material* material) :MeshRenderingComponent(mesh,material)
+	WidgetRenderingComponent(Mesh* mesh) :MeshRenderingComponent(mesh,new Material())
 	{
 		phase = Electron::PHASE_WIDGETS_RENDERING;
 	}

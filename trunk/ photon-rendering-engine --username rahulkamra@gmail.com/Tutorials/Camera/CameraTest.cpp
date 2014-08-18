@@ -200,13 +200,12 @@ int main(int argc, char** argv)
 	GameObj* plane = new GameObj();
 	plane->transform.translate(vec3(0, -2.0f, -6.0f));
 	plane->addComponent(new MeshRenderingComponent(new Plane(), new DiffuseMaterial()));
-	plane->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()), new DiffuseMaterial()));
 	Electron::add(plane);
 
 
 	GameObj* teapot = new GameObj();
 	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
-	teapot->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()), new DiffuseMaterial()));
+	teapot->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis())));
 	teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
 	teapot->transform.rotate(270.0f, vec3(1.0f, 0.0f, 0.0f));
 	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
@@ -229,14 +228,13 @@ int main(int argc, char** argv)
 
 	GameObj* light = new GameObj();
 	light->addComponent(new DirectionalLight());
-	light->addComponent(new MeshRenderingComponent(new Arrow(), new Material()));
-	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()), new Material()));
-	light->transform.rotate(45.0f,vec3(0,1,1));
+	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2,50,5))));
+	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis())));
+	light->transform.translate(vec3(0, 0, -6.0f));
+	light->transform.rotate(0.0f,vec3(1,0,0));
 	light->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	light->transform.translate(vec3(0, 2.0f, -6.0f));
 	Electron::add(light);
 
-	//Electron::addLight(vec3(0.0f, 0.0f, -6.0f), true);
 	glutMainLoop();
 
 }

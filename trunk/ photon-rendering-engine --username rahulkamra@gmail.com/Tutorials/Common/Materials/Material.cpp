@@ -34,7 +34,7 @@ void Material::addUniforms(Transform transform)
 	addMat4("mvp", modelViewProjection);
 	addMat4("modelToWorld", model);
 	addVec3("cameraWorld", Camera::getCamera()->position);
-	addVec3("ambientLight", Electron::ambientLight);
+	addVec3("ambientLight", vec3(1.0f, 1.0f, 1.0f));
 }
 void Material::bind()
 {
@@ -42,4 +42,15 @@ void Material::bind()
 }
 Material::~Material()
 {
+}
+
+void AmbientMaterial::addUniforms(Transform transform)
+{
+	glm::mat4 modelViewProjection = Camera::getCamera()->worldToProjection(transform.modelTransformtionMatrix());
+	glm::mat4 model = transform.modelTransformtionMatrix();
+
+	addMat4("mvp", modelViewProjection);
+	addMat4("modelToWorld", model);
+	addVec3("cameraWorld", Camera::getCamera()->position);
+	addVec3("ambientLight", Electron::ambientLight);
 }
