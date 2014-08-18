@@ -225,16 +225,29 @@ int main(int argc, char** argv)
 
 	Electron::ambientLight = vec3(1.0f, 0.5f, 0.1f);
 
+	GameObj* directionalLight = new GameObj();
+	directionalLight->addComponent(new PointLight());
+	directionalLight->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	//light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis())));
+	directionalLight->transform.translate(vec3(0, 0, -2.0f));
+	directionalLight->transform.rotate(180, vec3(0, 1, 0));
+	directionalLight->transform.rotate(45, vec3(1, 0, 0));
+	directionalLight->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	Electron::add(directionalLight);
 
-	GameObj* light = new GameObj();
-	light->addComponent(new DirectionalLight());
-	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2,50,5))));
-	light->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis())));
-	light->transform.translate(vec3(0, 0, -6.0f));
-	light->transform.rotate(180,vec3(0,1,0));
-	light->transform.rotate(45, vec3(1, 0, 0));
-	light->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	Electron::add(light);
+
+
+
+	GameObj* pointLight = new GameObj();
+	pointLight->addComponent(new PointLight());
+	pointLight->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	//pointLight->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis())));
+	pointLight->transform.translate(vec3(0, -1, -6.0f));
+	pointLight->transform.rotate(180, vec3(0, 1, 0));
+	pointLight->transform.rotate(45, vec3(1, 0, 0));
+	pointLight->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	Electron::add(pointLight);
+
 
 	glutMainLoop();
 

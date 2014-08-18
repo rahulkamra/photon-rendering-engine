@@ -11,9 +11,15 @@ struct DirectionalLight
 };
 
 
-vec3 calculateLight(vec3 worldLightDirection , vec3 worldNormal , vec3 worldPosition)
+struct PointLight
 {
-	worldLightDirection = normalize(worldLightDirection);
-	float intensity  = dot(worldNormal,-worldLightDirection);
+	BaseLight light;
+	vec3 position;
+};
+
+
+vec3 calculateLight(vec3 lightVector , vec3 worldNormal , vec3 worldPosition)
+{
+	float intensity  = dot(worldNormal,lightVector);
 	return vec3(intensity,intensity,intensity);	
 };

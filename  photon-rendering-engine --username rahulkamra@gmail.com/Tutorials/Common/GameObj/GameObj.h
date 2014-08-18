@@ -23,22 +23,12 @@ class GameObj
 	Transform transform;
 	vector<GameObj*> children;
 	vector<GameComponent*> components;
-
-
-	GameObj()
-	{
-		
-	}
-
-
-	void drawNormals()
-	{
-		//normalsShape = ShapeGenerator::generateNormals(shape);
-		//DebugUtils::showNormals(this);
-	}
+	
 
 	void addChild(GameObj* gameObj);
 	void render();
+	void addedToStage();
 	void addComponent(GameComponent* gameComponent);
 
+	void _callAddedToStage();
 };

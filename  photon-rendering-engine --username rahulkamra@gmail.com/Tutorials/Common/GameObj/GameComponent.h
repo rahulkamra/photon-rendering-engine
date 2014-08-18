@@ -13,6 +13,7 @@ public:
 
 	virtual void render(){}
 	virtual void addedToGameObj(){}
+	virtual void addedToStage(){}
 
  
 };

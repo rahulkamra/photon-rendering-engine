@@ -5,22 +5,26 @@ class BaseLight : public GameComponent
 {
 
 public:
-	BaseLight();
-	~BaseLight();
-
 	void addedToGameObj();
-	void virtual bind(){};
+	void virtual bind();
 	GLuint virtual getShaderId(){ return 0; };
+	virtual void addedToStage();
 	void virtual updateUniforms(Material* material){};
 };
 
 class DirectionalLight : public BaseLight
 {
 public:
-	DirectionalLight();
-	~DirectionalLight();
-	void virtual bind();
 	GLuint virtual getShaderId();
 	void virtual updateUniforms(Material* material);
 };
+
+
+class PointLight : public BaseLight
+{
+public:
+	GLuint virtual getShaderId();
+	void virtual updateUniforms(Material* material);
+};
+
 

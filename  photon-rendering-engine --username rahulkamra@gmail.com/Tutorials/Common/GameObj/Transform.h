@@ -22,7 +22,7 @@ public:
 	void scale(glm::vec3 scale);
 	glm::mat4 modelTransformtionMatrix() const;
 
-	glm::vec3 Transform::forward();
-
+	glm::vec3 forward();
+	glm::vec3 getPosition();
 };
 

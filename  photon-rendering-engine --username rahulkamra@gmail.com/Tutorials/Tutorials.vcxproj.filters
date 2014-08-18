@@ -298,5 +298,26 @@
     <None Include="Shaders\forward_ambient.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
+    <None Include="Shaders\lighting.fsh">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\lighting.vsh">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\lightingMath.fsh">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\directional_light.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\directional_light.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\point_light.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\point_light.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
