@@ -5,33 +5,26 @@
 
 void BaseLight::addedToGameObj()
 {
+	//Electron::lights.push_back(this);
+}
+
+void BaseLight::addedToStage()
+{
 	Electron::lights.push_back(this);
 }
 
-BaseLight::BaseLight()
-{
 
-}
-BaseLight::~BaseLight()
-{
 
+void BaseLight::bind()
+{
+	glUseProgram(getShaderId());
 }
+
 
 /*
 
 */
-DirectionalLight::DirectionalLight()
-{
-	
-}
-DirectionalLight::~DirectionalLight()
-{
-}
 
-void DirectionalLight::bind()
-{
-	glUseProgram(getShaderId());
-}
 
 GLuint DirectionalLight::getShaderId()
 {
@@ -44,4 +37,17 @@ void DirectionalLight::updateUniforms(Material* material)
 {
 	glm::vec3 forward =  parent->transform.forward();
 	material->addVec3("directionalLight.direction", parent->transform.forward());
+}
+
+
+GLuint PointLight::getShaderId()
+{
+	return MaterialsManager::getMaterial(MaterialsList::POINT_LIGHT);
+}
+
+
+
+void PointLight::updateUniforms(Material* material)
+{
+	material->addVec3("pointLight.position", parent->transform.getPosition());
 }

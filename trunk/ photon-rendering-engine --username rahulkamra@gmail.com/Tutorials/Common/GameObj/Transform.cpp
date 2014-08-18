@@ -40,3 +40,10 @@ glm::vec3 Transform::forward()
 	forward = glm::normalize(forward);
 	return forward;
 }
+
+
+glm::vec3 Transform::getPosition()
+{
+	glm::vec3 position = (glm::vec3)(translationMatrix*glm::vec4(0, 0, 0, 1));
+	return position;
+}

@@ -136,12 +136,19 @@
     <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.vs" />
     <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.fs" />
     <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.vs" />
+    <None Include="Shaders\directional_light.fs" />
+    <None Include="Shaders\directional_light.vs" />
     <None Include="Shaders\electron.fsh" />
     <None Include="Shaders\electron.vsh" />
     <None Include="Shaders\forward_ambient.fs" />
     <None Include="Shaders\forward_ambient.vs" />
     <None Include="Shaders\Hello Triangle\shader.fs" />
     <None Include="Shaders\Hello Triangle\shader.vs" />
+    <None Include="Shaders\lighting.fsh" />
+    <None Include="Shaders\lighting.vsh" />
+    <None Include="Shaders\lightingMath.fsh" />
+    <None Include="Shaders\point_light.fs" />
+    <None Include="Shaders\point_light.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

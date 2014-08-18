@@ -4,6 +4,30 @@
 void GameObj::addChild(GameObj* gameObj)
 {
 	children.push_back(gameObj);
+	gameObj->_callAddedToStage();
+}
+
+void GameObj::_callAddedToStage()
+{
+	this->addedToStage();
+
+	for (int count = 0; count < components.size(); count++)
+	{
+		GameComponent* gameComponent = components.at(count);
+		gameComponent->addedToStage();
+	}
+
+	for (int count = 0; count < children.size(); count++)
+	{
+		GameObj* childObj = children.at(count);
+		childObj->_callAddedToStage();
+	}
+}
+
+
+void GameObj::addedToStage()
+{
+
 }
 
 void GameObj::addComponent(GameComponent* gameComponent)
