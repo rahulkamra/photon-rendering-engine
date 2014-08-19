@@ -1,5 +1,6 @@
 #include "GameObj.h"
 #include "GameComponent.h"
+#include "MeshRenderingComponent.h"
 
 void GameObj::addChild(GameObj* gameObj)
 {
@@ -36,6 +37,17 @@ void GameObj::addComponent(GameComponent* gameComponent)
 	components.push_back(gameComponent);
 	gameComponent->addedToGameObj();
 }
+
+
+void GameObj::showAxis()
+{
+	if (this->axis == nullptr)
+	{
+		this->axis = new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createAxis()));
+	}
+	this->addComponent(this->axis);
+}
+
 void GameObj::render()
 {
 	renderGameObj();

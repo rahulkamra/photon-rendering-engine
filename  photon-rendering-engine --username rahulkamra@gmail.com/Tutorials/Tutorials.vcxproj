@@ -119,7 +119,6 @@
     <ClInclude Include="LightData.h" />
     <ClInclude Include="MeshRenderingComponent.h" />
     <ClInclude Include="MyClass.h" />
-    <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Utils\ColorUtils.h" />
     <ClInclude Include="Utils\StringUtils.h" />
   </ItemGroup>

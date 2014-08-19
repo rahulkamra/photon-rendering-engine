@@ -1,5 +1,4 @@
 #pragma once
-
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 #include <Electron_std.h>
@@ -10,13 +9,16 @@
 #include "Common\Materials\MaterialsList.h"
 #include "Transform.h"
 #include <vector>
+
 using namespace glm;
 class GameComponent;
+class WidgetRenderingComponent;
 
 class GameObj
 {
 	private:
 	void renderGameObj();
+	WidgetRenderingComponent* axis;
 
 	public:
 	glm::vec3 translation;
@@ -29,6 +31,8 @@ class GameObj
 	void render();
 	void addedToStage();
 	void addComponent(GameComponent* gameComponent);
-
 	void _callAddedToStage();
+
+	void showAxis();
+
 };

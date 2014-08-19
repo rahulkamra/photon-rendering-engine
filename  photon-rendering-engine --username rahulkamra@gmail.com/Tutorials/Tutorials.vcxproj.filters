@@ -227,9 +227,6 @@
     <ClInclude Include="Common\Lights\Lights.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringUtils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Utils\StringUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>

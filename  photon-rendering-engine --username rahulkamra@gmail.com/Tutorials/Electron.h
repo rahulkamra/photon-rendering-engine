@@ -1,9 +1,6 @@
 #pragma once
-#include "Common\Renderer\NormalsRenderer.h"
-#include "Utils\ColorUtils.h"
 #include <vector>
-
-
+#include <Common\GameObj\GameObj.h>
 
 class BasicMeshRenderer;
 class BaseLight;
