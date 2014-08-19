@@ -6,7 +6,7 @@ class Plane : public Mesh
 {
 
 public:
-	Plane(int dimensions = 10) :Mesh(ShapeGenerator::makePlane(dimensions))
+	Plane(int dimensions = 10,glm::vec3 color = glm::vec3(0.2,0.2,0.2)) :Mesh(ShapeGenerator::makePlane(dimensions,color,false))
 	{
 		
 	}

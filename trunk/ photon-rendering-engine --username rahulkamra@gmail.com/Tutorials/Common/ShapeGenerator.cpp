@@ -400,7 +400,7 @@ MeshData* ShapeGenerator::makeArrow()
 	return meshdata;
 }
 
-Vertex* ShapeGenerator::makePlaneVerts(int dimensions)
+Vertex* ShapeGenerator::makePlaneVerts(int dimensions, glm::vec3 color ,bool generateRandomColor)
 {
 	int numVertices = dimensions * dimensions;
 	int half = dimensions / 2;
@@ -414,7 +414,10 @@ Vertex* ShapeGenerator::makePlaneVerts(int dimensions)
 			thisVert.position.z = i - half;
 			thisVert.position.y = 0;
 			thisVert.normal = glm::vec3(0, 1, 0);
-			thisVert.color = ColorUtils::randomColor();
+			if (generateRandomColor)
+				thisVert.color = ColorUtils::randomColor();
+			else
+				thisVert.color = color;
 		}
 	}
 	return vertices;
@@ -442,11 +445,11 @@ GLushort* ShapeGenerator::makePlaneIndices(int dimensions)
 	return indices;
 }
 
-MeshData* ShapeGenerator::makePlane(uint dimensions)
+MeshData* ShapeGenerator::makePlane(uint dimensions, glm::vec3 color, bool generateRandomColor)
 {
 
 	int numVertices = dimensions * dimensions;
-	Vertex* vertices = makePlaneVerts(dimensions);
+	Vertex* vertices = makePlaneVerts(dimensions, color, generateRandomColor);
 
 	int numIndices = (dimensions - 1) * (dimensions - 1) * 2 * 3; // 2 triangles per square, 3 indices per triangle
 	GLushort* indices = makePlaneIndices(dimensions);

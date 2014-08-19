@@ -3,7 +3,7 @@
 
 class ShapeGenerator
 {
-	static Vertex* makePlaneVerts(int dimensions);
+	static Vertex* makePlaneVerts(int dimensions, glm::vec3 color, bool generateRandomColor);
 	static GLushort* makePlaneIndices(int dimensions);
 	static GLushort* makePlaneUnseamedIndices(int tesselation);
 
@@ -36,7 +36,7 @@ public:
 	static MeshData* makeTriangle();
 	static MeshData* makeCube();
 	static MeshData* makeArrow();
-	static MeshData* makePlane(uint dimensions = 10);
+	static MeshData* makePlane(uint dimensions = 10, glm::vec3 color = glm::vec3(0.2, 0.2, 0.2), bool generateRandomColor = true);
 	static MeshData* makeTeapot(uint tesselation = 10, const glm::mat4& lidTransform = glm::mat4());
 	static MeshData* makeSphere(uint tesselation = 20);
 	static MeshData* makeTorus(uint tesselation = 20);
