@@ -30,11 +30,20 @@ public:
 		Electron::addRenderingComponent(this);
 	}
 
-	virtual void draw()
+	virtual void draw(Material* _material = nullptr)
 	{
-		material->bind();
-		material->addUniforms(parent->transform);
-		mesh->draw(parent->transform, *material);
+
+		Material* renderMaterial = _material;
+
+		if (_material == nullptr)
+		{
+			renderMaterial = this->material; 
+			
+		}
+		renderMaterial->bind();
+		renderMaterial->addUniforms(parent->transform);
+		mesh->draw(parent->transform, *renderMaterial);
+		
 	}
 
 };

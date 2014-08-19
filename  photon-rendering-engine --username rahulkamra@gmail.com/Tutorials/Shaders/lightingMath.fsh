@@ -21,5 +21,5 @@ struct PointLight
 vec3 calculateLight(vec3 lightVector , vec3 worldNormal , vec3 worldPosition)
 {
 	float intensity  = dot(worldNormal,lightVector);
-	return vec3(intensity,intensity,intensity);	
+	return vec3(intensity*0.7,intensity*0.7,intensity*0.7);	
 };

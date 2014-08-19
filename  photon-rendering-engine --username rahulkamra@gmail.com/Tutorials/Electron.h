@@ -10,7 +10,7 @@ class Electron
 {
 
 private:
-	static void drawPhase(vector<MeshRenderingComponent*> renderingComponents);
+	static void drawPhase(vector<MeshRenderingComponent*> renderingComponents, Material* material = nullptr);
 
 public:
 
