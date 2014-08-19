@@ -3,10 +3,9 @@
 #include "Common\Materials\MaterialsManager.h"
 
 
-void BaseLight::addedToGameObj()
-{
-	//Electron::lights.push_back(this);
-}
+void BaseLight::addedToGameObj(){}
+void BaseLight::updateUniforms(Material* material){}
+GLuint BaseLight::getShaderId(){ return 0; }
 
 void BaseLight::addedToStage()
 {
