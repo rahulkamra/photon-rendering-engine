@@ -9,5 +9,5 @@ void main()
 {
 	//light vector is opposite to the light direction
 	vec3 lightVector = normalize(pointLight.position - worldPosition);
-	finalColor = vec4(calculateLight(lightVector,worldNormal,worldPosition),0);
+	finalColor = vec4(calculateLight(lightVector,worldNormal,worldPosition,pointLight.light),0);
 }

@@ -41,15 +41,14 @@ void Electron::render()
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 	root->render(); // the rendering compoenents will be rendered later
 
-//	glEnable(GL_BLEND);
-	//glBlendFunc(GL_ONE, GL_ONE);
-	//glEnable(GL_DEPTH_TEST);
+	glDepthMask(GL_TRUE);
+	glDepthFunc(GL_LESS);
+	glDisable(GL_BLEND);
 
 	AmbientMaterial* material = new AmbientMaterial();
 	drawPhase(forwardRenderingComponents, material);
 
 
-	
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_ONE, GL_ONE);
@@ -62,17 +61,20 @@ void Electron::render()
 		drawPhase(forwardRenderingComponents);
 	}
 		
-	glClear(GL_DEPTH_BUFFER_BIT);
 	
-
-	glutSwapBuffers();
-
+	
 	glDepthMask(GL_TRUE);
 	glDepthFunc(GL_LESS);
 	glDisable(GL_BLEND);
+	
 
 	drawPhase(deferredRenderingComponents);
 	drawPhase(widgetsRenderingComponents);
+
+	
+
+	glClear(GL_DEPTH_BUFFER_BIT);
+	glutSwapBuffers();
 }
 
 
