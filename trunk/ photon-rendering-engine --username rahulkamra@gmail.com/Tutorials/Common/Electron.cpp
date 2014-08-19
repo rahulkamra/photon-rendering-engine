@@ -41,34 +41,47 @@ void Electron::render()
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 	root->render(); // the rendering compoenents will be rendered later
 
-	if (lights.size() == 0)
+//	glEnable(GL_BLEND);
+	//glBlendFunc(GL_ONE, GL_ONE);
+	//glEnable(GL_DEPTH_TEST);
+
+	AmbientMaterial* material = new AmbientMaterial();
+	drawPhase(forwardRenderingComponents, material);
+
+
+	
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_ONE, GL_ONE);
+	glDepthMask(GL_FALSE);
+	glDepthFunc(GL_EQUAL);
+
+	for (int count = 0; count < lights.size(); count++)
 	{
+		activeLight = lights.at(count);
 		drawPhase(forwardRenderingComponents);
 	}
-	else
-	{
-		for (int count = 0; count < lights.size(); count++)
-		{
-			activeLight = lights.at(count);
-			drawPhase(forwardRenderingComponents);
-		}
-	}
-
-	drawPhase(deferredRenderingComponents);
-
+		
 	glClear(GL_DEPTH_BUFFER_BIT);
-	drawPhase(widgetsRenderingComponents);
+	
 
 	glutSwapBuffers();
+
+	glDepthMask(GL_TRUE);
+	glDepthFunc(GL_LESS);
+	glDisable(GL_BLEND);
+
+	drawPhase(deferredRenderingComponents);
+	drawPhase(widgetsRenderingComponents);
 }
 
 
-void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents)
+void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , Material* material)
 {
 	for (int count = 0; count < renderingComponents.size(); count++)
 	{
 		MeshRenderingComponent* eachComponent = renderingComponents.at(count);
-		eachComponent->draw();
+		eachComponent->draw(material);
 	}
 }
 

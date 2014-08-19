@@ -226,8 +226,8 @@ int main(int argc, char** argv)
 	Electron::ambientLight = vec3(1.0f, 0.5f, 0.1f);
 
 	GameObj* directionalLight = new GameObj();
-	//directionalLight->addComponent(new PointLight());
-	directionalLight->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	directionalLight->addComponent(new PointLight());
+	//directionalLight->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//directionalLight->showAxis();
 	directionalLight->transform.translate(vec3(0, 0, -2.0f));
 	directionalLight->transform.rotate(180, vec3(0, 1, 0));
@@ -243,7 +243,7 @@ int main(int argc, char** argv)
 	pointLight->transform.rotate(180, vec3(0, 1, 0));
 	pointLight->transform.rotate(45, vec3(1, 0, 0));
 	pointLight->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	Electron::add(pointLight);
+	//Electron::add(pointLight);
 
 
 	glutMainLoop();
