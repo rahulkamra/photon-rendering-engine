@@ -48,13 +48,16 @@ void DirectionalLight::updateUniforms(Material* material)
 	glm::vec3 forward =  parent->transform.forward();
 	material->addVec3("directionalLight.direction", parent->transform.forward());
 	material->addVec3("directionalLight.light.color",color);
+	material->addVec3("ambientLight", Electron::ambientLight);
 }
 
 
 
-PointLight::PointLight(glm::vec3 color) :BaseLight(color)
+PointLight::PointLight(Attenuation attenuation, glm::vec3 color, float range) :BaseLight(color)
 {
-	this->color = color;
+	this->attenuation = attenuation;
+	this->range = range;
+
 }
 
 
@@ -69,4 +72,12 @@ void PointLight::updateUniforms(Material* material)
 {
 	material->addVec3("pointLight.position", parent->transform.getPosition());
 	material->addVec3("pointLight.light.color", color);
+
+	material->addFloat("pointLight.attenuation.constant", attenuation.constant);
+	material->addFloat("pointLight.attenuation.linear", attenuation.linear);
+	material->addFloat("pointLight.attenuation.quadratic", attenuation.quadratic);
+
+	material->addFloat("pointLight.range", 2.0f);
+	material->addVec3("ambientLight", Electron::ambientLight);
+
 }
