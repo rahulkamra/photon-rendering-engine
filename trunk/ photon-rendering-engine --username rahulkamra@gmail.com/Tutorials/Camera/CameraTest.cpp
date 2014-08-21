@@ -226,11 +226,11 @@ int main(int argc, char** argv)
 	Electron::ambientLight = vec3(0.2f, 0.2f, 0.2f);
 
 	GameObj* pointLightGreen = new GameObj();
-	pointLightGreen->addComponent(new PointLight(glm::vec3(0, 1, 0)));
+	pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0),10));
 
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//directionalLight->showAxis();
-	pointLightGreen->transform.translate(vec3(-3, -1, -6.0f));
+	pointLightGreen->transform.translate(vec3(-1, -1, -6.0f));
 	pointLightGreen->transform.rotate(180, vec3(0, 1, 0));
 	pointLightGreen->transform.rotate(45, vec3(1, 0, 0));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
@@ -238,7 +238,7 @@ int main(int argc, char** argv)
 
 
 	GameObj* pointLightRed = new GameObj();
-	pointLightRed->addComponent(new PointLight(glm::vec3(1, 0, 0)));
+	pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
 	pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	pointLightRed->transform.translate(vec3(3, -1, -6.0f));
 	pointLightRed->transform.rotate(180, vec3(0, 1, 0));
@@ -247,16 +247,24 @@ int main(int argc, char** argv)
 	Electron::add(pointLightRed);
 
 
+	GameObj* pointLightBlue = new GameObj();
+	pointLightBlue->addComponent(new PointLight(Attenuation(), glm::vec3(0, 0, 1)));
+	pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
+	pointLightBlue->transform.rotate(180, vec3(0, 1, 0));
+	pointLightBlue->transform.rotate(45, vec3(1, 0, 0));
+	pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	Electron::add(pointLightBlue);
 
 
 	GameObj* directionalLightYellow = new GameObj();
-	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.1, 0.1, 0)));
+	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.1, 0.1, 0.1)));
 	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	directionalLightYellow->transform.translate(vec3(3, -1, 0.0f));
+	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
 	directionalLightYellow->transform.rotate(180, vec3(0, 1, 0));
 	directionalLightYellow->transform.rotate(45, vec3(1, 0, 0));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	Electron::add(directionalLightYellow);
+	//Electron::add(directionalLightYellow);
 
 
 

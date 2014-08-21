@@ -26,13 +26,25 @@ public:
 	void virtual updateUniforms(Material* material);
 };
 
-
-class PointLight : public BaseLight
+class Attenuation
 {
 public:
-	PointLight(glm::vec3 color = glm::vec3(1,1,1));
+	float constant = 0;
+	float linear = 0;
+	float quadratic = 1;
+
+};
+
+
+class PointLight : public BaseLight
+{	
+public:
+	Attenuation attenuation;
+	float range;
+	PointLight(Attenuation attenuation, glm::vec3 color = glm::vec3(1, 1, 1), float range = 100.0f);
 	GLuint virtual getShaderId();
 	void virtual updateUniforms(Material* material);
 };
+
 
 

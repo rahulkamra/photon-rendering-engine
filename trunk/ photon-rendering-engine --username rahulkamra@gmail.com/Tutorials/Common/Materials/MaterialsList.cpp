@@ -1,6 +1,6 @@
 #include <Common\Materials\MaterialsList.h>
 
-const string MaterialsList::BASIC_MATERIAL = "BasicMaterial";
+const string MaterialsList::BASIC_MATERIAL = "default";
 const string MaterialsList::AMBIENT_MATERIAL = "forward_ambient";
 const string MaterialsList::DIRECTIONAL_LIGHT = "directional_light";
 const string MaterialsList::POINT_LIGHT = "point_light";

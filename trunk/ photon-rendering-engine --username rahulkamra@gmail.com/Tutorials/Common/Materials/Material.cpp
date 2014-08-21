@@ -25,7 +25,11 @@ void Material::addVec3(std::string name, glm::vec3 vector)
 	GLuint location = glGetUniformLocation(getShaderId(), name.c_str());
 	glUniform3fv(location, 1, &vector[0]);
 }
-
+void Material::addFloat(std::string name, float value)
+{
+	GLuint location = glGetUniformLocation(getShaderId(), name.c_str());
+	glUniform1f(location, value);
+}
 void Material::addUniforms(Transform transform)
 {
 	glm::mat4 modelViewProjection = Camera::getCamera()->worldToProjection(transform.modelTransformtionMatrix());
@@ -43,6 +47,7 @@ void Material::bind()
 Material::~Material()
 {
 }
+
 
 void AmbientMaterial::addUniforms(Transform transform)
 {

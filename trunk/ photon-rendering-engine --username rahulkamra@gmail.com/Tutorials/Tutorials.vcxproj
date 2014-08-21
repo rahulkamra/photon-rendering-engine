@@ -139,8 +139,8 @@
     <None Include="Shaders\directional_light.vs" />
     <None Include="Shaders\electron.fsh" />
     <None Include="Shaders\electron.vsh" />
-    <None Include="Shaders\forward_ambient.fs" />
-    <None Include="Shaders\forward_ambient.vs" />
+    <None Include="Shaders\default.fs" />
+    <None Include="Shaders\default.vs" />
     <None Include="Shaders\Hello Triangle\shader.fs" />
     <None Include="Shaders\Hello Triangle\shader.vs" />
     <None Include="Shaders\lighting.fsh" />

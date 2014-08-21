@@ -289,12 +289,6 @@
     <None Include="Shaders\electron.vsh">
       <Filter>Source Files\Shaders</Filter>
     </None>
-    <None Include="Shaders\forward_ambient.fs">
-      <Filter>Source Files\Shaders</Filter>
-    </None>
-    <None Include="Shaders\forward_ambient.vs">
-      <Filter>Source Files\Shaders</Filter>
-    </None>
     <None Include="Shaders\lighting.fsh">
       <Filter>Source Files\Shaders</Filter>
     </None>
@@ -314,6 +308,12 @@
       <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="Shaders\point_light.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\default.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\default.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>
