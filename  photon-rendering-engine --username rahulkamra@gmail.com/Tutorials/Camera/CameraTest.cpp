@@ -1,5 +1,6 @@
 
 #define WIN32 1
+#define GLM_FORCE_RADIANS
 
 #include <GL/glew.h>
 #include <assert.h>
@@ -30,6 +31,12 @@
 #include "Electron.h";
 #include "Common\Lights\Lights.h";
 #include "DiffuseMaterial.h"
+#include "QuaternionUtils.h"
+
+#include "glm\gtx\euler_angles.hpp"
+
+#include "glm\gtc\quaternion.hpp"
+#include "glm\gtx\quaternion.hpp"
 
 using namespace std;
 using glm::vec3;
@@ -54,6 +61,8 @@ int CameraController::previousY = 0;
 
 int CameraController::currentDownButton = 0;
 
+float CameraController::previousRotationX = 0;
+float CameraController::previousRotationY = 0;
 
 bool CameraController::_isMouseDown = false;
 
@@ -121,11 +130,11 @@ void keySpecialUp(int key, int x, int y)
 		break;
 
 	case GLUT_KEY_PAGE_UP:
-		Camera::getCamera()->moveUp();
+		Camera::getCamera()->moveUp(0.2f);
 		break;
 
 	case GLUT_KEY_PAGE_DOWN:
-		Camera::getCamera()->moveDown();
+		Camera::getCamera()->moveDown(0.2f);
 			break;
 
 	}
@@ -147,6 +156,7 @@ void mouseWheel(int button, int dir, int x, int y)
 	return;
 }
 
+static GameObj* arrow;
 int main(int argc, char** argv)
 {
 	
@@ -193,11 +203,12 @@ int main(int argc, char** argv)
 	GameObj* arrow = new GameObj();
 	arrow->transform.translate(vec3(0, -2.0f, -6.0f));
 	arrow->addComponent(new MeshRenderingComponent(new Arrow(), new DiffuseMaterial()));
-	Electron::add(arrow);
+	//Electron::add(arrow);
 
 
 	
 	GameObj* plane = new GameObj();
+	plane->showAxis();
 	plane->transform.translate(vec3(0, -2.0f, -6.0f));
 	plane->addComponent(new MeshRenderingComponent(new Plane(), new DiffuseMaterial()));
 	Electron::add(plane);
@@ -207,7 +218,7 @@ int main(int argc, char** argv)
 	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
 	teapot->showAxis();
 	teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
-	teapot->transform.rotate(270.0f, vec3(1.0f, 0.0f, 0.0f));
+	teapot->transform.rotate(QuaternionUtils::createRotation(270.0f, vec3(1.0f, 0.0f, 0.0f)));
 	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(teapot);
 
@@ -231,8 +242,8 @@ int main(int argc, char** argv)
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//directionalLight->showAxis();
 	pointLightGreen->transform.translate(vec3(-1, -1, -6.0f));
-	pointLightGreen->transform.rotate(180, vec3(0, 1, 0));
-	pointLightGreen->transform.rotate(45, vec3(1, 0, 0));
+	pointLightGreen->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
+	pointLightGreen->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightGreen);
 
@@ -241,8 +252,8 @@ int main(int argc, char** argv)
 	pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
 	pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	pointLightRed->transform.translate(vec3(3, -1, -6.0f));
-	pointLightRed->transform.rotate(180, vec3(0, 1, 0));
-	pointLightRed->transform.rotate(45, vec3(1, 0, 0));
+	pointLightRed->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
+	pointLightRed->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
 	pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightRed);
 
@@ -251,8 +262,8 @@ int main(int argc, char** argv)
 	pointLightBlue->addComponent(new PointLight(Attenuation(), glm::vec3(0, 0, 1)));
 	pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
-	pointLightBlue->transform.rotate(180, vec3(0, 1, 0));
-	pointLightBlue->transform.rotate(45, vec3(1, 0, 0));
+	pointLightBlue->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
+	pointLightBlue->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
 	pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightBlue);
 
@@ -261,14 +272,47 @@ int main(int argc, char** argv)
 	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.1, 0.1, 0.1)));
 	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
-	directionalLightYellow->transform.rotate(180, vec3(0, 1, 0));
-	directionalLightYellow->transform.rotate(45, vec3(1, 0, 0));
+	directionalLightYellow->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
+	directionalLightYellow->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	//Electron::add(directionalLightYellow);
 
 
+	Transform trans;
+	//trans.translate(glm::vec3(100,100,0));
+	
+	trans.rotate(QuaternionUtils::createRotation(glm::vec3(90, 180, -270)));
 
+	std::cout << "\n";
+	//std::cout << trans.getPosition().x << trans.getPosition().y << trans.getPosition().z;
+	std::cout << "\n";
 
+	glm::vec3 euler =  QuaternionUtils::toEuler(trans.quaterion);
+	std::cout << euler.x << " " << euler.y << " " << euler.z;
+	std::cout << "\n";
 	glutMainLoop();
 
+}
+
+
+
+void testForInverseMatrix()
+{
+	glm::mat4 translate;
+	glm::mat4 rotate;
+	glm::mat4 scale;
+
+	translate = glm::translate(translate, glm::vec3(1, 0, 0));
+	rotate = glm::rotate(rotate, 45.0f, glm::vec3(1, 0, 0));
+	scale = glm::scale(scale, glm::vec3(2, 2, 2));
+	
+	glm::mat4 transfomation = translate * rotate * scale;
+	glm::mat4 transfomationInverse = glm::inverse(transfomation);
+
+	glm::mat4 realInverse = glm::inverse(scale) * glm::inverse(rotate) * glm::inverse(translate);
+	//glm::eulerAngles()
+	
+	int index = 3;
+	cout << transfomationInverse[index].x << "   " << transfomationInverse[index].y << " " << transfomationInverse[index].z << "\n";
+	cout << realInverse[index].x << " " << realInverse[index].y << " " << realInverse[index].z;
 }

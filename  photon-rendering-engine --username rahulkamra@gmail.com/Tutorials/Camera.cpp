@@ -1,15 +1,18 @@
 #include <Camera.h>
 #include <GL/glew.h>
+#include <stdio.h>
+#include <iostream>
 
 Camera* Camera::camera;
 
-Camera::Camera() : viewDirection(0.0f, 0.0f, -1.0f), UP(0.0f,1.0f,0.0f)
+Camera::Camera() 
 {
 }
 
 glm::mat4 Camera::getWorldToView() const
 {
-	return glm::lookAt(position, position + viewDirection, UP);
+	return glm::inverse(transform.modelTransformtionMatrix());//This is the inverse because we want world to view , the transformation matrix is camera to the world.	
+	//return glm::lookAt(position, position + viewDirection, UP);
 }
 
 
@@ -29,27 +32,29 @@ const float MOVE_SPEED = 0.1f;
 
 void Camera::moveForward(float distance)
 {
-	position += UP*distance;
+	transform.translate(transform.forward()*distance);
+	//position += UP*distance;
 }
 void Camera::moveBackward(float distance)
 {
-	position -= UP*distance;
+	transform.translate(transform.backward()*distance);
+	//position -= UP*distance;
 }
 void Camera::moveLeft(float distance)
 {
-	position -= getRIGHT()*distance;
+	transform.translate(transform.left()*distance);
 }
 void Camera::moveRight(float distance)
 {
-	position += getRIGHT()*distance;
+	transform.translate(transform.right()*distance);
 }
-void Camera::moveUp()
+void Camera::moveUp(float distance)
 {
-	position += viewDirection*MOVE_SPEED;
+	transform.translate(transform.up()*distance);
 }
-void Camera::moveDown()
+void Camera::moveDown(float distance)
 {
-	position -= viewDirection*MOVE_SPEED;
+	transform.translate(transform.down()*distance);
 }
 
 
