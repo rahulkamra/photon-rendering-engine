@@ -77,7 +77,38 @@ void PointLight::updateUniforms(Material* material)
 	material->addFloat("pointLight.attenuation.linear", attenuation.linear);
 	material->addFloat("pointLight.attenuation.quadratic", attenuation.quadratic);
 
-	material->addFloat("pointLight.range", 2.0f);
+	material->addFloat("pointLight.range", this->range);
 	material->addVec3("ambientLight", Electron::ambientLight);
+
+}
+
+
+SpotLight::SpotLight(Attenuation attenuation, glm::vec3 color, float range, float cutoff) :PointLight(attenuation,color,range)
+{
+	this->cutoff = cutoff;
+}
+
+
+GLuint SpotLight::getShaderId()
+{
+	return MaterialsManager::getMaterial(MaterialsList::SPOT_LIGHT);
+}
+
+void SpotLight::updateUniforms(Material* material)
+{
+	material->addVec3("spotLight.position", parent->transform.getPosition());
+	material->addVec3("spotLight.light.color", color);
+
+	material->addFloat("spotLight.attenuation.constant", attenuation.constant);
+	material->addFloat("spotLight.attenuation.linear", attenuation.linear);
+	material->addFloat("spotLight.attenuation.quadratic", attenuation.quadratic);
+	
+	material->addVec3("spotLight.direction", parent->transform.forward());
+
+	material->addFloat("spotLight.cutoff", this->cutoff);
+
+	material->addFloat("spotLight.range", this->range);
+	material->addVec3("ambientLight", Electron::ambientLight);
+
 
 }

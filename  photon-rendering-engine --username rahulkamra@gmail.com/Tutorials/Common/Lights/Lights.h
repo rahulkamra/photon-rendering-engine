@@ -47,4 +47,14 @@ public:
 };
 
 
+class SpotLight : public PointLight
+{
+public:
+	float cutoff;
+	GLuint virtual getShaderId();
+	void virtual updateUniforms(Material* material);
+	SpotLight(Attenuation attenuation, glm::vec3 color = glm::vec3(1, 1, 1), float range = 100.0f,float cutoff = 1.0f);
+};
+
+
 

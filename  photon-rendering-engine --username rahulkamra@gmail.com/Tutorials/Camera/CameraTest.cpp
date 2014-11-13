@@ -258,12 +258,12 @@ int main(int argc, char** argv)
 
 
 	GameObj* pointLightBlue = new GameObj();
-	pointLightBlue->addComponent(new PointLight(Attenuation(), glm::vec3(0, 0, 1)));
+	pointLightBlue->addComponent(new SpotLight(Attenuation(), glm::vec3(0, 0, 1)));
 	pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	pointLightBlue->showAxis();
 	pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
 	pointLightBlue->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	pointLightBlue->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
+	pointLightBlue->transform.rotate(Quaternion(90, vec3(1, 0, 0)));
 	pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightBlue);
 
@@ -273,7 +273,7 @@ int main(int argc, char** argv)
 	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//Electron::add(directionalLightYellow);
+	Electron::add(directionalLightYellow);
 
 
 	Transform trans;
