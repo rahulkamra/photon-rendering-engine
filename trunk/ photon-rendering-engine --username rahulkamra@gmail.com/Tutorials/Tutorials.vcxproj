@@ -150,6 +150,8 @@
     <None Include="Shaders\lightingMath.fsh" />
     <None Include="Shaders\point_light.fs" />
     <None Include="Shaders\point_light.vs" />
+    <None Include="Shaders\spot_light.fs" />
+    <None Include="Shaders\spot_light.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

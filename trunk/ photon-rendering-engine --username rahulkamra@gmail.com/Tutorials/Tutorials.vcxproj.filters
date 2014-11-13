@@ -139,7 +139,7 @@
       <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
     <ClCompile Include="Quaternion.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\common\GameObj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +320,12 @@
       <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="Shaders\default.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\spot_light.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\spot_light.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>
