@@ -138,8 +138,8 @@
     <ClCompile Include="DiffuseMaterial.cpp">
       <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
-    <ClCompile Include="QuaternionUtils.cpp">
-      <Filter>Source Files\common\GameObj</Filter>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,7 +242,7 @@
     <ClInclude Include="DiffuseMaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuaternionUtils.h">
+    <ClInclude Include="Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

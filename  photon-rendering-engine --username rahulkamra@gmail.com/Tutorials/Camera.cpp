@@ -9,7 +9,7 @@ Camera::Camera()
 {
 }
 
-glm::mat4 Camera::getWorldToView() const
+glm::mat4 Camera::getWorldToView()
 {
 	return glm::inverse(transform.modelTransformtionMatrix());//This is the inverse because we want world to view , the transformation matrix is camera to the world.	
 	//return glm::lookAt(position, position + viewDirection, UP);

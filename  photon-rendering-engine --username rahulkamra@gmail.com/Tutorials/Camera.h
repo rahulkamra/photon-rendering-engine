@@ -21,7 +21,7 @@ public:
 	
 	Transform transform;
 
-	glm::mat4 getWorldToView() const;
+	glm::mat4 getWorldToView();
 	glm::mat4 getProjectionMatrix() const;
 	glm::mat4 worldToProjection(mat4 worldMatrix) const;
 

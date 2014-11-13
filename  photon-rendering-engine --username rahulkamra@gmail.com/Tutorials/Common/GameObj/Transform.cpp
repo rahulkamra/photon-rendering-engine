@@ -7,6 +7,7 @@ using namespace std;
 
 Transform::Transform()
 {
+
 }
 
 
@@ -20,11 +21,9 @@ void Transform::translate(glm::vec3 translate)
 	this->translationMatrix = glm::translate(translationMatrix, translate);
 }
 
-void Transform::rotate(glm::quat quat)
+void Transform::rotate(Quaternion quat)
 {
-	//this->quaterion = glm::normalize(glm::cross(this->quaterion,quat));
-
-	this->quaterion =   quat;
+	this->quaterion =  quat;
 }
 
 
@@ -34,9 +33,9 @@ void Transform::scale(glm::vec3 scale)
 	this->scaleMatrix = glm::scale(scaleMatrix, scale);
 }
 
-glm::mat4 Transform::modelTransformtionMatrix() const
+glm::mat4 Transform::modelTransformtionMatrix()
 {
-	return this->translationMatrix * QuaternionUtils::toMat4x4(quaterion)* this->scaleMatrix;
+	return this->translationMatrix * this->quaterion.toMat4x4() * this->scaleMatrix;
 }
 
 
@@ -76,19 +75,6 @@ glm::vec3 Transform::up()
 }
 
 
-
-/*glm::vec3 Transform::up()
-{
-	glm::vec3 up = glm::normalize((glm::vec3)(modelTransformtionMatrix()*glm::vec4(0, 1, 0, 0)));
-	//cout << up.x << up.y <<up.z << "\n" ;
-	return up;
-}*/
-
-/*glm::vec3 Transform::right()
-{
-glm::vec3 right = glm::normalize((glm::vec3)(modelTransformtionMatrix()*glm::vec4(1, 0, 0, 0)));
-return right;
-}*/
 glm::vec3 Transform::down()
 {
 	return -up();
