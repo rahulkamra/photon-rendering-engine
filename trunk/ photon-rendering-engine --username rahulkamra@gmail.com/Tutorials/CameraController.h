@@ -44,7 +44,7 @@ public :
 			previousRotationX += delta.y*speed;
 			previousRotationY += delta.x*speed;
 
-			camera->transform.quaterion = QuaternionUtils::createRotation(glm::vec3(previousRotationX, previousRotationY,0));
+			camera->transform.quaterion = Quaternion(glm::vec3(previousRotationX, previousRotationY,0));
 		}
 
 		else if (currentDownButton == GLUT_MIDDLE_BUTTON)

@@ -31,7 +31,6 @@
 #include "Electron.h";
 #include "Common\Lights\Lights.h";
 #include "DiffuseMaterial.h"
-#include "QuaternionUtils.h"
 
 #include "glm\gtx\euler_angles.hpp"
 
@@ -218,7 +217,7 @@ int main(int argc, char** argv)
 	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
 	teapot->showAxis();
 	teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
-	teapot->transform.rotate(QuaternionUtils::createRotation(270.0f, vec3(1.0f, 0.0f, 0.0f)));
+	teapot->transform.rotate(Quaternion(270.0f, vec3(1.0f, 0.0f, 0.0f)));
 	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(teapot);
 
@@ -242,8 +241,8 @@ int main(int argc, char** argv)
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//directionalLight->showAxis();
 	pointLightGreen->transform.translate(vec3(-1, -1, -6.0f));
-	pointLightGreen->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
-	pointLightGreen->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
+	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightGreen);
 
@@ -252,8 +251,8 @@ int main(int argc, char** argv)
 	pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
 	pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	pointLightRed->transform.translate(vec3(3, -1, -6.0f));
-	pointLightRed->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
-	pointLightRed->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
+	pointLightRed->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	pointLightRed->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightRed);
 
@@ -261,9 +260,10 @@ int main(int argc, char** argv)
 	GameObj* pointLightBlue = new GameObj();
 	pointLightBlue->addComponent(new PointLight(Attenuation(), glm::vec3(0, 0, 1)));
 	pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	pointLightBlue->showAxis();
 	pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
-	pointLightBlue->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
-	pointLightBlue->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
+	pointLightBlue->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	pointLightBlue->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightBlue);
 
@@ -272,8 +272,6 @@ int main(int argc, char** argv)
 	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.1, 0.1, 0.1)));
 	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
-	directionalLightYellow->transform.rotate(QuaternionUtils::createRotation(180, vec3(0, 1, 0)));
-	directionalLightYellow->transform.rotate(QuaternionUtils::createRotation(45, vec3(1, 0, 0)));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	//Electron::add(directionalLightYellow);
 
@@ -281,15 +279,7 @@ int main(int argc, char** argv)
 	Transform trans;
 	//trans.translate(glm::vec3(100,100,0));
 	
-	trans.rotate(QuaternionUtils::createRotation(glm::vec3(90, 180, -270)));
-
-	std::cout << "\n";
-	//std::cout << trans.getPosition().x << trans.getPosition().y << trans.getPosition().z;
-	std::cout << "\n";
-
-	glm::vec3 euler =  QuaternionUtils::toEuler(trans.quaterion);
-	std::cout << euler.x << " " << euler.y << " " << euler.z;
-	std::cout << "\n";
+	trans.rotate(Quaternion(glm::vec3(90, 180, -270)));
 	glutMainLoop();
 
 }

@@ -2,15 +2,12 @@
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 #include <glm\gtc\quaternion.hpp>
-#include <QuaternionUtils.h>
-
+#include <Quaternion.h>
 class Transform
 {
 
 private:
 	
-
-
 public:
 	Transform();
 	~Transform();
@@ -18,12 +15,12 @@ public:
 	glm::mat4 localMatrix;
 	glm::mat4 translationMatrix;
 	glm::mat4 scaleMatrix;
-	glm::quat quaterion;
-
+	Quaternion quaterion;
+	
 	void translate(glm::vec3 translate);
-	void rotate(glm::quat quat);
+	void rotate(Quaternion quat);
 	void scale(glm::vec3 scale);
-	glm::mat4 modelTransformtionMatrix() const;
+	glm::mat4 modelTransformtionMatrix();
 
 	glm::vec3 forward();
 	glm::vec3 backward();
