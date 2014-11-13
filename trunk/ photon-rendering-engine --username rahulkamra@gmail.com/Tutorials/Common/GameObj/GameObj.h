@@ -21,6 +21,7 @@ class GameObj
 	WidgetRenderingComponent* axis;
 
 	public:
+	string name;
 	glm::vec3 translation;
 	Transform transform;
 	vector<GameObj*> children;

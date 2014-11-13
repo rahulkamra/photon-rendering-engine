@@ -85,6 +85,7 @@
     <ClCompile Include="DiffuseMaterial.cpp" />
     <ClCompile Include="ogldev_util.cpp" />
     <ClCompile Include="MeshData.cpp" />
+    <ClCompile Include="QuaternionUtils.cpp" />
     <ClCompile Include="Utils\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,7 @@
     <ClInclude Include="LightData.h" />
     <ClInclude Include="MeshRenderingComponent.h" />
     <ClInclude Include="MyClass.h" />
+    <ClInclude Include="QuaternionUtils.h" />
     <ClInclude Include="Utils\ColorUtils.h" />
     <ClInclude Include="Utils\StringUtils.h" />
   </ItemGroup>

@@ -9,6 +9,8 @@
 #include <GL/freeglut.h>
 #include <Magick++.h>
 
+
+
 using glm::vec2;
 
 class CameraController
@@ -20,6 +22,9 @@ private :
 
 	static int previousX;
 	static int previousY;
+
+	static float previousRotationX;
+	static float previousRotationY;
 
 	static bool _isMouseDown;
 
@@ -35,16 +40,17 @@ public :
 		if (currentDownButton == GLUT_RIGHT_BUTTON)
 		{
 			float speed = 0.1f;
-			vec3 globalUp = glm::vec3(0, 1, 0);
-			vec3 globalRight = glm::vec3(1, 0, 0);
 
-			camera->viewDirection = glm::mat3(glm::rotate(delta.x*speed, globalUp)) * camera->viewDirection;
-			camera->viewDirection = glm::mat3(glm::rotate(-delta.y*speed, globalRight)) * camera->viewDirection;
+			previousRotationX += delta.y*speed;
+			previousRotationY += delta.x*speed;
+
+			camera->transform.quaterion = QuaternionUtils::createRotation(glm::vec3(previousRotationX, previousRotationY,0));
 		}
+
 		else if (currentDownButton == GLUT_MIDDLE_BUTTON)
 		{
 			camera->moveRight(delta.x*0.01);
-			camera->moveForward(-delta.y*0.01);
+			camera->moveDown(delta.y*0.01);
 		}
 		
 		previousX = x;
@@ -74,12 +80,12 @@ public :
 
 	static void mouseWheelUp()
 	{
-		Camera::getCamera()->moveUp();
+		Camera::getCamera()->moveForward(0.05);
 	}
 
 	static void mouseWheelDown()
 	{
-		Camera::getCamera()->moveDown();
+		Camera::getCamera()->moveBackward(0.05);
 	}
 };
 
