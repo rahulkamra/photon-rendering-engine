@@ -53,7 +53,7 @@ public:
 	float cutoff;
 	GLuint virtual getShaderId();
 	void virtual updateUniforms(Material* material);
-	SpotLight(Attenuation attenuation, glm::vec3 color = glm::vec3(1, 1, 1), float range = 100.0f,float cutoff = 1.0f);
+	SpotLight(Attenuation attenuation, glm::vec3 color = glm::vec3(1, 1, 1), float range = 10.0f,float cutoff = 10.0f);
 };
 
 

@@ -89,6 +89,7 @@
     <ClCompile Include="Utils\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\Tutorials\MathDefine.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Common\Debug\DebugUtils.h" />
     <ClInclude Include="Common\GameObj\GameComponent.h" />

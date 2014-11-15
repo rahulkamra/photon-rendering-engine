@@ -202,7 +202,7 @@ int main(int argc, char** argv)
 	GameObj* arrow = new GameObj();
 	arrow->transform.translate(vec3(0, -2.0f, -6.0f));
 	arrow->addComponent(new MeshRenderingComponent(new Arrow(), new DiffuseMaterial()));
-	//Electron::add(arrow);
+	Electron::add(arrow);
 
 
 	
@@ -244,7 +244,7 @@ int main(int argc, char** argv)
 	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
 	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	Electron::add(pointLightGreen);
+	//Electron::add(pointLightGreen);
 
 
 	GameObj* pointLightRed = new GameObj();
@@ -269,10 +269,11 @@ int main(int argc, char** argv)
 
 
 	GameObj* directionalLightYellow = new GameObj();
-	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.1, 0.1, 0.1)));
+	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.5, 0.5, 0.5)));
 	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	//directionalLightYellow->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
 	Electron::add(directionalLightYellow);
 
 

@@ -80,12 +80,13 @@ public :
 
 	static void mouseWheelUp()
 	{
-		Camera::getCamera()->moveForward(0.05);
+		Camera::getCamera()->moveBackward(0.05);
+		
 	}
 
 	static void mouseWheelDown()
 	{
-		Camera::getCamera()->moveBackward(0.05);
+		Camera::getCamera()->moveForward(0.05);
 	}
 };
 

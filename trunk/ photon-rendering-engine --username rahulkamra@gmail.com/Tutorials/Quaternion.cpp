@@ -1,5 +1,6 @@
 #include "Quaternion.h"
 
+
 Quaternion::Quaternion()
 {
 	nativeQuat = glm::quat();
@@ -11,6 +12,7 @@ Quaternion::Quaternion(float angle, glm::vec3 axis)
 
 Quaternion::Quaternion(glm::vec3 eulerAngles)
 {
+
 	eulerAngles = glm::vec3(ToRadian(eulerAngles.x), ToRadian(eulerAngles.y), ToRadian(eulerAngles.z));
 	nativeQuat =  glm::quat(eulerAngles);
 }
