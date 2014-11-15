@@ -82,6 +82,9 @@
     <Filter Include="Source Files\common\Materials\SpecularDiffuseAmbientPerVertex">
       <UniqueIdentifier>{c990fcf5-c141-4433-a7c7-f2ec6bb484d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\common\Utils">
+      <UniqueIdentifier>{d7eecd4a-5a48-48cc-b46a-c580ccc61e62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ogldev_util.cpp">
@@ -243,6 +246,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\Tutorials\MathDefine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

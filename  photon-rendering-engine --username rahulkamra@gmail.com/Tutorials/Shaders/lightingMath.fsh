@@ -41,7 +41,7 @@ struct SpotLight
 
 vec3 calculateLight(vec3 lightVector , vec3 worldNormal , vec3 worldPosition , vec3 color)
 {
-	float diffuseIntensity  = dot(worldNormal,lightVector);
+	float diffuseIntensity  = dot(worldNormal,-lightVector);
 	if( diffuseIntensity < 0)
 		 diffuseIntensity = 0;
 
@@ -49,10 +49,10 @@ vec3 calculateLight(vec3 lightVector , vec3 worldNormal , vec3 worldPosition , v
 };
 
 
-vec4 calculatePointLight(vec3 worldToLight,Attenuation attenuation,vec3 color)
+vec4 calculatePointLight(vec3 lightVector,Attenuation attenuation,vec3 color)
 {
-	float distance = length(worldToLight);
-	vec3 normalizedVector = normalize(worldToLight);
+	float distance = length(lightVector);
+	vec3 normalizedVector = normalize(lightVector);
 
 	float attenuationValue = attenuation.constant +
                          attenuation.linear * distance +
@@ -64,13 +64,13 @@ vec4 calculatePointLight(vec3 worldToLight,Attenuation attenuation,vec3 color)
 	return lightColor/ attenuationValue;
 }
 
-vec4 calculateSpotLight(vec3 worldToLight,Attenuation attenuation,vec3 color,vec3 direction,float cutoff)
+vec4 calculateSpotLight(vec3 lightVector,Attenuation attenuation,vec3 color,vec3 direction,float cutoff)
 {
-	vec3 lightToWorld = normalize(-worldToLight);
-	float spotFactor = dot(lightToWorld,direction);
+	vec3 normalizeLightVector = normalize(lightVector);
+	float spotFactor = dot(normalizeLightVector,normalize(direction));
 	if(spotFactor > cutoff)
 	{
-		vec4 pointColor = calculatePointLight(-worldToLight,attenuation,color);
+		vec4 pointColor = calculatePointLight(normalizeLightVector,attenuation,color);
 		//return pointColor;
 		return pointColor*(1.0-(1.0 - spotFactor)*1.0/(1.0 - cutoff));
 	}

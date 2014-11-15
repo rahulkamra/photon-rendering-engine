@@ -10,8 +10,8 @@ uniform SpotLight spotLight;
 void main()
 {
 
-	vec3 worldToLight = spotLight.position - worldPosition;
-	finalColor = calculateSpotLight(worldToLight,spotLight.attenuation,spotLight.light.color,spotLight.direction,spotLight.cutoff);
+	vec3 lightVector =  worldPosition-spotLight.position;
+	finalColor = calculateSpotLight(lightVector,spotLight.attenuation,spotLight.light.color,spotLight.direction,spotLight.cutoff);
 }
 
 

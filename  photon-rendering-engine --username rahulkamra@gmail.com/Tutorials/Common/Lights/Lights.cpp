@@ -45,7 +45,10 @@ GLuint DirectionalLight::getShaderId()
 void DirectionalLight::updateUniforms(Material* material)
 {
 	BaseLight::updateUniforms(material);
-	glm::vec3 forward =  parent->transform.forward();
+	//glm::vec3 forward =  parent->transform.forward();
+	//cout << forward.x;
+	//cout << forward.y;
+	//cout << forward.z;
 	material->addVec3("directionalLight.direction", parent->transform.forward());
 	material->addVec3("directionalLight.light.color",color);
 	material->addVec3("ambientLight", Electron::ambientLight);
@@ -103,6 +106,8 @@ void SpotLight::updateUniforms(Material* material)
 	material->addFloat("spotLight.attenuation.linear", attenuation.linear);
 	material->addFloat("spotLight.attenuation.quadratic", attenuation.quadratic);
 	
+	glm::vec3 forw = parent->transform.forward();
+
 	material->addVec3("spotLight.direction", parent->transform.forward());
 
 	material->addFloat("spotLight.cutoff", this->cutoff);

@@ -41,15 +41,15 @@ glm::mat4 Transform::modelTransformtionMatrix()
 
 glm::vec3 Transform::forward()
 {
-	return -backward();
+	glm::mat4 mat = modelTransformtionMatrix();
+	glm::vec3 forward = glm::vec3(mat[2][0], mat[2][1], mat[2][2]);
+	forward = glm::normalize(forward);
+	return forward;
 }
 
 glm::vec3 Transform::backward()
 {
-	glm::mat4 mat = modelTransformtionMatrix();
-	glm::vec3 backward = glm::vec3(mat[2][0], mat[2][1], mat[2][2]);
-	backward = glm::normalize(backward);
-	return backward; 
+	return -forward();
 }
 
 glm::vec3 Transform::right()
@@ -82,6 +82,7 @@ glm::vec3 Transform::down()
 
 glm::vec3 Transform::getPosition()
 {
+
 	glm::vec3 position = (glm::vec3)(modelTransformtionMatrix()*glm::vec4(0, 0, 0, 1));
 //	glm::vec3 position = glm::vec3(translationMatrix[0][3], translationMatrix[1][3], translationMatrix[2][3])
 

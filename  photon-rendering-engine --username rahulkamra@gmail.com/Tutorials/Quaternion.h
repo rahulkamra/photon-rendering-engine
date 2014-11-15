@@ -2,7 +2,7 @@
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 #include <glm\gtc\quaternion.hpp>
-#include <math_3d.h>
+#include <MathDefine.h>
 class Quaternion
 {
 private:
