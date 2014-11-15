@@ -71,7 +71,6 @@ vec4 calculateSpotLight(vec3 lightVector,Attenuation attenuation,vec3 color,vec3
 	if(spotFactor > cutoff)
 	{
 		vec4 pointColor = calculatePointLight(normalizeLightVector,attenuation,color);
-		//return pointColor;
 		return pointColor*(1.0-(1.0 - spotFactor)*1.0/(1.0 - cutoff));
 	}
 	else
