@@ -6,9 +6,12 @@
 class MeshData
 {
 
+private :
+	bool requireResync = true;
+	
 public:
 	MeshData(Vertex* vertices, GLuint numVertices, GLushort* indices, GLuint numIndices);
-
+	MeshData();
 	Vertex* vertices;
 	GLuint numVertices;
 	GLushort* indices;
@@ -24,6 +27,6 @@ public:
 	void createIndexBuffer();
 	void createVertexBuffer();
 	void createVertexArrays();
-
+	void bind();
 	void cleanup();
 };
