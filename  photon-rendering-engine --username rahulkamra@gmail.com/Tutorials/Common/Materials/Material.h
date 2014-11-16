@@ -3,6 +3,7 @@
 #include <GL\glew.h>
 #include <glm\gtc\matrix_transform.hpp>
 #include <Common\GameObj\Transform.h>
+#include <Texture.h>
 
 class Material
 {
@@ -15,9 +16,24 @@ public:
 	void  addFloat(std::string name, float value);
 	GLuint virtual inline getShaderId();
 	void virtual addUniforms(Transform transform);
+	void inline addTextureUniform(std::string name, GLuint samplerId);
 	virtual void bind();
 
+	std::map<std::string, Texture*> m_textureMap;
 
+	inline void AddTexture(const std::string& name, Texture* value) 
+	{
+		m_textureMap.insert(std::pair<std::string, Texture*>(name, value)); 
+	}
+
+	inline Texture* GetTexture(const std::string& name) const
+	{
+		std::map<std::string, Texture*>::const_iterator it = m_textureMap.find(name);
+		if (it != m_textureMap.end())
+			return it->second;
+
+		return 0;
+	}
 };
 
 
@@ -31,6 +47,8 @@ public:
 class AmbientMaterial : public Material
 {
 public:
+	AmbientMaterial();
+	AmbientMaterial(Texture* diffuseTexture);
 	void virtual addUniforms(Transform transform);
 
 };
