@@ -14,7 +14,11 @@ GLuint inline Material::getShaderId()
 	return MaterialsManager::getMaterial(MaterialsList::AMBIENT_MATERIAL);
 }
 
-
+void inline Material::addTextureUniform(std::string name, GLuint samplerId)
+{
+	Texture* texture = GetTexture(name);
+	texture->bind(samplerId);
+}
 void Material::addMat4(std::string name, glm::mat4 matrix)
 {
 	GLint location = glGetUniformLocation(getShaderId(), name.c_str());
@@ -30,6 +34,9 @@ void Material::addFloat(std::string name, float value)
 	GLuint location = glGetUniformLocation(getShaderId(), name.c_str());
 	glUniform1f(location, value);
 }
+
+
+
 void Material::addUniforms(Transform transform)
 {
 	glm::mat4 modelViewProjection = Camera::getCamera()->worldToProjection(transform.modelTransformtionMatrix());
@@ -48,6 +55,19 @@ Material::~Material()
 {
 }
 
+AmbientMaterial::AmbientMaterial()
+{
+	TextureData* textureData = new TextureData("res/textures/black.png");
+	textureData->load();
+	Texture* texture = new Texture(textureData);
+	this->AddTexture("diffuse", texture);
+}
+AmbientMaterial::AmbientMaterial(Texture* diffuseTexture)
+{
+	this->AddTexture("diffuse", diffuseTexture);
+}
+
+
 
 void AmbientMaterial::addUniforms(Transform transform)
 {
@@ -58,4 +78,6 @@ void AmbientMaterial::addUniforms(Transform transform)
 	addMat4("modelToWorld", model);
 	addVec3("cameraWorld", Camera::getCamera()->position);
 	addVec3("ambientLight", Electron::ambientLight);
+	addTextureUniform("diffuse", 0);
+
 }
