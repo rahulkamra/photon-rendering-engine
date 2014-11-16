@@ -85,6 +85,9 @@
     <Filter Include="Source Files\common\Utils">
       <UniqueIdentifier>{d7eecd4a-5a48-48cc-b46a-c580ccc61e62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\common\Textures">
+      <UniqueIdentifier>{ffa43caf-b5d4-4ba5-aeec-e6f136d6a6e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ogldev_util.cpp">
@@ -135,14 +138,20 @@
     <ClCompile Include="Common\Lights\Lights.cpp">
       <Filter>Source Files\common\Lights</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\StringUtils.cpp">
-      <Filter>Source Files\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="DiffuseMaterial.cpp">
       <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
     <ClCompile Include="Quaternion.cpp">
       <Filter>Source Files\common\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\StringUtils.cpp">
+      <Filter>Source Files\common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureData.cpp">
+      <Filter>Source Files\common\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\common\Textures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +260,12 @@
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\Tutorials\MathDefine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TextureData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\Hello Triangle\shader.vs">
@@ -332,6 +347,12 @@
       <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="Shaders\spot_light.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\forward_ambient.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\forward_ambient.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>

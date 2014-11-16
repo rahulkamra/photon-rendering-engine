@@ -41,16 +41,20 @@ void  MeshData::createVertexArrays()
 {
 	glGenVertexArrays(1, &vertexArrayId);
 	glBindVertexArray(vertexArrayId);
+
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 	glEnableVertexAttribArray(2);
+	glEnableVertexAttribArray(3);
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	GLsizei sizeOfVertex = 9 * sizeof(float);
+	GLsizei sizeOfVertex = 11 * sizeof(float);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeOfVertex, (void *)0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeOfVertex, (void *)(sizeof(float)* 3));
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeOfVertex, (void *)(sizeof(float)* 6));
+	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeOfVertex, (void *)(sizeof(float)* 9));
+
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
 
@@ -58,6 +62,7 @@ void  MeshData::createVertexArrays()
 	glDisableVertexAttribArray (0);
 	glDisableVertexAttribArray(1);
 	glDisableVertexAttribArray(2);
+	glDisableVertexAttribArray(3);
 }
 
 

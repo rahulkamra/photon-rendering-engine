@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <iostream>
 #include <GL/freeglut.h>
-#include <Magick++.h>
 
 
 

@@ -24,14 +24,17 @@ MeshData* ShapeGenerator::makeTriangle()
 		vec3(+0.0f, +1.0f, +0.0f),
 		vec3(+1.0f, +0.0f, +0.0f),
 		vec3(+0.0f, +0.0f, +1.0f),
+		vec2(0.0f,0.1f),
 
 		vec3(-1.0f, -1.0f, +0.0f),
 		vec3(+0.0f, +1.0f, +0.0f),
 		vec3(+0.0f, +0.0f, +1.0f),
+		vec2(0.0f, 0.1f),
 
 		vec3(+1.0f, -1.0f, +0.0f),
 		vec3(+0.0f, +0.0f, +1.0f),
 		vec3(+0.0f, +0.0f, +1.0f),
+		vec2(0.0f, 0.1f)
 	};
 	//ret.numVertices = NUM_ARRAY_ELEMENTS(myTri);
 	//ret.vertices = new Vertex[ret.numVertices];
