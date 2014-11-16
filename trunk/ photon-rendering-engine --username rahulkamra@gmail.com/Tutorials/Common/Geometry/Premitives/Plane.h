@@ -13,6 +13,6 @@ public:
 
 	~Plane()
 	{
-		meshData->cleanup();
+		this->cleanup();
 	}
 };

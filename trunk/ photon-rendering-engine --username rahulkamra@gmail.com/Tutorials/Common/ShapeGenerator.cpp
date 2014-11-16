@@ -1063,3 +1063,13 @@ MeshData* ShapeGenerator::createDirectionalWidget(float radius, int numSegments,
 	return meshData;
 
 }
+
+
+vector<MeshData*> ShapeGenerator::createShapeFromFile(string  fileName)
+{
+	Assimp::Importer importer = Assimp::Importer();
+	importer.ReadFile(fileName, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
+	vector<MeshData*> ret;
+	
+	return ret;
+}

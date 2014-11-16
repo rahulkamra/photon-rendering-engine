@@ -10,7 +10,7 @@ public:
 	}
 	~Triangle()
 	{
-		meshData->cleanup();
+		this->cleanup();
 
 	}
 };

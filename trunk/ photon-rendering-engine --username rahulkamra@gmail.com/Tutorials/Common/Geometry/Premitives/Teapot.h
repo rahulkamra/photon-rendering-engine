@@ -12,6 +12,6 @@ public:
 	}
 	~TeaPot()
 	{
-		meshData->cleanup();
+		this->cleanup();
 	}
 };
