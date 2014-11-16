@@ -86,6 +86,8 @@
     <ClCompile Include="ogldev_util.cpp" />
     <ClCompile Include="MeshData.cpp" />
     <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="Utils\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +124,8 @@
     <ClInclude Include="MeshRenderingComponent.h" />
     <ClInclude Include="MyClass.h" />
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureData.h" />
     <ClInclude Include="Utils\ColorUtils.h" />
     <ClInclude Include="Utils\StringUtils.h" />
   </ItemGroup>
@@ -144,6 +148,8 @@
     <None Include="Shaders\electron.vsh" />
     <None Include="Shaders\default.fs" />
     <None Include="Shaders\default.vs" />
+    <None Include="Shaders\forward_ambient.fs" />
+    <None Include="Shaders\forward_ambient.vs" />
     <None Include="Shaders\Hello Triangle\shader.fs" />
     <None Include="Shaders\Hello Triangle\shader.vs" />
     <None Include="Shaders\lighting.fsh" />
