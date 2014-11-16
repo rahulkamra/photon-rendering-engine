@@ -37,6 +37,9 @@ class ShapeGenerator
 	static glm::vec3 evaluate(int gridU, int gridV, float *B, glm::vec3 patch[][4]);
 	static glm::vec3 evaluateNormal(int gridU, int gridV,
 		float *B, float *dB, glm::vec3 patch[][4]);
+
+	static vector<MeshData*> initFromScene(const aiScene* scene);
+
 public:
 	static MeshData* makeTriangle();
 	static MeshData* makeCube();

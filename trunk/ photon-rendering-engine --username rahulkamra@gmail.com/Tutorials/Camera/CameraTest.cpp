@@ -222,17 +222,26 @@ int main(int argc, char** argv)
 
 	GameObj* pyramid = new GameObj();
 	pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new DiffuseMaterial()));
-	pyramid->transform.translate(vec3(-2.5f, -1.8f, -6.0f));
+	pyramid->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
 	pyramid->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(pyramid);
 
+
+	GameObj* customMesh = new GameObj();
+	customMesh->addComponent(new MeshRenderingComponent(new Mesh(ShapeGenerator::createShapeFromFile("res/models/phoenix_ugv.md2")), new DiffuseMaterial()));
+	customMesh->transform.translate(vec3(-1.5, -1.8f, -6.0f));
+	customMesh->transform.scale(vec3(0.02f, 0.02f, 0.02f));
+
+	Electron::add(customMesh);
+
+
 	GameObj* torus = new GameObj();
 	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial()));
-	torus->transform.translate(vec3(-2.5f, -1.8f, -6.0f));
+	torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
 	torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(torus);
 
-	Electron::ambientLight = vec3(0.2f, 0.2f, 0.2f);
+	Electron::ambientLight = vec3(0.5f, 0.5f, 0.5f);
 
 	GameObj* pointLightGreen = new GameObj();
 	pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0),10));
@@ -243,7 +252,7 @@ int main(int argc, char** argv)
 	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
 	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	Electron::add(pointLightGreen);
+	//Electron::add(pointLightGreen);
 
 
 	GameObj* pointLightRed = new GameObj();
@@ -272,8 +281,8 @@ int main(int argc, char** argv)
 	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//directionalLightYellow->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
-	//Electron::add(directionalLightYellow);
+	directionalLightYellow->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
+	Electron::add(directionalLightYellow);
 
 
 	Transform trans;

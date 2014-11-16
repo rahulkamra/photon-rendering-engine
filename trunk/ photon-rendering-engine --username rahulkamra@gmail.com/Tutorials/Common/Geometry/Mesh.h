@@ -27,7 +27,6 @@ class LineMesh :public Mesh
 {
 	
 public:
-	vector<MeshData*> meshData;
 	void virtual draw(Transform modelToWorld, Material& material);
 	LineMesh(MeshData* meshData);
 };

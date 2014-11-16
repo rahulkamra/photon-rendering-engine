@@ -35,29 +35,12 @@ void Mesh::draw(Transform modelToWorld,Material& material)
 	for (int count = 0; count < this->meshData.size(); count++)
 	{
 		MeshData* _meshData = this->meshData.at(count);
-		glBindVertexArray(_meshData->vertexArrayId);
-		//glm::mat4 worldToView = Camera::getCamera()->worldToProjection(modelToWorld.modelTransformtionMatrix());
-
-		//GLuint shaderProgramId = MaterialsManager::getMaterial(material);
-		//glUseProgram(shaderProgramId);
-
-
-		//GLint worldToViewLocation = glGetUniformLocation(shaderProgramId, "worldToView");
-		//glUniformMatrix4fv(worldToViewLocation, 1, GL_FALSE, &worldToView[0][0]);
-
-		//GLint modelToWorldLocation = glGetUniformLocation(shaderProgramId, "modelToWorld");
-		//glUniformMatrix4fv(modelToWorldLocation, 1, GL_FALSE, &modelToWorld.modelTransformtionMatrix()[0][0]);
-
-		//GLuint cameraWorldUniformLocation = glGetUniformLocation(shaderProgramId, "cameraWorld");
-		//glUniform3fv(cameraWorldUniformLocation, 1, &Camera::getCamera()->position[0]);
-
-		//GLuint anbientLightUniformLocation = glGetUniformLocation(shaderProgramId, "ambientLight");
-		//glUniform3fv(anbientLightUniformLocation, 1, &Electron::ambientLight[0]);
-
-		//DiffuseLightManager::addAttribs(shaderProgramId);
-
+		_meshData->bind();
 		glDrawElements(GL_TRIANGLES, _meshData->numIndices, GL_UNSIGNED_SHORT, (void *)0);
+		glBindVertexArray(0);
+
 	}
+
 	
 
 
@@ -70,8 +53,9 @@ void LineMesh::draw(Transform modelToWorld, Material& material)
 	for (int count = 0; count < this->meshData.size(); count++)
 	{
 		MeshData* _meshData = this->meshData.at(count);
-		glBindVertexArray(_meshData->vertexArrayId);
+		_meshData->bind();
 		glDrawElements(GL_LINES, _meshData->numIndices, GL_UNSIGNED_SHORT, (void *)0);
+		glBindVertexArray(0);
 	}
 	
 }
@@ -82,5 +66,4 @@ LineMesh::LineMesh(MeshData* meshData) :Mesh(meshData)
 {
 	
 }
-
 

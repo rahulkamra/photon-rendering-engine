@@ -1067,9 +1067,68 @@ MeshData* ShapeGenerator::createDirectionalWidget(float radius, int numSegments,
 
 vector<MeshData*> ShapeGenerator::createShapeFromFile(string  fileName)
 {
-	Assimp::Importer importer = Assimp::Importer();
-	importer.ReadFile(fileName, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
 	vector<MeshData*> ret;
-	
+	Assimp::Importer importer = Assimp::Importer();
+	const aiScene* scene =  importer.ReadFile(fileName, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
+	if (scene)
+	{
+		return initFromScene(scene);
+	}
+	else
+	{
+		cout << "Error Creating Mesh from " << fileName;
+	}
+
 	return ret;
+}
+
+
+vector<MeshData*> ShapeGenerator::initFromScene(const aiScene* scene)
+{
+	vector<MeshData*> meshDataVector;
+	
+	for (int countM = 0; countM < scene->mNumMeshes; countM++)
+	{
+		const aiMesh* aiMeshIns = scene->mMeshes[countM];
+
+		MeshData* meshData = new MeshData();
+		meshDataVector.push_back(meshData);
+
+		meshData->numVertices = aiMeshIns->mNumVertices;
+		meshData->vertices = new Vertex[meshData->numVertices];
+
+		meshData->numIndices = aiMeshIns->mNumFaces*3;
+		meshData->indices = new GLushort[meshData->numIndices];
+
+		GLuint indicesCountIndex = 0;
+		for (int countV = 0; countV < aiMeshIns->mNumVertices ; countV++)
+		{
+			aiVector3D aiVectorIns = aiMeshIns->mVertices[countV];
+			//const aiColor4D* aiColor4D = aiMeshIns->mColors[countV];
+			const aiVector3D aiNormals = aiMeshIns->mNormals[countV];
+
+			meshData->vertices[countV].position = glm::vec3(aiVectorIns.x, aiVectorIns.y, aiVectorIns.z);
+			//meshData->vertices[countV].color = glm::vec3(aiColor4D->r, aiColor4D->g, aiColor4D->b);
+			meshData->vertices[countV].normal = glm::vec3(aiNormals.x, aiNormals.y, aiNormals.z);
+			
+		}
+
+		for (int countI = 0; countI < aiMeshIns->mNumFaces; countI++)
+		{
+			aiFace aiFaceIns =  aiMeshIns->mFaces[countI];
+			assert(aiFaceIns.mNumIndices == 3);
+
+			meshData->indices[indicesCountIndex] = aiFaceIns.mIndices[0];
+			meshData->indices[indicesCountIndex+1] = aiFaceIns.mIndices[1];
+			meshData->indices[indicesCountIndex+2] = aiFaceIns.mIndices[2];
+
+			indicesCountIndex+=3;
+		}
+
+
+
+
+	}
+
+	return meshDataVector;
 }
