@@ -8,7 +8,7 @@ public:
 	}
 	~Torus()
 	{
-		meshData->cleanup();
+		this->cleanup();
 	}
 
 private:

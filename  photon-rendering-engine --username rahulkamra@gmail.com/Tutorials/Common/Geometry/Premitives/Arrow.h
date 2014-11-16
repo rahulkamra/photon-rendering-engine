@@ -8,7 +8,7 @@ public:
 	}
 	~Arrow()
 	{
-		meshData->cleanup();
+		this->cleanup();
 	}
 
 };

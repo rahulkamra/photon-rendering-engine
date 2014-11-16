@@ -11,7 +11,7 @@ public:
 
 	~Pyramid()
 	{
-		meshData->cleanup();
+		this->cleanup();
 
 	}
 

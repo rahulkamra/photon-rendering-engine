@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <ogldev_util.h>
 #include <ogldev_types.h>
+#include <vector>
 #include <Common\Geometry\MeshData.h>
 #include "Common\GameObj\Transform.h"
 #include "Common\Materials\Material.h"
@@ -11,10 +12,12 @@ class Mesh
 
 
 public:
+	Mesh(vector<MeshData*> meshData);
 	Mesh(MeshData* meshData);
 	~Mesh();
 
-	MeshData* meshData;
+	vector<MeshData*> meshData;
+	void cleanup();
 	void virtual draw(Transform modelToWorld, Material& material);
 
 };
@@ -24,6 +27,7 @@ class LineMesh :public Mesh
 {
 	
 public:
+	vector<MeshData*> meshData;
 	void virtual draw(Transform modelToWorld, Material& material);
 	LineMesh(MeshData* meshData);
 };

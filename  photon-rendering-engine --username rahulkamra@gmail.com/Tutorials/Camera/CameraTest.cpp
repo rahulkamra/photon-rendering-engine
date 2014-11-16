@@ -1,6 +1,5 @@
 
 #define WIN32 1
-#define GLM_FORCE_RADIANS
 
 #include <GL/glew.h>
 #include <assert.h>
@@ -240,11 +239,11 @@ int main(int argc, char** argv)
 
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//directionalLight->showAxis();
-	pointLightGreen->transform.translate(vec3(-1, -1, -6.0f));
+	pointLightGreen->transform.translate(vec3(-2.5, 0, -6.0f));
 	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
 	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//Electron::add(pointLightGreen);
+	Electron::add(pointLightGreen);
 
 
 	GameObj* pointLightRed = new GameObj();
@@ -274,7 +273,7 @@ int main(int argc, char** argv)
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	//directionalLightYellow->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
-	Electron::add(directionalLightYellow);
+	//Electron::add(directionalLightYellow);
 
 
 	Transform trans;

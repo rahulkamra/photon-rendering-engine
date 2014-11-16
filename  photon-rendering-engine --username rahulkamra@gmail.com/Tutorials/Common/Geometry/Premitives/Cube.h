@@ -13,7 +13,7 @@ public:
 
 	~Cube()
 	{
-		meshData->cleanup();
+		this->cleanup();
 	}
 
 };

@@ -1,4 +1,9 @@
 #pragma once
+#include <assimp\Importer.hpp>
+#include <assimp\postprocess.h> // Post processing flags
+#include <assimp\scene.h>       // Output data structure
+
+#include <vector>
 #include <Common\Geometry\MeshData.h>
 
 class ShapeGenerator
@@ -45,7 +50,7 @@ public:
 
 	static MeshData* createAxis(float length = 1.0f);
 
-	static MeshData* ShapeGenerator::createDirectionalWidget(float radius, int numSegments, int numDirectionalElements, glm::vec3 color = glm::vec3(1,0,0));
-	
+	static MeshData* createDirectionalWidget(float radius, int numSegments, int numDirectionalElements, glm::vec3 color = glm::vec3(1,0,0));
+	static vector<MeshData*> createShapeFromFile(string  fileName);
 };
 
