@@ -4,7 +4,13 @@
 #include <Utils\ColorUtils.h>
 #include <glm\gtc\matrix_transform.hpp>
 #include <iostream>
+#include <Common\Geometry\Mesh.h>
+#include <Common\Geometry\MeshData.h>
+#include <MeshRenderingComponent.h>
+#include <DiffuseMaterial.h>
 #include <math.h>
+#include "Common\Geometry\Premitives\TeapotData.h"
+
 #define PI 3.14159265359
 
 #define NUM_ARRAY_ELEMENTS(a) sizeof(a) / sizeof(*a)
@@ -16,37 +22,33 @@ using glm::mat3;
 
 
 MeshData* ShapeGenerator::makeTriangle()
-{
-	//MeshData ret;
+{	
+	GLuint numVertices = 3;
+	Vertex* vertex = new Vertex[numVertices];
 
-	Vertex myTri[] =
-	{
-		vec3(+0.0f, +1.0f, +0.0f),
-		vec3(+1.0f, +0.0f, +0.0f),
-		vec3(+0.0f, +0.0f, +1.0f),
-		vec2(0.0f,0.1f),
+	vertex[0].position = vec3(0.0f, +1.0f, +0.0f);  // 0
+	vertex[0].color = vec3(+1.0f, +0.0f, +0.0f);	// Color
+	vertex[0].normal = vec3(+0.0f, +0.0f, +1.0f);  // Normal
+	vertex[0].uv = vec2(0, 0);
 
-		vec3(-1.0f, -1.0f, +0.0f),
-		vec3(+0.0f, +1.0f, +0.0f),
-		vec3(+0.0f, +0.0f, +1.0f),
-		vec2(0.0f, 0.1f),
+	vertex[1].position = vec3(-1.0f, -1.0f, 0.0f);  // 1
+	vertex[1].color = vec3(+0.0f, +1.0f, +0.0f);	// Color
+	vertex[1].normal = vec3(+0.0f, +0.0f, +1.0f);  // Normal
+	vertex[1].uv = vec2(1, 0);
 
-		vec3(+1.0f, -1.0f, +0.0f),
-		vec3(+0.0f, +0.0f, +1.0f),
-		vec3(+0.0f, +0.0f, +1.0f),
-		vec2(0.0f, 0.1f)
-	};
-	//ret.numVertices = NUM_ARRAY_ELEMENTS(myTri);
-	//ret.vertices = new Vertex[ret.numVertices];
-	//memcpy(ret.vertices, myTri, sizeof(myTri));
+	vertex[2].position = vec3(+1.0f, -1.0f, 0.0f);  // 2
+	vertex[2].color = vec3(+0.0f, +0.0f, +1.0f);  // Color
+	vertex[2].normal = vec3(+0.0f, +0.0f, +1.0f);  // Normal
+	vertex[2].uv = vec2(0, 1);
 
-	//GLushort indices[] = { 0, 1, 2 };
-	//ret.numIndices = NUM_ARRAY_ELEMENTS(indices);
-	//ret.indices = new GLushort[ret.numIndices];
-	//memcpy(ret.indices, indices, sizeof(indices));
+	GLuint numIndices = 3;
+	GLushort* indices = new GLushort[numIndices];
+	indices[0] = 0;
+	indices[1] = 1;
+	indices[2] = 2;
 
-	//return ret;
-	return NULL;
+	MeshData* meshdata = new MeshData(vertex, numVertices, indices, numIndices);
+	return meshdata;
 }
 
 
@@ -448,7 +450,7 @@ GLushort* ShapeGenerator::makePlaneIndices(int dimensions)
 	return indices;
 }
 
-MeshData* ShapeGenerator::makePlane(uint dimensions, glm::vec3 color, bool generateRandomColor)
+MeshData* ShapeGenerator::makePlane(int dimensions, glm::vec3 color, bool generateRandomColor)
 {
 
 	int numVertices = dimensions * dimensions;
@@ -462,16 +464,11 @@ MeshData* ShapeGenerator::makePlane(uint dimensions, glm::vec3 color, bool gener
 }
 
 
-
-
-
-#include "Common\Geometry\Premitives\TeapotData.h"
-
-MeshData* ShapeGenerator::makeTeapot(uint tesselation, const glm::mat4& lidTransform)
+MeshData* ShapeGenerator::makeTeapot(int tesselation, const glm::mat4& lidTransform)
 {
 
 	GLuint numVertices = 32 * (tesselation + 1) * (tesselation + 1);
-	uint faces = tesselation * tesselation * 32;
+	int faces = tesselation * tesselation * 32;
 	float* vertices = new float[numVertices * 3];
 	float* normals = new float[numVertices * 3];
 	float* textureCoordinates = new float[numVertices * 2];
@@ -483,7 +480,7 @@ MeshData* ShapeGenerator::makeTeapot(uint tesselation, const glm::mat4& lidTrans
 
 	// Adapt/convert their data format to mine
 	Vertex* gVerxtex = new Vertex[numVertices];
-	for (uint i = 0; i < numVertices; i++)
+	for (int i = 0; i < numVertices; i++)
 	{
 		Vertex& v = gVerxtex[i];
 		v.position.x = vertices[i * 3 + 0];
@@ -749,8 +746,8 @@ MeshData ShapeGenerator::generateNormals(const MeshData& data)
 GLushort* ShapeGenerator::makePlaneUnseamedIndices(int tesselation)
 {
 
-	uint dimensions = tesselation * tesselation;
-	uint numIndices = dimensions * 2 * 3; // 2 triangles per square, 3 indices per triangle
+	int dimensions = tesselation * tesselation;
+	int numIndices = dimensions * 2 * 3; // 2 triangles per square, 3 indices per triangle
 	GLushort* indices = new unsigned short[numIndices];
 	int runner = 0;
 	for (int row = 0; row < tesselation; row++)
@@ -802,7 +799,7 @@ GLushort* ShapeGenerator::makePlaneUnseamedIndices(int tesselation)
 }
 
 
-MeshData* ShapeGenerator::makeSphere(uint tesselation)
+MeshData* ShapeGenerator::makeSphere(int tesselation)
 {
 	/*MeshData ret = makePlaneVerts(tesselation);
 	MeshData ret2 = makePlaneIndices(tesselation);
@@ -831,17 +828,17 @@ MeshData* ShapeGenerator::makeSphere(uint tesselation)
 	return NULL;
 }
 
-MeshData* ShapeGenerator::makeTorus(uint tesselation)
+MeshData* ShapeGenerator::makeTorus(int tesselation)
 {
 
-	uint dimensions = tesselation * tesselation;
-	uint numVertices = dimensions;
+	int dimensions = tesselation * tesselation;
+	int numVertices = dimensions;
 	Vertex* vertices = new Vertex[numVertices];
 
 	float sliceAngle = 360 / tesselation;
 	const float torusRadius = 1.0f;
 	const float pipeRadius = 0.5f;
-	for (uint round1 = 0; round1 < tesselation; round1++)
+	for (int round1 = 0; round1 < tesselation; round1++)
 	{
 		// Generate a circle on the xy plane, then
 		// translate then rotate it into position
@@ -849,7 +846,7 @@ MeshData* ShapeGenerator::makeTorus(uint tesselation)
 			glm::rotate(glm::mat4(), round1 * sliceAngle, glm::vec3(0.0f, 1.0f, 0.0f)) *
 			glm::translate(glm::mat4(), glm::vec3(torusRadius, 0.0f, 0.0f));
 		glm::mat3 normalTransform = (glm::mat3)transform;
-		for (uint round2 = 0; round2 < tesselation; round2++)
+		for (int round2 = 0; round2 < tesselation; round2++)
 		{
 			Vertex& v = vertices[round1 * tesselation + round2];
 			glm::vec4 glmVert(
@@ -865,7 +862,7 @@ MeshData* ShapeGenerator::makeTorus(uint tesselation)
 	}
 
 	GLushort* indices = makePlaneUnseamedIndices(tesselation);
-	uint numIndices = dimensions * 2 * 3; // 2 triangles per square, 3 indices per triangle
+	int numIndices = dimensions * 2 * 3; // 2 triangles per square, 3 indices per triangle
 	MeshData* ret = new MeshData(vertices, numVertices, indices, numIndices);
 	return ret;
 
@@ -1068,21 +1065,30 @@ MeshData* ShapeGenerator::createDirectionalWidget(float radius, int numSegments,
 }
 
 
-vector<MeshData*> ShapeGenerator::createShapeFromFile(string  fileName)
+GameObj* ShapeGenerator::createShapeFromFile(string  fileName)
 {
 	vector<MeshData*> ret;
 	Assimp::Importer importer = Assimp::Importer();
 	const aiScene* scene =  importer.ReadFile(fileName, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
+	
+	GameObj* gameobj = new GameObj();
+	
 	if (scene)
 	{
-		return initFromScene(scene);
+		vector<MeshData*> meshData =  initFromScene(scene);
+		Mesh* mesh = new Mesh(meshData);
+		DiffuseMaterial* diffuseMaterial = getDiffuseMaterial(scene, fileName);
+
+		MeshRenderingComponent* meshRenderingComponent = new MeshRenderingComponent(new Mesh(meshData),diffuseMaterial);
+
+		gameobj->addComponent(meshRenderingComponent);
 	}
 	else
 	{
 		cout << "Error Creating Mesh from " << fileName;
 	}
 
-	return ret;
+	return gameobj;
 }
 
 
@@ -1107,10 +1113,11 @@ vector<MeshData*> ShapeGenerator::initFromScene(const aiScene* scene)
 		for (int countV = 0; countV < aiMeshIns->mNumVertices ; countV++)
 		{
 			aiVector3D aiVectorIns = aiMeshIns->mVertices[countV];
-			//const aiColor4D* aiColor4D = aiMeshIns->mColors[countV];
-			const aiVector3D aiNormals = aiMeshIns->mNormals[countV];
+			aiVector3D pTexCoord = aiMeshIns->mTextureCoords[0][countV];
+			aiVector3D aiNormals = aiMeshIns->mNormals[countV];
 
 			meshData->vertices[countV].position = glm::vec3(aiVectorIns.x, aiVectorIns.y, aiVectorIns.z);
+			meshData->vertices[countV].uv = glm::vec2(pTexCoord.x, pTexCoord.y);
 			//meshData->vertices[countV].color = glm::vec3(aiColor4D->r, aiColor4D->g, aiColor4D->b);
 			meshData->vertices[countV].normal = glm::vec3(aiNormals.x, aiNormals.y, aiNormals.z);
 			
@@ -1134,4 +1141,36 @@ vector<MeshData*> ShapeGenerator::initFromScene(const aiScene* scene)
 	}
 
 	return meshDataVector;
+}
+
+
+DiffuseMaterial* ShapeGenerator::getDiffuseMaterial(const aiScene* scene, std::string fileName)
+{
+	std::string fileUrl;
+	aiString path;
+	for (int count = 0; count < scene->mNumMaterials; count++)
+	{
+		const aiMaterial* material = scene->mMaterials[count];
+		if (material->GetTextureCount(aiTextureType_DIFFUSE) > 0)
+		{
+			if (material->GetTexture(aiTextureType_DIFFUSE, 0, &path, NULL, NULL, NULL, NULL, NULL) == AI_SUCCESS)
+			{
+				fileUrl = path.data; 
+			}
+		}
+		else
+		{
+			fileUrl = "";
+			cout << "Diffuse Texture Not found " << fileName;
+		}
+	}
+
+
+	TextureData* textureData = new TextureData("res/models/phoenix.pcx");
+	textureData->load();
+	Texture* texture = new Texture(textureData);
+
+	DiffuseMaterial* diffuseMaterial = new DiffuseMaterial();
+	diffuseMaterial->AddTexture("diffuse", texture);
+	return diffuseMaterial;
 }

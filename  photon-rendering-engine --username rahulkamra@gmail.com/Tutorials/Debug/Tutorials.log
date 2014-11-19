@@ -1,33 +1,9 @@
-﻿Build started 11/17/2014 12:23:52 AM.
+﻿Build started 11/19/2014 1:08:22 PM.
      1>Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Work\Renderer\\AdditionalIncludes /ID:\Work\Renderer\\package\include /ID:\Work\Renderer\Tutorials\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Common\Materials\Material.cpp
-         Material.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Work\Renderer\Debug\Tutorials.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\Work\Renderer\\AdditionalLibs /LIBPATH:D:\Work\Renderer\\package\lib glew32.lib freeglut.lib CORE_DB_Magick++_.lib CORE_RL_Magick++_.lib assimp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Work\Renderer\Debug\Tutorials.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\Renderer\Debug\Tutorials.lib" /MACHINE:X86 Debug\Camera.obj
-         Debug\CameraController.obj
-         Debug\CameraTest.obj
-         Debug\DebugUtils.obj
-         Debug\Electron.obj
-         Debug\GameComponent.obj
-         Debug\GameObj.obj
-         Debug\Transform.obj
-         Debug\Mesh.obj
-         Debug\Lights.obj
-         Debug\Material.obj
-         Debug\MaterialsList.obj
-         Debug\MaterialsManager.obj
-         Debug\ShapeGenerator.obj
-         Debug\DiffuseMaterial.obj
-         Debug\ogldev_util.obj
-         Debug\MeshData.obj
-         Debug\Quaternion.obj
-         Debug\Texture.obj
-         Debug\TextureData.obj
-         Debug\StringUtils.obj
+     1>Link:
          Tutorials.vcxproj -> D:\Work\Renderer\Debug\Tutorials.exe
      1>Done Building Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.30
+Time Elapsed 00:00:00.07
