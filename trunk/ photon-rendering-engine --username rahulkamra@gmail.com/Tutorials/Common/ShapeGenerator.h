@@ -2,9 +2,16 @@
 #include <assimp\Importer.hpp>
 #include <assimp\postprocess.h> // Post processing flags
 #include <assimp\scene.h>       // Output data structure
-
+#include <glm\glm.hpp>
+#include <ogldev_types.h>
+#include <ogldev_util.h>
+#include <GL/glew.h>
 #include <vector>
-#include <Common\Geometry\MeshData.h>
+
+class GameObj;
+class MeshData;
+class Vertex;
+class DiffuseMaterial;
 
 class ShapeGenerator
 {
@@ -39,21 +46,24 @@ class ShapeGenerator
 		float *B, float *dB, glm::vec3 patch[][4]);
 
 	static vector<MeshData*> initFromScene(const aiScene* scene);
+	static DiffuseMaterial* getDiffuseMaterial(const aiScene* scene, std::string fileName);
 
 public:
 	static MeshData* makeTriangle();
 	static MeshData* makeCube();
 	static MeshData* makeArrow();
-	static MeshData* makePlane(uint dimensions = 10, glm::vec3 color = glm::vec3(0.2, 0.2, 0.2), bool generateRandomColor = true);
-	static MeshData* makeTeapot(uint tesselation = 10, const glm::mat4& lidTransform = glm::mat4());
-	static MeshData* makeSphere(uint tesselation = 20);
-	static MeshData* makeTorus(uint tesselation = 20);
+	static MeshData* makePlane(int dimensions = 10, glm::vec3 color = glm::vec3(0.2, 0.2, 0.2), bool generateRandomColor = true);
+	static MeshData* makeTeapot(int tesselation = 10, const glm::mat4& lidTransform = glm::mat4());
+	static MeshData* makeSphere(int tesselation = 20);
+	static MeshData* makeTorus(int tesselation = 20);
 	static MeshData generateNormals(const MeshData& data);
 	static MeshData* makePyramid();
 
 	static MeshData* createAxis(float length = 1.0f);
 
 	static MeshData* createDirectionalWidget(float radius, int numSegments, int numDirectionalElements, glm::vec3 color = glm::vec3(1,0,0));
-	static vector<MeshData*> createShapeFromFile(string  fileName);
+
+	static GameObj* createShapeFromFile(string  fileName);
+	
 };
 

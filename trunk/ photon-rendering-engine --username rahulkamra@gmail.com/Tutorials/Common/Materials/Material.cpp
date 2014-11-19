@@ -57,7 +57,7 @@ Material::~Material()
 
 AmbientMaterial::AmbientMaterial()
 {
-	TextureData* textureData = new TextureData("res/textures/black.png");
+	TextureData* textureData = new TextureData("res/models/phoenix.pcx");
 	textureData->load();
 	Texture* texture = new Texture(textureData);
 	this->AddTexture("diffuse", texture);
