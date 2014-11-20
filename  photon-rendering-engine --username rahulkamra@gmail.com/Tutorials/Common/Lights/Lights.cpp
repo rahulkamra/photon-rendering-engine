@@ -45,10 +45,6 @@ GLuint DirectionalLight::getShaderId()
 void DirectionalLight::updateUniforms(Material* material)
 {
 	BaseLight::updateUniforms(material);
-	//glm::vec3 forward =  parent->transform.forward();
-	//cout << forward.x;
-	//cout << forward.y;
-	//cout << forward.z;
 	material->addVec3("directionalLight.direction", parent->transform.forward());
 	material->addVec3("directionalLight.light.color",color);
 	material->addVec3("ambientLight", Electron::ambientLight);

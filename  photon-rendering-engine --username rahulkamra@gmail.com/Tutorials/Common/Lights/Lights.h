@@ -15,6 +15,7 @@ public:
 	void virtual bind();
 	GLuint virtual getShaderId();
 	virtual void addedToStage();
+	//virtual Material* getMaterial();
 	void virtual updateUniforms(Material* material);
 };
 

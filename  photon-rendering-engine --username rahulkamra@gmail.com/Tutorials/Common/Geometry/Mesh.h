@@ -18,7 +18,7 @@ public:
 
 	vector<MeshData*> meshData;
 	void cleanup();
-	void virtual draw(Transform modelToWorld, Material& material);
+	void virtual draw(Transform modelToWorld);
 
 };
 
@@ -27,7 +27,7 @@ class LineMesh :public Mesh
 {
 	
 public:
-	void virtual draw(Transform modelToWorld, Material& material);
+	void virtual draw(Transform modelToWorld);
 	LineMesh(MeshData* meshData);
 };
 

@@ -7,24 +7,29 @@
 
 void DiffuseMaterial::bind()
 {
-	BaseLight* activeLight = Electron::activeLight;
-	activeLight->bind();//when this material is binded the active light is binded
+	Material::bind();
+
+	//this->bind();
+	//BaseLight* activeLight = Electron::activeLight;
+	//activeLight->bind();//when this material is binded the active light is binded
 }
 
+/*
 GLuint DiffuseMaterial::getShaderId()
 {
 	BaseLight* activeLight = Electron::activeLight;
 	return activeLight->getShaderId();
 }
+*/
 
 
 void DiffuseMaterial::addUniforms(Transform transform)
 {
 	Material::addUniforms(transform);
-	BaseLight* light = Electron::activeLight;
-	if (light == NULL)
-		return;
+	//BaseLight* light = Electron::activeLight;
+	//if (light == NULL)
+	//	return;
 
-	light->updateUniforms(this);
+	//light->updateUniforms(this);
 	
 }

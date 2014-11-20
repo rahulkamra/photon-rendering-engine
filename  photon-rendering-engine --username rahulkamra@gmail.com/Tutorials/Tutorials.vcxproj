@@ -132,24 +132,14 @@
   <ItemGroup>
     <None Include="Camera\shader.fs" />
     <None Include="Camera\shader.vs" />
-    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.fs" />
-    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.vs" />
-    <None Include="Common\Materials\BasicMaterial\BasicMaterial.fs" />
-    <None Include="Common\Materials\BasicMaterial\BasicMaterial.vs" />
-    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.fs" />
-    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.vs" />
-    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.fs" />
-    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.vs" />
-    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.fs" />
-    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.vs" />
     <None Include="Shaders\directional_light.fs" />
     <None Include="Shaders\directional_light.vs" />
     <None Include="Shaders\electron.fsh" />
     <None Include="Shaders\electron.vsh" />
     <None Include="Shaders\default.fs" />
     <None Include="Shaders\default.vs" />
-    <None Include="Shaders\forward_ambient.fs" />
-    <None Include="Shaders\forward_ambient.vs" />
+    <None Include="Shaders\forward_diffuse.fs" />
+    <None Include="Shaders\forward_diffuse.vs" />
     <None Include="Shaders\Hello Triangle\shader.fs" />
     <None Include="Shaders\Hello Triangle\shader.vs" />
     <None Include="Shaders\lighting.fsh" />
