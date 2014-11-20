@@ -1,6 +1,8 @@
 #pragma once
 #include "Common\GameObj\GameComponent.h"
 #include "Electron.h"
+#include "Common\Lights\Lights.h"
+
 class Material;
 class MeshRenderingComponent : public GameComponent
 {
@@ -32,17 +34,29 @@ public:
 
 	virtual void draw(Material* _material = nullptr)
 	{
-
 		Material* renderMaterial = _material;
 
 		if (_material == nullptr)
 		{
-			renderMaterial = this->material; 
-			
+			renderMaterial = this->material;
+
 		}
-		renderMaterial->bind();
-		renderMaterial->addUniforms(parent->transform);
-		mesh->draw(parent->transform, *renderMaterial);
+
+		if (Electron::activeLight)
+		{
+			renderMaterial = new Material();
+			//renderMaterial->
+			Electron::activeLight->bind();
+			Electron::activeLight->updateUniforms(renderMaterial);
+
+		}
+		else
+		{
+			renderMaterial->bind();
+			renderMaterial->addUniforms(parent->transform);
+		}
+		
+		mesh->draw(parent->transform);
 		
 	}
 

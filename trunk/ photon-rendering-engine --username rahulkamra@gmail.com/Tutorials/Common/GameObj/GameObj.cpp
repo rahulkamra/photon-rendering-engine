@@ -51,6 +51,7 @@ void GameObj::showAxis()
 void GameObj::render()
 {
 	renderGameObj();
+
 	for (int count = 0; count < children.size(); count++)
 	{
 		GameObj* gameObj = children.at(count);
@@ -68,4 +69,26 @@ void GameObj::renderGameObj()
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

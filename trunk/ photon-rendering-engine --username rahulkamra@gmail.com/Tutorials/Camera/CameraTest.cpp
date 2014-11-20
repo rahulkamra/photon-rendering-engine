@@ -201,76 +201,76 @@ int main(int argc, char** argv)
 	GameObj* arrow = new GameObj();
 	arrow->transform.translate(vec3(0, -2.0f, -6.0f));
 	arrow->addComponent(new MeshRenderingComponent(new Arrow(), new DiffuseMaterial()));
-	//Electron::add(arrow);
+	Electron::add(arrow);
 
 
 	
-	GameObj* plane = new GameObj();
-	plane->showAxis();
-	plane->transform.translate(vec3(0, -2.0f, -6.0f));
+	//GameObj* plane = new GameObj();
+	//plane->showAxis();
+	//plane->transform.translate(vec3(0, -2.0f, -6.0f));
 //	plane->addComponent(new MeshRenderingComponent(new Plane(), new DiffuseMaterial()));
 //	Electron::add(plane);
 
 
-	GameObj* teapot = new GameObj();
+	//GameObj* teapot = new GameObj();
 //	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
-	teapot->showAxis();
-	teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
-	teapot->transform.rotate(Quaternion(270.0f, vec3(1.0f, 0.0f, 0.0f)));
-	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
+	//teapot->showAxis();
+	//teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
+	//teapot->transform.rotate(Quaternion(270.0f, vec3(1.0f, 0.0f, 0.0f)));
+	//teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	//Electron::add(teapot);
 
-	GameObj* pyramid = new GameObj();
+	//GameObj* pyramid = new GameObj();
 	//pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new DiffuseMaterial()));
-	pyramid->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
-	pyramid->transform.scale(vec3(0.5f, 0.5f, 0.5f));
+	//pyramid->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
+	//pyramid->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	//Electron::add(pyramid);
 
 
-	GameObj* customMesh = ShapeGenerator::createShapeFromFile("res/models/phoenix_ugv.md2");
-	customMesh->transform.translate(vec3(-1.5, -1.8f, -6.0f));
-	customMesh->transform.scale(vec3(0.02f, 0.02f, 0.02f));
+	//GameObj* customMesh = ShapeGenerator::createShapeFromFile("res/models/phoenix_ugv.md2");
+	//customMesh->transform.translate(vec3(-1.5, -1.8f, -6.0f));
+	//customMesh->transform.scale(vec3(0.02f, 0.02f, 0.02f));
 
-	Electron::add(customMesh);
+	//Electron::add(customMesh);
 
 
-	GameObj* torus = new GameObj();
+	//GameObj* torus = new GameObj();
 	//torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial()));
-	torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
-	torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
-	Electron::add(torus);
+	//torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
+	//torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
+	//Electron::add(torus);
 
 	Electron::ambientLight = vec3(0.5f, 0.5f, 0.5f);
 
 	GameObj* pointLightGreen = new GameObj();
-	//pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0),10));
+	pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0),10));
 
-	//pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//directionalLight->showAxis();
-	pointLightGreen->transform.translate(vec3(-2.5, 0, -6.0f));
-	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
-	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//Electron::add(pointLightGreen);
+	//pointLightGreen->transform.translate(vec3(-2.5, 0, -6.0f));
+	//pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	//pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
+	//pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	Electron::add(pointLightGreen);
 
 
-	GameObj* pointLightRed = new GameObj();
+	//GameObj* pointLightRed = new GameObj();
 	//pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
 	//pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	pointLightRed->transform.translate(vec3(3, -1, -6.0f));
-	pointLightRed->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	pointLightRed->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
-	pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	//pointLightRed->transform.translate(vec3(3, -1, -6.0f));
+	//pointLightRed->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	//pointLightRed->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
+	//pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	//Electron::add(pointLightRed);
 
 
-	GameObj* pointLightBlue = new GameObj();
+	//GameObj* pointLightBlue = new GameObj();
 	//pointLightBlue->addComponent(new SpotLight(Attenuation(), glm::vec3(0, 0, 1)));
 	//pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	pointLightBlue->showAxis();
-	pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
-	pointLightBlue->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	pointLightBlue->transform.rotate(Quaternion(90, vec3(1, 0, 0)));
+	//pointLightBlue->showAxis();
+	//pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
+	//pointLightBlue->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	//pointLightBlue->transform.rotate(Quaternion(90, vec3(1, 0, 0)));
 	//pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	//Electron::add(pointLightBlue);
 
@@ -288,8 +288,8 @@ int main(int argc, char** argv)
 	//directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.5, 0.5, 0.5)));
 	//directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	triangle->transform.translate(vec3(0, -1, -6.0f));
-	//triangle->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//triangle->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
+	triangle->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	triangle->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
 	triangle->addComponent(
 		new MeshRenderingComponent(
 		new Mesh(
@@ -299,7 +299,7 @@ int main(int argc, char** argv)
 	Electron::add(triangle);
 
 	Transform trans;
-	//trans.translate(glm::vec3(100,100,0));
+	trans.translate(glm::vec3(100,100,0));
 	
 	trans.rotate(Quaternion(glm::vec3(90, 180, -270)));
 	glutMainLoop();

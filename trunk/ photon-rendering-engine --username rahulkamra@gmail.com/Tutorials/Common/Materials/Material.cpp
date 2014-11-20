@@ -11,7 +11,7 @@ Material::Material()
 
 GLuint inline Material::getShaderId()
 {
-	return MaterialsManager::getMaterial(MaterialsList::AMBIENT_MATERIAL);
+	return MaterialsManager::getMaterial(MaterialsList::DIFFUSE_MATERIAL);
 }
 
 void inline Material::addTextureUniform(std::string name, GLuint samplerId)
@@ -45,7 +45,8 @@ void Material::addUniforms(Transform transform)
 	addMat4("mvp", modelViewProjection);
 	addMat4("modelToWorld", model);
 	addVec3("cameraWorld", Camera::getCamera()->position);
-	addVec3("ambientLight", vec3(1.0f, 1.0f, 1.0f));
+	addVec3("ambientLight", Electron::ambientLight);
+	//addTextureUniform("diffuse", 0);
 }
 void Material::bind()
 {
@@ -55,6 +56,7 @@ Material::~Material()
 {
 }
 
+/*
 AmbientMaterial::AmbientMaterial()
 {
 	TextureData* textureData = new TextureData("res/models/phoenix.pcx");
@@ -81,3 +83,4 @@ void AmbientMaterial::addUniforms(Transform transform)
 	addTextureUniform("diffuse", 0);
 
 }
+*/

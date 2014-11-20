@@ -45,8 +45,7 @@ void Electron::render()
 	glDepthFunc(GL_LESS);
 	glDisable(GL_BLEND);
 
-	AmbientMaterial* material = new AmbientMaterial();
-	drawPhase(forwardRenderingComponents, material);
+	drawPhase(forwardRenderingComponents);
 
 
 
@@ -54,6 +53,7 @@ void Electron::render()
 	glBlendFunc(GL_ONE, GL_ONE);
 	glDepthMask(GL_FALSE);
 	glDepthFunc(GL_EQUAL);
+
 
 	for (int count = 0; count < lights.size(); count++)
 	{
@@ -75,6 +75,7 @@ void Electron::render()
 
 	glClear(GL_DEPTH_BUFFER_BIT);
 	glutSwapBuffers();
+	activeLight = NULL;
 }
 
 

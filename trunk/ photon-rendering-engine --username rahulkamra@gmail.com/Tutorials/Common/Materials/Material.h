@@ -44,6 +44,7 @@ public:
 };
 
 
+/*
 class AmbientMaterial : public Material
 {
 public:
@@ -52,4 +53,5 @@ public:
 	void virtual addUniforms(Transform transform);
 
 };
+*/
 

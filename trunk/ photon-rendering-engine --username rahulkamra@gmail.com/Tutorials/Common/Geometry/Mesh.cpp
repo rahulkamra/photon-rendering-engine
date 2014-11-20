@@ -30,7 +30,7 @@ void Mesh::cleanup()
 	}
 }
 
-void Mesh::draw(Transform modelToWorld,Material& material)
+void Mesh::draw(Transform modelToWorld)
 {
 	for (int count = 0; count < this->meshData.size(); count++)
 	{
@@ -48,7 +48,7 @@ void Mesh::draw(Transform modelToWorld,Material& material)
 }
 
 
-void LineMesh::draw(Transform modelToWorld, Material& material)
+void LineMesh::draw(Transform modelToWorld)
 {
 	for (int count = 0; count < this->meshData.size(); count++)
 	{

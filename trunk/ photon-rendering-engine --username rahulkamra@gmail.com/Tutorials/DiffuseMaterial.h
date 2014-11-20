@@ -4,7 +4,6 @@
 class DiffuseMaterial : public Material
 {
 	
-	GLuint getShaderId();
 	void virtual addUniforms(Transform transform);
 	void bind();
 

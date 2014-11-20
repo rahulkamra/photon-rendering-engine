@@ -64,23 +64,8 @@
     <Filter Include="Source Files\common\Materials">
       <UniqueIdentifier>{b04c7d0d-4b48-438c-ba03-0aa9ca76d432}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\common\Materials\BasicMeterial">
-      <UniqueIdentifier>{fc7504d8-b403-47fe-9910-2623d072d790}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\common\Materials\AmbientMaterial">
-      <UniqueIdentifier>{6513342a-bd3b-4b08-b32c-7fe5c4898003}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\common\Lights">
       <UniqueIdentifier>{3170ea23-27ef-4a3c-86da-5a845a621c32}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\common\Materials\DiffuseMaterial">
-      <UniqueIdentifier>{20d47afc-3b8d-490f-8978-f69b57c84152}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\common\Materials\SpecularMaterial">
-      <UniqueIdentifier>{45a0dbb8-b41f-4159-bd40-d51bd75ab7ac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\common\Materials\SpecularDiffuseAmbientPerVertex">
-      <UniqueIdentifier>{c990fcf5-c141-4433-a7c7-f2ec6bb484d3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\common\Utils">
       <UniqueIdentifier>{d7eecd4a-5a48-48cc-b46a-c580ccc61e62}</UniqueIdentifier>
@@ -280,36 +265,6 @@
     <None Include="Camera\shader.vs">
       <Filter>Source Files\Camera</Filter>
     </None>
-    <None Include="Common\Materials\BasicMaterial\BasicMaterial.fs">
-      <Filter>Source Files\common\Materials\BasicMeterial</Filter>
-    </None>
-    <None Include="Common\Materials\BasicMaterial\BasicMaterial.vs">
-      <Filter>Source Files\common\Materials\BasicMeterial</Filter>
-    </None>
-    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.fs">
-      <Filter>Source Files\common\Materials\AmbientMaterial</Filter>
-    </None>
-    <None Include="Common\Materials\AmbientMaterial\AmbientMaterial.vs">
-      <Filter>Source Files\common\Materials\AmbientMaterial</Filter>
-    </None>
-    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.fs">
-      <Filter>Source Files\common\Materials\DiffuseMaterial</Filter>
-    </None>
-    <None Include="Common\Materials\DiffuseMaterial\DiffuseMaterial.vs">
-      <Filter>Source Files\common\Materials\DiffuseMaterial</Filter>
-    </None>
-    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.fs">
-      <Filter>Source Files\common\Materials\SpecularMaterial</Filter>
-    </None>
-    <None Include="Common\Materials\SpecularMaterial\SpecularMaterial.vs">
-      <Filter>Source Files\common\Materials\SpecularMaterial</Filter>
-    </None>
-    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.fs">
-      <Filter>Source Files\common\Materials\SpecularDiffuseAmbientPerVertex</Filter>
-    </None>
-    <None Include="Common\Materials\SpecularDiffuseAmbientPerVertex\SpecularDiffuseAmbientPerVertex.vs">
-      <Filter>Source Files\common\Materials\SpecularDiffuseAmbientPerVertex</Filter>
-    </None>
     <None Include="Shaders\electron.fsh">
       <Filter>Source Files\Shaders</Filter>
     </None>
@@ -349,10 +304,10 @@
     <None Include="Shaders\spot_light.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
-    <None Include="Shaders\forward_ambient.fs">
+    <None Include="Shaders\forward_diffuse.fs">
       <Filter>Source Files\Shaders</Filter>
     </None>
-    <None Include="Shaders\forward_ambient.vs">
+    <None Include="Shaders\forward_diffuse.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>
