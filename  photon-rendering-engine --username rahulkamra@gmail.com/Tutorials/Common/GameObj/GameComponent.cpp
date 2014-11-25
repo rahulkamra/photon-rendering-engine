@@ -16,3 +16,8 @@ void GameComponent::setParent(GameObj* gameObj)
 	this->parent = gameObj;
 }
 
+GameObj* GameComponent::getParent()
+{
+	return this->parent;
+}
+

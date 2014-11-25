@@ -1,28 +1,29 @@
 #include "Lights.h"
 #include "Electron.h"
+#include <Shader.h>
 #include "Common\Materials\MaterialsManager.h"
 
 
 void BaseLight::addedToGameObj(){}
-void BaseLight::updateUniforms(Material* material){};
+void BaseLight::updateUniforms(){};
 
 BaseLight::BaseLight(glm::vec3 color)
 {
 	this->color = color;
 }
 
-GLuint BaseLight::getShaderId(){ return 0; }
-
+void BaseLight::setShader(Shader* shader)
+{
+	this->shader = shader;
+}
 void BaseLight::addedToStage()
 {
 	Electron::lights.push_back(this);
 }
 
-
-
 void BaseLight::bind()
 {
-	glUseProgram(getShaderId());
+	shader->bind();
 }
 
 
@@ -33,21 +34,17 @@ void BaseLight::bind()
 DirectionalLight::DirectionalLight(glm::vec3 color) :BaseLight(color)
 {
 	this->color = color;
-}
-
-GLuint DirectionalLight::getShaderId()
-{
-	return MaterialsManager::getMaterial(MaterialsList::DIRECTIONAL_LIGHT);
+	setShader(new Shader(MaterialsList::DIRECTIONAL_LIGHT));
 }
 
 
-
-void DirectionalLight::updateUniforms(Material* material)
+void DirectionalLight::updateUniforms()
 {
-	BaseLight::updateUniforms(material);
-	material->addVec3("directionalLight.direction", parent->transform.forward());
-	material->addVec3("directionalLight.light.color",color);
-	material->addVec3("ambientLight", Electron::ambientLight);
+	BaseLight::updateUniforms();
+	
+	shader->addVec3("directionalLight.direction", parent->transform.forward());
+	shader->addVec3("directionalLight.light.color", color);
+	//shader->addVec3("ambientLight", Electron::ambientLight);
 }
 
 
@@ -56,28 +53,20 @@ PointLight::PointLight(Attenuation attenuation, glm::vec3 color, float range) :B
 {
 	this->attenuation = attenuation;
 	this->range = range;
-
+	setShader(new Shader(MaterialsList::POINT_LIGHT));
 }
 
-
-GLuint PointLight::getShaderId()
+void PointLight::updateUniforms()
 {
-	return MaterialsManager::getMaterial(MaterialsList::POINT_LIGHT);
-}
+	shader->addVec3("pointLight.position", parent->transform.getPosition());
+	shader->addVec3("pointLight.light.color", color);
 
+	shader->addFloat("pointLight.attenuation.constant", attenuation.constant);
+	shader->addFloat("pointLight.attenuation.linear", attenuation.linear);
+	shader->addFloat("pointLight.attenuation.quadratic", attenuation.quadratic);
 
-
-void PointLight::updateUniforms(Material* material)
-{
-	material->addVec3("pointLight.position", parent->transform.getPosition());
-	material->addVec3("pointLight.light.color", color);
-
-	material->addFloat("pointLight.attenuation.constant", attenuation.constant);
-	material->addFloat("pointLight.attenuation.linear", attenuation.linear);
-	material->addFloat("pointLight.attenuation.quadratic", attenuation.quadratic);
-
-	material->addFloat("pointLight.range", this->range);
-	material->addVec3("ambientLight", Electron::ambientLight);
+	shader->addFloat("pointLight.range", this->range);
+	shader->addVec3("ambientLight", Electron::ambientLight);
 
 }
 
@@ -85,31 +74,26 @@ void PointLight::updateUniforms(Material* material)
 SpotLight::SpotLight(Attenuation attenuation, glm::vec3 color, float range, float cutoff) :PointLight(attenuation,color,range)
 {
 	this->cutoff = cutoff;
+	setShader(new Shader(MaterialsList::SPOT_LIGHT));
 }
 
-
-GLuint SpotLight::getShaderId()
+void SpotLight::updateUniforms()
 {
-	return MaterialsManager::getMaterial(MaterialsList::SPOT_LIGHT);
-}
+	shader->addVec3("spotLight.position", parent->transform.getPosition());
+	shader->addVec3("spotLight.light.color", color);
 
-void SpotLight::updateUniforms(Material* material)
-{
-	material->addVec3("spotLight.position", parent->transform.getPosition());
-	material->addVec3("spotLight.light.color", color);
-
-	material->addFloat("spotLight.attenuation.constant", attenuation.constant);
-	material->addFloat("spotLight.attenuation.linear", attenuation.linear);
-	material->addFloat("spotLight.attenuation.quadratic", attenuation.quadratic);
+	shader->addFloat("spotLight.attenuation.constant", attenuation.constant);
+	shader->addFloat("spotLight.attenuation.linear", attenuation.linear);
+	shader->addFloat("spotLight.attenuation.quadratic", attenuation.quadratic);
 	
 	glm::vec3 forw = parent->transform.forward();
 
-	material->addVec3("spotLight.direction", parent->transform.forward());
+	shader->addVec3("spotLight.direction", parent->transform.forward());
 
-	material->addFloat("spotLight.cutoff", this->cutoff);
+	shader->addFloat("spotLight.cutoff", this->cutoff);
 
-	material->addFloat("spotLight.range", this->range);
-	material->addVec3("ambientLight", Electron::ambientLight);
+	shader->addFloat("spotLight.range", this->range);
+
 
 
 }

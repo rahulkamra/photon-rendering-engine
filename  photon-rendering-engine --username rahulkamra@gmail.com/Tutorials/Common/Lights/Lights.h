@@ -4,8 +4,13 @@
 #include <glm\glm.hpp>
 
 class Material;
+class Shader;
+
 class BaseLight : public GameComponent
 {
+
+protected:
+	void setShader(Shader* shader);
 
 public:
 	BaseLight(glm::vec3 color = glm::vec3(1, 1, 1));
@@ -13,18 +18,17 @@ public:
 	glm::vec3 color;
 	void addedToGameObj();
 	void virtual bind();
-	GLuint virtual getShaderId();
 	virtual void addedToStage();
-	//virtual Material* getMaterial();
-	void virtual updateUniforms(Material* material);
+	Shader* shader;
+
+	void virtual updateUniforms();
 };
 
 class DirectionalLight : public BaseLight
 {
 public:
 	DirectionalLight(glm::vec3 color = glm::vec3(1, 1, 1));
-	GLuint virtual getShaderId();
-	void virtual updateUniforms(Material* material);
+	void virtual updateUniforms();
 };
 
 class Attenuation
@@ -43,8 +47,7 @@ public:
 	Attenuation attenuation;
 	float range;
 	PointLight(Attenuation attenuation, glm::vec3 color = glm::vec3(1, 1, 1), float range = 1.0f);
-	GLuint virtual getShaderId();
-	void virtual updateUniforms(Material* material);
+	void virtual updateUniforms();
 };
 
 
@@ -52,8 +55,7 @@ class SpotLight : public PointLight
 {
 public:
 	float cutoff;
-	GLuint virtual getShaderId();
-	void virtual updateUniforms(Material* material);
+	void virtual updateUniforms();
 	SpotLight(Attenuation attenuation, glm::vec3 color = glm::vec3(1, 1, 1), float range = 10.0f,float cutoff = 0.7f);
 };
 
