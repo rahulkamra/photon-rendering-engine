@@ -23,6 +23,7 @@
 #include "CameraController.h";
 #include "Common\Renderer\BasicMeshRenderer.h";
 #include <TextureData.h>
+#include <Texture.h>
 #include "Common\Geometry\Premitives\Premitives.h"
 #include "Common\Materials\MaterialsManager.h"
 #include "Common\Materials\MaterialsList.h"
@@ -227,11 +228,11 @@ int main(int argc, char** argv)
 	Electron::add(pyramid);
 
 
-	//GameObj* customMesh = ShapeGenerator::createShapeFromFile("res/models/phoenix_ugv.md2");
-	//customMesh->transform.translate(vec3(-1.5, -1.8f, -6.0f));
-	//customMesh->transform.scale(vec3(0.02f, 0.02f, 0.02f));
+	GameObj* customMesh = ShapeGenerator::createShapeFromFile("res/models/phoenix_ugv.md2");
+	customMesh->transform.translate(vec3(-1.5, -1.8f, -6.0f));
+	customMesh->transform.scale(vec3(0.02f, 0.02f, 0.02f));
 
-	//Electron::add(customMesh);
+	Electron::add(customMesh);
 
 
 	GameObj* torus = new GameObj();
@@ -292,12 +293,15 @@ int main(int argc, char** argv)
 	//triangle->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
 
 	
-	TextureData* texture = new TextureData();
+	TextureData* textureData = new TextureData("res/textures/test.png");
+	textureData->load();
+
+	Texture* texture = new Texture(textureData);
 	triangle->addComponent(
 		new MeshRenderingComponent(
 		new Mesh(
 		ShapeGenerator::makeTriangle()
-		), new DiffuseMaterial()));
+		), new DiffuseMaterial(texture)));
 	triangle->showAxis();
 	Electron::add(triangle);
 

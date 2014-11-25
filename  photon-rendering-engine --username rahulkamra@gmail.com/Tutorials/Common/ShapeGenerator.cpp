@@ -12,6 +12,7 @@
 #include <DiffuseMaterial.h>
 #include <math.h>
 #include "Common\Geometry\Premitives\TeapotData.h"
+#include <boost\filesystem.hpp>
 
 #define PI 3.14159265359
 
@@ -1166,13 +1167,17 @@ DiffuseMaterial* ShapeGenerator::getDiffuseMaterial(const aiScene* scene, std::s
 			cout << "Diffuse Texture Not found " << fileName;
 		}
 	}
+	
 
+	boost::filesystem::path filePath(fileName);
+	boost::filesystem::path texturePath = filePath.parent_path().append(fileUrl);
+	
 
-	TextureData* textureData = new TextureData("res/models/phoenix.pcx");
+	//cout << p.root_directory().string();
+	TextureData* textureData = new TextureData(texturePath.string());
 	textureData->load();
 	Texture* texture = new Texture(textureData);
 
-	DiffuseMaterial* diffuseMaterial = new DiffuseMaterial();
-	//diffuseMaterial->AddTexture("diffuse", texture);
+	DiffuseMaterial* diffuseMaterial = new DiffuseMaterial(texture);
 	return diffuseMaterial;
 }
