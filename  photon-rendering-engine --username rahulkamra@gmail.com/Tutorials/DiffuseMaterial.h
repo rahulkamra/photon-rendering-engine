@@ -3,8 +3,12 @@
 
 class DiffuseMaterial : public Material
 {
-	
-	void virtual addUniforms(Transform transform);
+private:
+	static Texture* DEFAULT_DIFFUSE_TEXTURE;
+	Texture* diffuseTexture;
+public:
+	DiffuseMaterial(Texture* diffuseTexture = NULL);
+	void addUniforms(Transform transform, Shader* shader);
 	void bind();
 
 };

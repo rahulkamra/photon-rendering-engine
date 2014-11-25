@@ -13,16 +13,14 @@ private :
 public:
 	void addMat4(std::string name, glm::mat4 matrix);
 	void addVec3(std::string name, glm::vec3 vector);
-	void  addFloat(std::string name, float value);
-	void addTextureUniform(std::string name, GLuint samplerId);
+	void addFloat(std::string name, float value);
+	void addTexture(std::string name, Texture* texture);
 	GLuint getShaderId();
 
-	std::map<std::string, Texture*> m_textureMap;
-
-	inline void AddTexture(const std::string& name, Texture* value);
-	void bind();
 	
-	inline Texture* GetTexture(const std::string& name) const;
+
+	
+	void bind();
 	
 	Shader(std::string fileName);
 	~Shader();

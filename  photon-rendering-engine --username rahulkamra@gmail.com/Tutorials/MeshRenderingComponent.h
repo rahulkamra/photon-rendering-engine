@@ -39,6 +39,7 @@ public:
 		mesh->draw(parent->transform);
 	}
 
+
 	Material* getMaterial()
 	{
 		return material;
@@ -51,7 +52,7 @@ public:
 class WidgetRenderingComponent : public MeshRenderingComponent
 {
 public:
-	WidgetRenderingComponent(Mesh* mesh) :MeshRenderingComponent(mesh,new DiffuseMaterial())
+	WidgetRenderingComponent(Mesh* mesh) :MeshRenderingComponent(mesh,new Material())
 	{
 		phase = Electron::PHASE_WIDGETS_RENDERING;
 	}

@@ -22,7 +22,7 @@
 #include <Camera.h>
 #include "CameraController.h";
 #include "Common\Renderer\BasicMeshRenderer.h";
-
+#include <TextureData.h>
 #include "Common\Geometry\Premitives\Premitives.h"
 #include "Common\Materials\MaterialsManager.h"
 #include "Common\Materials\MaterialsList.h"
@@ -220,11 +220,11 @@ int main(int argc, char** argv)
 	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(teapot);
 
-	//GameObj* pyramid = new GameObj();
-	//pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new DiffuseMaterial()));
-	//pyramid->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
-	//pyramid->transform.scale(vec3(0.5f, 0.5f, 0.5f));
-	//Electron::add(pyramid);
+	GameObj* pyramid = new GameObj();
+	pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new DiffuseMaterial()));
+	pyramid->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
+	pyramid->transform.scale(vec3(0.5f, 0.5f, 0.5f));
+	Electron::add(pyramid);
 
 
 	//GameObj* customMesh = ShapeGenerator::createShapeFromFile("res/models/phoenix_ugv.md2");
@@ -234,11 +234,11 @@ int main(int argc, char** argv)
 	//Electron::add(customMesh);
 
 
-	//GameObj* torus = new GameObj();
-	//torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial()));
-	//torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
-	//torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
-	//Electron::add(torus);
+	GameObj* torus = new GameObj();
+	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial()));
+	torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
+	torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
+	Electron::add(torus);
 
 	Electron::ambientLight = vec3(0.1f, 0.1f, 0.1f);
 
@@ -287,9 +287,12 @@ int main(int argc, char** argv)
 	GameObj* triangle = new GameObj();
 	//directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.5, 0.5, 0.5)));
 	//directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	triangle->transform.translate(vec3(0, -1, -6.0f));
+	triangle->transform.translate(vec3(0, -1, -2.0f));
 	triangle->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	triangle->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
+	//triangle->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
+
+	
+	TextureData* texture = new TextureData();
 	triangle->addComponent(
 		new MeshRenderingComponent(
 		new Mesh(

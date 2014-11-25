@@ -3,33 +3,42 @@
 #include "Common\Materials\MaterialsList.h"
 #include "Common\Lights\Lights.h"
 #include "Electron.h"
+#include <Shader.h>
 
+Texture* DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE = NULL;
 
 void DiffuseMaterial::bind()
 {
 	Material::bind();
-
-	//this->bind();
-	//BaseLight* activeLight = Electron::activeLight;
-	//activeLight->bind();//when this material is binded the active light is binded
 }
 
-/*
-GLuint DiffuseMaterial::getShaderId()
+DiffuseMaterial::DiffuseMaterial(Texture* diffuseTexture)
 {
-	BaseLight* activeLight = Electron::activeLight;
-	return activeLight->getShaderId();
+	if (DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE == NULL)
+	{
+		TextureData* textureData = new TextureData("res/textures/white.png");
+		textureData->load();
+		DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE = new Texture(textureData);
+	}
+
+	
+	if (diffuseTexture == NULL)
+	{
+		this->diffuseTexture = DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE;
+	}
+	else
+	{
+		this->diffuseTexture = diffuseTexture;
+	}
+
+	this->shader = new Shader(MaterialsList::DIFFUSE_MATERIAL_TEXTURE);
+	this->AddTexture("diffuse", diffuseTexture);
+	
+
 }
-*/
-
-
-void DiffuseMaterial::addUniforms(Transform transform)
+void DiffuseMaterial::addUniforms(Transform transform, Shader* shader)
 {
+	this->shader->addTexture("diffuse", this->diffuseTexture);
 	Material::addUniforms(transform,shader);
-	//BaseLight* light = Electron::activeLight;
-	//if (light == NULL)
-	//	return;
-
-	//light->updateUniforms(this);
 	
 }
