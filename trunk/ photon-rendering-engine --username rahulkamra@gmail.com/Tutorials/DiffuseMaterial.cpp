@@ -16,7 +16,7 @@ DiffuseMaterial::DiffuseMaterial(Texture* diffuseTexture)
 {
 	if (DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE == NULL)
 	{
-		TextureData* textureData = new TextureData("res/textures/white.png");
+		TextureData* textureData = new TextureData("res/textures/black.png");
 		textureData->load();
 		DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE = new Texture(textureData);
 	}

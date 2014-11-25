@@ -1,33 +1,33 @@
-d:\work\renderer\tutorials\debug\vc120.pdb
-d:\work\renderer\tutorials\debug\vc120.idb
-d:\work\renderer\tutorials\debug\debugutils.obj
-d:\work\renderer\tutorials\debug\gamecomponent.obj
-d:\work\renderer\tutorials\debug\transform.obj
-d:\work\renderer\tutorials\debug\mesh.obj
-d:\work\renderer\tutorials\debug\lights.obj
-d:\work\renderer\tutorials\debug\material.obj
-d:\work\renderer\tutorials\debug\materialslist.obj
-d:\work\renderer\tutorials\debug\materialsmanager.obj
-d:\work\renderer\tutorials\debug\diffusematerial.obj
-d:\work\renderer\tutorials\debug\ogldev_util.obj
-d:\work\renderer\tutorials\debug\meshdata.obj
-d:\work\renderer\tutorials\debug\quaternion.obj
-d:\work\renderer\tutorials\debug\shader.obj
-d:\work\renderer\tutorials\debug\texture.obj
-d:\work\renderer\tutorials\debug\texturedata.obj
-d:\work\renderer\tutorials\debug\stringutils.obj
-d:\work\renderer\tutorials\debug\camera.obj
-d:\work\renderer\tutorials\debug\cameracontroller.obj
-d:\work\renderer\tutorials\debug\electron.obj
-d:\work\renderer\tutorials\debug\gameobj.obj
-d:\work\renderer\tutorials\debug\cameratest.obj
-d:\work\renderer\tutorials\debug\shapegenerator.obj
-d:\work\renderer\debug\tutorials.ilk
-d:\work\renderer\debug\tutorials.exe
-d:\work\renderer\debug\tutorials.pdb
-d:\work\renderer\tutorials\debug\tutorials.tlog\cl.command.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\cl.read.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\cl.write.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\link.command.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\link.read.1.tlog
-d:\work\renderer\tutorials\debug\tutorials.tlog\link.write.1.tlog
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\vc120.pdb
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\vc120.idb
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\cameratest.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\debugutils.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\electron.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\gamecomponent.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\gameobj.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\transform.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\mesh.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\lights.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\material.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\materialslist.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\materialsmanager.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\shapegenerator.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\diffusematerial.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\ogldev_util.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\meshdata.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\quaternion.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\shader.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\texture.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\texturedata.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\stringutils.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\camera.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\cameracontroller.obj
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\debug\tutorials.ilk
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\debug\tutorials.exe
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\debug\tutorials.pdb
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\tutorials.tlog\cl.command.1.tlog
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\tutorials.tlog\cl.read.1.tlog
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\tutorials.tlog\cl.write.1.tlog
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\tutorials.tlog\link.command.1.tlog
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\tutorials.tlog\link.read.1.tlog
+f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\debug\tutorials.tlog\link.write.1.tlog
