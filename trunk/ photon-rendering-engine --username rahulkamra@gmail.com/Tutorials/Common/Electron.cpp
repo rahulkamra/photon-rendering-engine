@@ -70,6 +70,7 @@ void Electron::render()
 	glDepthFunc(GL_LESS);
 	glDisable(GL_BLEND);
 	
+	activeLight = NULL;
 
 	drawPhase(deferredRenderingComponents);
 	drawPhase(widgetsRenderingComponents);
@@ -78,7 +79,7 @@ void Electron::render()
 
 	glClear(GL_DEPTH_BUFFER_BIT);
 	glutSwapBuffers();
-	activeLight = NULL;
+	
 }
 
 
@@ -89,6 +90,7 @@ void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , M
 	{
 		MeshRenderingComponent* eachComponent = renderingComponents.at(count);
 		Shader* shader;
+
 		if (Electron::activeLight)
 		{
 			shader = Electron::activeLight->shader;

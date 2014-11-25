@@ -319,5 +319,11 @@
     <None Include="Shaders\forward_diffuse.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
+    <None Include="Shaders\forward_diffuse_texture.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\forward_diffuse_texture.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

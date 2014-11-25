@@ -6,7 +6,7 @@
 
 Material::Material()
 {
-	this->shader = new Shader(MaterialsList::DIFFUSE_MATERIAL);
+	this->shader = new Shader(MaterialsList::DEFAULT);
 }
 
 void Material::addUniforms(Transform transform , Shader* shader)
@@ -17,17 +17,25 @@ void Material::addUniforms(Transform transform , Shader* shader)
 	shader->addMat4("modelToWorld", model);
 	shader->addVec3("cameraWorld", Camera::getCamera()->position);
 	shader->addVec3("ambientLight", Electron::ambientLight);
-	//shader->addTextureUniform("diffuse", 0);
-
-	//typeid(Electron::ambientLight).
-	
-	//if (typedef(modelViewProjection) == glm::mat4)
-	//{
-
-	//}
-
 	//addTextureUniform("diffuse", 0);
 }
+
+
+void Material::AddTexture(const std::string& name, Texture* value)
+{
+	m_textureMap.insert(std::pair<std::string, Texture*>(name, value));
+}
+
+Texture* Material::GetTexture(const std::string& name)
+{
+	std::map<std::string, Texture*>::const_iterator it = m_textureMap.find(name);
+	if (it != m_textureMap.end())
+		return it->second;
+
+	return 0;
+}
+
+
 void Material::bind()
 {
 	shader->bind();
@@ -35,32 +43,3 @@ void Material::bind()
 Material::~Material()
 {
 }
-
-/*
-AmbientMaterial::AmbientMaterial()
-{
-	TextureData* textureData = new TextureData("res/models/phoenix.pcx");
-	textureData->load();
-	Texture* texture = new Texture(textureData);
-	this->AddTexture("diffuse", texture);
-}
-AmbientMaterial::AmbientMaterial(Texture* diffuseTexture)
-{
-	this->AddTexture("diffuse", diffuseTexture);
-}
-
-
-
-void AmbientMaterial::addUniforms(Transform transform)
-{
-	glm::mat4 modelViewProjection = Camera::getCamera()->worldToProjection(transform.modelTransformtionMatrix());
-	glm::mat4 model = transform.modelTransformtionMatrix();
-
-	addMat4("mvp", modelViewProjection);
-	addMat4("modelToWorld", model);
-	addVec3("cameraWorld", Camera::getCamera()->position);
-	addVec3("ambientLight", Electron::ambientLight);
-	addTextureUniform("diffuse", 0);
-
-}
-*/

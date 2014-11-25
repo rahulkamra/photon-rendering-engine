@@ -14,10 +14,10 @@ Shader::~Shader()
 }
 
 
-void Shader::addTextureUniform(std::string name, GLuint samplerId)
+void Shader::addTexture(std::string name, Texture* texture)
 {
-	Texture* texture = GetTexture(name);
-	texture->bind(samplerId);
+	GLint location = glGetUniformLocation(getShaderId(), name.c_str());
+	texture->bind(location);
 }
 void Shader::addMat4(std::string name, glm::mat4 matrix)
 {
@@ -43,17 +43,4 @@ GLuint Shader::getShaderId()
 void Shader::bind()
 {
 	glUseProgram(shaderId);
-}
-inline void Shader::AddTexture(const std::string& name, Texture* value)
-{
-	m_textureMap.insert(std::pair<std::string, Texture*>(name, value));
-}
-
-inline Texture* Shader::GetTexture(const std::string& name) const
-{
-	std::map<std::string, Texture*>::const_iterator it = m_textureMap.find(name);
-	if (it != m_textureMap.end())
-		return it->second;
-
-	return 0;
 }
