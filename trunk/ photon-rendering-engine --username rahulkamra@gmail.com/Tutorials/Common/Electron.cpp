@@ -8,6 +8,7 @@
 #include <Common\Materials\MaterialsManager.h>
 #include <MeshRenderingComponent.h>
 #include "Lights\Lights.h"
+#include "Shader.h"
 
 const int Electron::PHASE_FORWARD_RENDERING = 100;
 const int Electron::PHASE_DEFFERED_RENDERING = 200;
@@ -58,6 +59,8 @@ void Electron::render()
 	for (int count = 0; count < lights.size(); count++)
 	{
 		activeLight = lights.at(count);
+		activeLight->bind();
+		activeLight->updateUniforms();
 		drawPhase(forwardRenderingComponents);
 	}
 		
@@ -81,10 +84,22 @@ void Electron::render()
 
 void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , Material* material)
 {
+	
 	for (int count = 0; count < renderingComponents.size(); count++)
 	{
 		MeshRenderingComponent* eachComponent = renderingComponents.at(count);
-		eachComponent->draw(material);
+		Shader* shader;
+		if (Electron::activeLight)
+		{
+			shader = Electron::activeLight->shader;
+		}
+		else
+		{
+			eachComponent->getMaterial()->bind();
+			shader = eachComponent->getMaterial()->shader;
+
+		}
+		eachComponent->draw(shader);
 	}
 }
 

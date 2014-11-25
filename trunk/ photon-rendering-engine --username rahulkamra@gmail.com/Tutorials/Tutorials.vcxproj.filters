@@ -73,6 +73,9 @@
     <Filter Include="Source Files\common\Textures">
       <UniqueIdentifier>{ffa43caf-b5d4-4ba5-aeec-e6f136d6a6e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\common\Shader">
+      <UniqueIdentifier>{2d396ef4-365d-4870-b346-4d806b3b4740}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ogldev_util.cpp">
@@ -137,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Source Files\common\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\common\Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +255,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

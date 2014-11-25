@@ -25,7 +25,7 @@ GLuint DiffuseMaterial::getShaderId()
 
 void DiffuseMaterial::addUniforms(Transform transform)
 {
-	Material::addUniforms(transform);
+	Material::addUniforms(transform,shader);
 	//BaseLight* light = Electron::activeLight;
 	//if (light == NULL)
 	//	return;

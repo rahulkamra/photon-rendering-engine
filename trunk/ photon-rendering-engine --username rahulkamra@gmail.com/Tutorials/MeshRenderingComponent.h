@@ -2,8 +2,9 @@
 #include "Common\GameObj\GameComponent.h"
 #include "Electron.h"
 #include "Common\Lights\Lights.h"
-
+#include <DiffuseMaterial.h>
 class Material;
+
 class MeshRenderingComponent : public GameComponent
 {
 
@@ -32,32 +33,15 @@ public:
 		Electron::addRenderingComponent(this);
 	}
 
-	virtual void draw(Material* _material = nullptr)
-	{
-		Material* renderMaterial = _material;
-
-		if (_material == nullptr)
-		{
-			renderMaterial = this->material;
-
-		}
-
-		if (Electron::activeLight)
-		{
-			renderMaterial = new Material();
-			//renderMaterial->
-			Electron::activeLight->bind();
-			Electron::activeLight->updateUniforms(renderMaterial);
-
-		}
-		else
-		{
-			renderMaterial->bind();
-			renderMaterial->addUniforms(parent->transform);
-		}
-		
+	virtual void draw(Shader* shader)
+	{		
+		material->addUniforms(parent->transform, shader);//Need to fix this
 		mesh->draw(parent->transform);
-		
+	}
+
+	Material* getMaterial()
+	{
+		return material;
 	}
 
 };
@@ -67,7 +51,7 @@ public:
 class WidgetRenderingComponent : public MeshRenderingComponent
 {
 public:
-	WidgetRenderingComponent(Mesh* mesh) :MeshRenderingComponent(mesh,new Material())
+	WidgetRenderingComponent(Mesh* mesh) :MeshRenderingComponent(mesh,new DiffuseMaterial())
 	{
 		phase = Electron::PHASE_WIDGETS_RENDERING;
 	}

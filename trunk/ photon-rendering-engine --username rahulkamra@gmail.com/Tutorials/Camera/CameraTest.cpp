@@ -205,20 +205,20 @@ int main(int argc, char** argv)
 
 
 	
-	//GameObj* plane = new GameObj();
-	//plane->showAxis();
-	//plane->transform.translate(vec3(0, -2.0f, -6.0f));
-//	plane->addComponent(new MeshRenderingComponent(new Plane(), new DiffuseMaterial()));
-//	Electron::add(plane);
+	GameObj* plane = new GameObj();
+	plane->showAxis();
+	plane->transform.translate(vec3(0, -2.0f, -6.0f));
+	plane->addComponent(new MeshRenderingComponent(new Plane(), new DiffuseMaterial()));
+	Electron::add(plane);
 
 
-	//GameObj* teapot = new GameObj();
-//	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
-	//teapot->showAxis();
-	//teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
-	//teapot->transform.rotate(Quaternion(270.0f, vec3(1.0f, 0.0f, 0.0f)));
-	//teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
-	//Electron::add(teapot);
+	GameObj* teapot = new GameObj();
+	teapot->addComponent(new MeshRenderingComponent(new TeaPot(), new DiffuseMaterial()));
+	teapot->showAxis();
+	teapot->transform.translate(vec3(1.5f, -2.0f, -6.0f));
+	teapot->transform.rotate(Quaternion(270.0f, vec3(1.0f, 0.0f, 0.0f)));
+	teapot->transform.scale(vec3(0.5f, 0.5f, 0.5f));
+	Electron::add(teapot);
 
 	//GameObj* pyramid = new GameObj();
 	//pyramid->addComponent(new MeshRenderingComponent(new Pyramid(), new DiffuseMaterial()));
@@ -240,48 +240,48 @@ int main(int argc, char** argv)
 	//torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	//Electron::add(torus);
 
-	Electron::ambientLight = vec3(0.5f, 0.5f, 0.5f);
+	Electron::ambientLight = vec3(0.1f, 0.1f, 0.1f);
 
 	GameObj* pointLightGreen = new GameObj();
 	pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0),10));
 
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	//directionalLight->showAxis();
-	//pointLightGreen->transform.translate(vec3(-2.5, 0, -6.0f));
-	//pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	//pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
-	//pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	//pointLightGreen->showAxis();
+	pointLightGreen->transform.translate(vec3(-2.5, 0, -6.0f));
+	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
+	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	Electron::add(pointLightGreen);
 
 
-	//GameObj* pointLightRed = new GameObj();
-	//pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
-	//pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	//pointLightRed->transform.translate(vec3(3, -1, -6.0f));
-	//pointLightRed->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	//pointLightRed->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
-	//pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//Electron::add(pointLightRed);
+	GameObj* pointLightRed = new GameObj();
+	pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
+	pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	pointLightRed->transform.translate(vec3(3, -1, -6.0f));
+	pointLightRed->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	pointLightRed->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
+	pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	Electron::add(pointLightRed);
 
 
-	//GameObj* pointLightBlue = new GameObj();
-	//pointLightBlue->addComponent(new SpotLight(Attenuation(), glm::vec3(0, 0, 1)));
-	//pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	//pointLightBlue->showAxis();
-	//pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
-	//pointLightBlue->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
-	//pointLightBlue->transform.rotate(Quaternion(90, vec3(1, 0, 0)));
-	//pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
-	//Electron::add(pointLightBlue);
+	GameObj* pointLightBlue = new GameObj();
+	pointLightBlue->addComponent(new SpotLight(Attenuation(), glm::vec3(0, 0, 1)));
+	pointLightBlue->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	pointLightBlue->showAxis();
+	pointLightBlue->transform.translate(vec3(0, -1, -6.0f));
+	pointLightBlue->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
+	pointLightBlue->transform.rotate(Quaternion(90, vec3(1, 0, 0)));
+	pointLightBlue->transform.scale(vec3(0.1f, 0.1f, 0.1f));
+	Electron::add(pointLightBlue);
 
 
 	GameObj* directionalLightYellow = new GameObj();
-	//directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.5, 0.5, 0.5)));
-	//directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
+	directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.1, 0.1, 0.1)));
+	directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	directionalLightYellow->transform.translate(vec3(3, -1, -6.0f));
 	directionalLightYellow->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	directionalLightYellow->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
-	//Electron::add(directionalLightYellow);
+	Electron::add(directionalLightYellow);
 
 
 	GameObj* triangle = new GameObj();

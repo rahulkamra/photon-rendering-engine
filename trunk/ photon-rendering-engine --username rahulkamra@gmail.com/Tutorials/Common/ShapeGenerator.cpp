@@ -6,6 +6,8 @@
 #include <iostream>
 #include <Common\Geometry\Mesh.h>
 #include <Common\Geometry\MeshData.h>
+#include <TextureData.h>
+#include <Texture.h>
 #include <MeshRenderingComponent.h>
 #include <DiffuseMaterial.h>
 #include <math.h>
@@ -1171,6 +1173,6 @@ DiffuseMaterial* ShapeGenerator::getDiffuseMaterial(const aiScene* scene, std::s
 	Texture* texture = new Texture(textureData);
 
 	DiffuseMaterial* diffuseMaterial = new DiffuseMaterial();
-	diffuseMaterial->AddTexture("diffuse", texture);
+	//diffuseMaterial->AddTexture("diffuse", texture);
 	return diffuseMaterial;
 }
