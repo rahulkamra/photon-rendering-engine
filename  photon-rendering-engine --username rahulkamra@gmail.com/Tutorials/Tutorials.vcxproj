@@ -89,6 +89,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureData.cpp" />
+    <ClCompile Include="TypeUtils.cpp" />
     <ClCompile Include="Utils\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureData.h" />
+    <ClInclude Include="TypeUtils.h" />
     <ClInclude Include="Utils\ColorUtils.h" />
     <ClInclude Include="Utils\StringUtils.h" />
   </ItemGroup>

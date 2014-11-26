@@ -82,9 +82,9 @@ glm::vec3 Transform::down()
 
 glm::vec3 Transform::getPosition()
 {
-
-	glm::vec3 position = (glm::vec3)(modelTransformtionMatrix()*glm::vec4(0, 0, 0, 1));
-//	glm::vec3 position = glm::vec3(translationMatrix[0][3], translationMatrix[1][3], translationMatrix[2][3])
+	//glm::mat4 translationMatrix = this->translationMatrix;
+	//glm::vec3 position = (glm::vec3)(modelTransformtionMatrix()*glm::vec4(0, 0, 0, 1));
+	glm::vec3 position = glm::vec3(this->translationMatrix[3][0], this->translationMatrix[3][1], this->translationMatrix[3][2]);
 
 	return position;
 }

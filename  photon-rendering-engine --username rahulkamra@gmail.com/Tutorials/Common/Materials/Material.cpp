@@ -9,15 +9,13 @@ Material::Material()
 	this->shader = new Shader(MaterialsList::DEFAULT);
 }
 
-void Material::addUniforms(Transform transform , Shader* shader)
+void Material::updateUniforms(Transform transform, Shader* shader)
 {
 	glm::mat4 modelViewProjection = Camera::getCamera()->worldToProjection(transform.modelTransformtionMatrix());
 	glm::mat4 model = transform.modelTransformtionMatrix();
 	shader->addMat4("mvp", modelViewProjection);
 	shader->addMat4("modelToWorld", model);
-	shader->addVec3("cameraWorld", Camera::getCamera()->position);
 	shader->addVec3("ambientLight", Electron::ambientLight);
-	//addTextureUniform("diffuse", 0);
 }
 
 

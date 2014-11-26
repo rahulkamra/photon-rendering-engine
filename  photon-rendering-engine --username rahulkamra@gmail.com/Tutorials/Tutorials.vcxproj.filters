@@ -144,6 +144,9 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Source Files\common\Shader</Filter>
     </ClCompile>
+    <ClCompile Include="TypeUtils.cpp">
+      <Filter>Source Files\common\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h">
@@ -258,6 +261,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

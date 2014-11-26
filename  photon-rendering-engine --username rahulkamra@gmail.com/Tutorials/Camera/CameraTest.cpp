@@ -236,7 +236,7 @@ int main(int argc, char** argv)
 
 
 	GameObj* torus = new GameObj();
-	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial()));
+	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial(NULL,8.0f,3.0f)));
 	torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
 	torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(torus);
@@ -248,7 +248,7 @@ int main(int argc, char** argv)
 
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//pointLightGreen->showAxis();
-	pointLightGreen->transform.translate(vec3(-2.5, 0, -6.0f));
+	pointLightGreen->transform.translate(vec3(-2.5, 0, -5.5f));
 	pointLightGreen->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
 	pointLightGreen->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightGreen->transform.scale(vec3(0.1f, 0.1f, 0.1f));
@@ -258,7 +258,7 @@ int main(int argc, char** argv)
 	GameObj* pointLightRed = new GameObj();
 	pointLightRed->addComponent(new PointLight(Attenuation(), glm::vec3(1, 0, 0)));
 	pointLightRed->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
-	pointLightRed->transform.translate(vec3(3, -1, -6.0f));
+	pointLightRed->transform.translate(vec3(1, 0.5, -6.0f));
 	pointLightRed->transform.rotate(Quaternion(180, vec3(0, 1, 0)));
 	pointLightRed->transform.rotate(Quaternion(45, vec3(1, 0, 0)));
 	pointLightRed->transform.scale(vec3(0.1f, 0.1f, 0.1f));

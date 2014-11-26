@@ -101,6 +101,13 @@ void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , M
 			shader = eachComponent->getMaterial()->shader;
 
 		}
+
+		DiffuseMaterial* material = dynamic_cast<DiffuseMaterial*> (eachComponent->getMaterial());
+		if (material != NULL)
+		{
+			material->updateLightUniforms();
+		}
+
 		eachComponent->draw(shader);
 	}
 }
