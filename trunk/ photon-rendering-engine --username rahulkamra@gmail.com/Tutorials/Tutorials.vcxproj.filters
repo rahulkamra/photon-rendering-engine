@@ -99,9 +99,6 @@
     <ClCompile Include="Common\Debug\DebugUtils.cpp">
       <Filter>Source Files\common\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Materials\MaterialsManager.cpp">
-      <Filter>Source Files\common\Materials</Filter>
-    </ClCompile>
     <ClCompile Include="Common\Materials\MaterialsList.cpp">
       <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
@@ -146,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="TypeUtils.cpp">
       <Filter>Source Files\common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Materials\ShaderLoader.cpp">
+      <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +199,6 @@
     </ClInclude>
     <ClInclude Include="Common\Debug\DebugUtils.h">
       <Filter>Source Files\common\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Materials\MaterialsManager.h">
-      <Filter>Source Files\common\Materials</Filter>
     </ClInclude>
     <ClInclude Include="Common\Materials\MaterialsList.h">
       <Filter>Source Files\common\Materials</Filter>
@@ -265,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="TypeUtils.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Materials\ShaderLoader.h">
+      <Filter>Source Files\common\Materials</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

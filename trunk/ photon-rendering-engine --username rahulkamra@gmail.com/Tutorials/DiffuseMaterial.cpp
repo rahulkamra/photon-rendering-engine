@@ -1,5 +1,5 @@
 #include <DiffuseMaterial.h>
-#include "Common\Materials\MaterialsManager.h"
+#include "Common\Materials\ShaderLoader.h"
 #include "Common\Materials\MaterialsList.h"
 #include "Common\Lights\Lights.h"
 #include "Electron.h"

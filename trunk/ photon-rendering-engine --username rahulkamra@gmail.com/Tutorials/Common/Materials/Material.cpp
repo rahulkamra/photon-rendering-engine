@@ -1,7 +1,7 @@
 #include "Material.h"
 #include "Camera.h"
 #include "Electron.h"
-#include "MaterialsManager.h"
+#include "ShaderLoader.h"
 #include <Shader.h>
 
 Material::Material()

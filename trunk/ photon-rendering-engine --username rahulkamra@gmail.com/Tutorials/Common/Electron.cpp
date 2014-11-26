@@ -5,7 +5,7 @@
 #include <GL/freeglut.h>
 #include <Common\Geometry\Premitives\Cube.h>
 #include <Common\Materials\MaterialsList.h>
-#include <Common\Materials\MaterialsManager.h>
+#include <Common\Materials\ShaderLoader.h>
 #include <MeshRenderingComponent.h>
 #include "Lights\Lights.h"
 #include "Shader.h"

@@ -6,7 +6,7 @@
 #include <ogldev_types.h>
 #include "Common\GameObj\GameObj.h"
 #include "Camera.h"
-#include "Common\Materials\MaterialsManager.h"
+#include "Common\Materials\ShaderLoader.h"
 #include <Electron.h>
 #include "Common\Lights\DiffuseLightManager.h"
 
