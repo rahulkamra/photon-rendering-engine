@@ -1,11 +1,11 @@
 #include "Shader.h"
-#include <Common\Materials\MaterialsManager.h>
+#include <Common\Materials\ShaderLoader.h>
 #include <Common\Materials\MaterialsList.h>
 
 
 Shader::Shader(std::string fileName)
 {
-	shaderId = MaterialsManager::getMaterial(fileName);
+	shaderId = ShaderLoader::getMaterial(fileName);
 }
 
 

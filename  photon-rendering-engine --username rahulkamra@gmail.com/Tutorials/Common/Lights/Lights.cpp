@@ -1,7 +1,7 @@
 #include "Lights.h"
 #include "Electron.h"
 #include <Shader.h>
-#include "Common\Materials\MaterialsManager.h"
+#include "Common\Materials\ShaderLoader.h"
 
 
 void BaseLight::addedToGameObj(){}

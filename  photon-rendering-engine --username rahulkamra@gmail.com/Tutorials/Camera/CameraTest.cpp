@@ -25,7 +25,7 @@
 #include <TextureData.h>
 #include <Texture.h>
 #include "Common\Geometry\Premitives\Premitives.h"
-#include "Common\Materials\MaterialsManager.h"
+#include "Common\Materials\ShaderLoader.h"
 #include "Common\Materials\MaterialsList.h"
 #include <MeshRenderingComponent.h>
 #include "Electron.h";

@@ -80,7 +80,7 @@
     <ClCompile Include="Common\Lights\Lights.cpp" />
     <ClCompile Include="Common\Materials\Material.cpp" />
     <ClCompile Include="Common\Materials\MaterialsList.cpp" />
-    <ClCompile Include="Common\Materials\MaterialsManager.cpp" />
+    <ClCompile Include="Common\Materials\ShaderLoader.cpp" />
     <ClCompile Include="Common\ShapeGenerator.cpp" />
     <ClCompile Include="DiffuseMaterial.cpp" />
     <ClCompile Include="ogldev_util.cpp" />
@@ -114,7 +114,7 @@
     <ClInclude Include="Common\Lights\Lights.h" />
     <ClInclude Include="Common\Materials\Material.h" />
     <ClInclude Include="Common\Materials\MaterialsList.h" />
-    <ClInclude Include="Common\Materials\MaterialsManager.h" />
+    <ClInclude Include="Common\Materials\ShaderLoader.h" />
     <ClInclude Include="Common\Renderer\BasicMeshRenderer.h" />
     <ClInclude Include="Common\Renderer\NormalsRenderer.h" />
     <ClInclude Include="Common\ShapeGenerator.h" />

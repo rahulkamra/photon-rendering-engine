@@ -2,7 +2,7 @@
 #include "Camera.h"
 #include "Electron.h"
 #include "Common\Materials\Material.h"
-#include "Common\Materials\MaterialsManager.h"
+#include "Common\Materials\ShaderLoader.h"
 #include "Common\Lights\DiffuseLightManager.h"
 
 Mesh::Mesh(vector<MeshData*> meshData)
