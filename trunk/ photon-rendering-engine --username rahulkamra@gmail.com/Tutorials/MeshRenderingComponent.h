@@ -35,7 +35,7 @@ public:
 
 	virtual void draw(Shader* shader)
 	{		
-		material->addUniforms(parent->transform, shader);//Need to fix this
+		material->updateUniforms(parent->transform, shader);//Need to fix this
 		mesh->draw(parent->transform);
 	}
 

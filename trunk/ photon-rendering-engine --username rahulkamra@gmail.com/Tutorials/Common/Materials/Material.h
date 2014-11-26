@@ -19,7 +19,7 @@ public:
 	Texture* GetTexture(const std::string& name);
 
 	Shader* shader;
-	virtual void addUniforms(Transform transform, Shader* shader);
+	virtual void updateUniforms(Transform transform, Shader* shader);
 	virtual void bind();
 
 };

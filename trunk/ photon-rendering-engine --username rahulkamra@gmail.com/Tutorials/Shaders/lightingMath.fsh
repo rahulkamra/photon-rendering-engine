@@ -38,14 +38,35 @@ struct SpotLight
 	float cutoff;
 };
 
-
-vec3 calculateLight(vec3 lightVector , vec3 worldNormal , vec3 worldPosition , vec3 color)
+//Light Direction is from Light to the surface.
+vec4 calculateLight(vec3 lightDirection , vec3 worldNormal , vec3 worldPosition , vec3 color)
 {
-	float diffuseIntensity  = dot(worldNormal,-lightVector);
-	if( diffuseIntensity < 0)
-		 diffuseIntensity = 0;
+	vec4 specularColor = vec4(0,0,0,0);
+	vec4 diffuseColor = vec4(0,0,0,0);
 
-	return vec3(diffuseIntensity,diffuseIntensity,diffuseIntensity)*color;	
+	worldNormal = normalize(worldNormal); //need to check are we renormalizing it or not
+
+	float diffuseIntensity  = dot(worldNormal,-lightDirection);
+	diffuseIntensity = clamp(diffuseIntensity,0,1);
+	
+	diffuseColor = vec4(diffuseIntensity,diffuseIntensity,diffuseIntensity,1.0)*vec4(color,1.0);
+
+    vec3 eyeVector = normalize(cameraWorld - worldPosition);
+	vec3 reflectVector = reflect(lightDirection,worldNormal);
+
+
+	//vec3 hanfAngleDirection = normalize(eyeVector - lightDirection);
+	//float specularFactor = dot(hanfAngleDirection, worldNormal);
+
+	
+	float specularFactor = dot(reflectVector,eyeVector);
+	specularFactor = pow(specularFactor, specularPower);
+	 if(specularFactor > 0 )
+	 {
+		 specularColor = vec4(color, 1.0) *  specularFactor * specularIntensity;
+	 }
+	 return  diffuseColor + specularColor;
+	
 };
 
 
@@ -59,7 +80,7 @@ vec4 calculatePointLight(vec3 lightVector,Attenuation attenuation,vec3 color)
                          attenuation.quadratic * distance * distance;
                          
 
-	vec4 lightColor = vec4(calculateLight(normalizedVector,worldNormal,worldPosition,color),0);
+	vec4 lightColor = calculateLight(normalizedVector,worldNormal,worldPosition,color);
 
 	return lightColor/ attenuationValue;
 }

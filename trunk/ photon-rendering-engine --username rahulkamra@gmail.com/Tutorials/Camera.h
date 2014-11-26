@@ -16,7 +16,6 @@ class Camera
 	
 
 public:
-	vec3 position;
 	Camera();
 	
 	Transform transform;

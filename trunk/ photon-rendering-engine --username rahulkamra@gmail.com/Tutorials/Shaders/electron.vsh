@@ -12,4 +12,3 @@ uniform  vec3 cameraWorld;
 out vec3 color;
 
 
-
