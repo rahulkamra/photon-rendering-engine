@@ -10,7 +10,7 @@
 #define FRAGMENT_SHADER_PATH(shaderName) "Shaders/"+shaderName+".fs"
 #define INCLUDE_SHADER_FILE_PATH(fileName) "Shaders/"+fileName
 
-map<const string, GLuint> ShaderLoader::materialMap;
+map<const string, ShaderData*> ShaderLoader::materialMap;
 
 ShaderLoader::ShaderLoader()
 {
@@ -27,10 +27,11 @@ void ShaderLoader::registerMaterial(const string name)
 	string fragmentShaderFileName = FRAGMENT_SHADER_PATH(name);
 
 	GLuint shaderProgram = compileShader(vertexShaderFileName, fragmentShaderFileName);
-	materialMap[name] = shaderProgram;
+
+	materialMap[name] = new ShaderData(shaderProgram);
 
 }
-GLuint ShaderLoader::getMaterial(const string name)
+ShaderData* ShaderLoader::getMaterial(const string name)
 {
 	if (!materialMap[name])
 		registerMaterial(name);

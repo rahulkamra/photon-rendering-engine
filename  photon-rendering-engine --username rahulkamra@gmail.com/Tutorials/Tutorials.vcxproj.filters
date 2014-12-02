@@ -147,6 +147,9 @@
     <ClCompile Include="Common\Materials\ShaderLoader.cpp">
       <Filter>Source Files\common\Materials</Filter>
     </ClCompile>
+    <ClCompile Include="ShaderData.cpp">
+      <Filter>Source Files\common\Shader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h">
@@ -265,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="Common\Materials\ShaderLoader.h">
       <Filter>Source Files\common\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderData.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
