@@ -87,6 +87,7 @@
     <ClCompile Include="MeshData.cpp" />
     <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderData.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TypeUtils.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="MyClass.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderData.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TypeUtils.h" />

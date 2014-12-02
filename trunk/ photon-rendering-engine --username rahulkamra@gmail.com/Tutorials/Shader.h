@@ -9,7 +9,7 @@ class Shader
 {
 
 private :
-	GLuint shaderId;
+	ShaderData* shaderData;
 public:
 	void addMat4(std::string name, glm::mat4 matrix);
 	void addVec3(std::string name, glm::vec3 vector);

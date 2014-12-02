@@ -5,7 +5,7 @@
 
 Shader::Shader(std::string fileName)
 {
-	shaderId = ShaderLoader::getMaterial(fileName);
+	shaderData = ShaderLoader::getMaterial(fileName);
 }
 
 
