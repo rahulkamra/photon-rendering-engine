@@ -26,9 +26,59 @@ void ShaderData::extractUniforms()
 		GLsizei actualLength = 0;
 		glGetActiveUniform(shaderProgram, unif, nameData.size(), &actualLength, &arraySize, &type, &nameData[0]);
 		std::string name((char*)&nameData[0], actualLength);
+
+		addUniformType(name, type);
+
+		if (type == (int)GL_FLOAT)
+		{
+			floatUniforms.push_back(name);
+			
+		}
+		else if (type == (int)GL_FLOAT_VEC3)
+		{
+			vec3Uniforms.push_back(name);
+		}
+		else if (type == (int)GL_FLOAT_MAT3)
+		{
+			mat4Uniforms.push_back(name);
+		}
+		else if (type == (int)GL_FLOAT_MAT4)
+		{
+			mat3Uniforms.push_back(name);
+		}
+		else if (type == (int)GL_SAMPLER_2D)
+		{
+			sampler2DUniforms.push_back(name);
+		}
+		else
+		{
+			std::cout << "undefined type " << type  <<  " with name : " << name <<  "\n";
+		}
+
 		uniforms.push_back(name);
 	}
 }
+
+
+void ShaderData::addUniformType(std::string name, int type)
+{
+	uniformType.set(name, type);
+}
+
+
+int ShaderData::getUniformType(std::string uniformName)
+{
+	boost::optional<int> value =  uniformType.get(uniformName);
+	if (value)
+	{
+		return *value;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 void ShaderData::extractAttributes()
 {
 	GLint numActiveAttribs = 0;
@@ -48,23 +98,19 @@ void ShaderData::extractAttributes()
 	}
 }
 
-void ShaderData::logShaderObjects(GLuint shaderProgram)
+void ShaderData::logShaderObjects()
 {
 	for (int count = 0; count < uniforms.size(); ++count)
 	{
-		std::cout << "Uniform Found "  << uniforms.at(count);
+		//std::cout << "Uniform Found "  << uniforms.at(count) << "\n";
 	}
-}
-
-void ShaderData::updateUniforms()
-{
-
 }
 
 void ShaderData::initialize()
 {
 	extractUniforms();
 	extractAttributes();
+	logShaderObjects();
 }
 
 

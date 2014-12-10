@@ -41,7 +41,6 @@ DirectionalLight::DirectionalLight(glm::vec3 color) :BaseLight(color)
 void DirectionalLight::updateUniforms()
 {
 	BaseLight::updateUniforms();
-	
 	shader->addVec3("directionalLight.direction", parent->transform.forward());
 	shader->addVec3("directionalLight.light.color", color);
 	//shader->addVec3("ambientLight", Electron::ambientLight);
@@ -93,7 +92,4 @@ void SpotLight::updateUniforms()
 	shader->addFloat("spotLight.cutoff", this->cutoff);
 
 	shader->addFloat("spotLight.range", this->range);
-
-
-
 }

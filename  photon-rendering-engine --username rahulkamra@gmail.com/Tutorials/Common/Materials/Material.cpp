@@ -11,11 +11,25 @@ Material::Material()
 
 void Material::updateUniforms(Transform transform, Shader* shader)
 {
-	glm::mat4 modelViewProjection = Camera::getCamera()->worldToProjection(transform.modelTransformtionMatrix());
-	glm::mat4 model = transform.modelTransformtionMatrix();
-	shader->addMat4("mvp", modelViewProjection);
-	shader->addMat4("modelToWorld", model);
-	shader->addVec3("ambientLight", Electron::ambientLight);
+}
+
+void Material::addFloat(std::string name, float value)
+{
+	floatMap.insert(std::pair<std::string, float>(name, value));
+}
+void Material::addVec3(std::string name, glm::vec3 value)
+{
+	vec3Map.insert(std::pair<std::string, glm::vec3>(name, value));
+}
+
+float Material::getFloat(std::string name)
+{
+	return floatMap[name];
+}
+
+glm::vec3 Material::getVec3(std::string name)
+{
+	return vec3Map[name];
 }
 
 

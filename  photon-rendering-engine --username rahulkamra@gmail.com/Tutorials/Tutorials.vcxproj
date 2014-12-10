@@ -83,6 +83,7 @@
     <ClCompile Include="Common\Materials\ShaderLoader.cpp" />
     <ClCompile Include="Common\ShapeGenerator.cpp" />
     <ClCompile Include="DiffuseMaterial.cpp" />
+    <ClCompile Include="MathUtils.cpp" />
     <ClCompile Include="ogldev_util.cpp" />
     <ClCompile Include="MeshData.cpp" />
     <ClCompile Include="Quaternion.cpp" />
@@ -123,7 +124,9 @@
     <ClInclude Include="DiffuseMaterial.h" />
     <ClInclude Include="Electron.h" />
     <ClInclude Include="Electron_std.h" />
+    <ClInclude Include="EMap.h" />
     <ClInclude Include="LightData.h" />
+    <ClInclude Include="MathUtils.h" />
     <ClInclude Include="MeshRenderingComponent.h" />
     <ClInclude Include="MyClass.h" />
     <ClInclude Include="Quaternion.h" />

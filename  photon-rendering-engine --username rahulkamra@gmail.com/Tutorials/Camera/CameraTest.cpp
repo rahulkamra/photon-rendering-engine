@@ -36,6 +36,7 @@
 
 #include "glm\gtc\quaternion.hpp"
 #include "glm\gtx\quaternion.hpp"
+#include <EMap.h>
 
 using namespace std;
 using glm::vec3;
@@ -309,6 +310,27 @@ int main(int argc, char** argv)
 	trans.translate(glm::vec3(100,100,0));
 	
 	trans.rotate(Quaternion(glm::vec3(90, 180, -270)));
+
+
+	EMap<int, int> emap;
+	emap.set(1, 100);
+	boost::optional<int> intValue =  emap.get(1);
+
+	if (intValue)
+		cout << *intValue;
+	else
+		cout << "Valur Not Found";
+
+	
+	//
+
+	//glm::vec3 a;
+	//EMap<int, glm::vec3> emap1;
+	//emap1.set(1, a);
+	//boost::optional<glm::vec3> value   = emap1.get(3);
+
+	//cout << emap1.get(3);
+
 	glutMainLoop();
 
 }

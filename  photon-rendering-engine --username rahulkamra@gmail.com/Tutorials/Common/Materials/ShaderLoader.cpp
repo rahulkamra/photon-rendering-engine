@@ -89,7 +89,8 @@ void ShaderLoader::LogShaderObjects(GLuint shaderProgram, const string fileName)
 		GLsizei actualLength = 0;
 		glGetActiveAttrib(shaderProgram, attrib, nameData.size(), &actualLength, &arraySize, &type, &nameData[0]);
 		std::string name((char*)&nameData[0], actualLength);
-		cout << name << "\n";
+
+		//cout << name << "\n";
 	}
 
 	std::vector<GLchar> _nameData(256);
@@ -100,9 +101,10 @@ void ShaderLoader::LogShaderObjects(GLuint shaderProgram, const string fileName)
 		GLsizei actualLength = 0;
 		glGetActiveUniform(shaderProgram, unif, _nameData.size(), &actualLength, &arraySize, &type, &_nameData[0]);
 		std::string name((char*)&_nameData[0], actualLength);
-		cout << name << "\n";
+
+		//cout << name << "\n";
 	}
-	cout << "---End Shader --" << "  "<< fileName << "\n";
+	//cout << "---End Shader --" << "  "<< fileName << "\n";
 }
 
 
