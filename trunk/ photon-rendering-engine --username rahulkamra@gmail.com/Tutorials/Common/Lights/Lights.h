@@ -2,6 +2,7 @@
 #include "Common\GameObj\GameComponent.h"
 #include <GL\glew.h>
 #include <glm\glm.hpp>
+#include <boost/any.hpp>
 
 class Material;
 class Shader;
@@ -14,13 +15,13 @@ protected:
 
 public:
 	BaseLight(glm::vec3 color = glm::vec3(1, 1, 1));
-	
+
 	glm::vec3 color;
 	void addedToGameObj();
 	void virtual bind();
 	virtual void addedToStage();
 	Shader* shader;
-
+	
 	void virtual updateUniforms();
 };
 

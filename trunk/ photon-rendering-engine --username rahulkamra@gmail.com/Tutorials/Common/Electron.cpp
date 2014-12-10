@@ -63,8 +63,6 @@ void Electron::render()
 		activeLight->updateUniforms();
 		drawPhase(forwardRenderingComponents);
 	}
-		
-	
 	
 	glDepthMask(GL_TRUE);
 	glDepthFunc(GL_LESS);
@@ -91,6 +89,7 @@ void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , M
 		MeshRenderingComponent* eachComponent = renderingComponents.at(count);
 		Shader* shader;
 
+
 		if (Electron::activeLight)
 		{
 			shader = Electron::activeLight->shader;
@@ -101,6 +100,12 @@ void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , M
 			shader = eachComponent->getMaterial()->shader;
 
 		}
+
+		if (shader)
+		{
+			shader->updateObjectUniforms(eachComponent->getMaterial(), &eachComponent->getParent()->transform);		
+		}
+			
 
 		DiffuseMaterial* material = dynamic_cast<DiffuseMaterial*> (eachComponent->getMaterial());
 		if (material != NULL)

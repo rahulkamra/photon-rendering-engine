@@ -76,6 +76,9 @@
     <Filter Include="Source Files\common\Shader">
       <UniqueIdentifier>{2d396ef4-365d-4870-b346-4d806b3b4740}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\common\Structures">
+      <UniqueIdentifier>{90a768ad-ff27-4391-bfe2-1cb2ac2f82ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ogldev_util.cpp">
@@ -149,6 +152,9 @@
     </ClCompile>
     <ClCompile Include="ShaderData.cpp">
       <Filter>Source Files\common\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="MathUtils.cpp">
+      <Filter>Source Files\common\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -270,6 +276,12 @@
       <Filter>Source Files\common\Materials</Filter>
     </ClInclude>
     <ClInclude Include="ShaderData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

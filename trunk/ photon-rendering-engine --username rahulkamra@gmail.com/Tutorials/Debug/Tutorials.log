@@ -1,15 +1,294 @@
-﻿Build started 12/2/2014 3:47:10 PM.
+﻿Build started 12/10/2014 3:22:22 PM.
      1>Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Work\Renderer\\AdditionalIncludes /ID:\Work\Renderer\\package\include /ID:\Work\Renderer\Tutorials\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Common\Electron.cpp Common\Lights\Lights.cpp Common\Materials\Material.cpp DiffuseMaterial.cpp Shader.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Work\Renderer\\AdditionalIncludes /ID:\Work\Renderer\\package\include /ID:\Work\Renderer\Tutorials\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera\CameraTest.cpp Common\Debug\DebugUtils.cpp Common\Electron.cpp Common\GameObj\GameObj.cpp Common\Geometry\Mesh.cpp Common\Lights\Lights.cpp Common\Materials\Material.cpp Common\ShapeGenerator.cpp DiffuseMaterial.cpp Shader.cpp
          Shader.cpp
-     1>d:\work\renderer\tutorials\shader.h(12): error C2143: syntax error : missing ';' before '*'
-     1>d:\work\renderer\tutorials\shader.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\work\renderer\tutorials\shader.cpp(8): error C2065: 'shaderData' : undeclared identifier
-     1>d:\work\renderer\tutorials\shader.cpp(40): error C2065: 'shaderId' : undeclared identifier
-     1>d:\work\renderer\tutorials\shader.cpp(45): error C2065: 'shaderId' : undeclared identifier
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>d:\work\renderer\tutorials\shader.cpp(44): warning C4018: '<' : signed/unsigned mismatch
+         Material.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(456): warning C4251: 'Magick::DrawableBezier::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableBezier'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(498): warning C4251: 'Magick::DrawablePushClipPath::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushClipPath'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(526): warning C4251: 'Magick::DrawableClipPath::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableClipPath'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(959): warning C4251: 'Magick::DrawableFont::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(960): warning C4251: 'Magick::DrawableFont::_family' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1128): warning C4251: 'Magick::DrawablePath::_path' : class 'std::list<Magick::VPath,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePath'
+                 with
+                 [
+                     _Ty=Magick::VPath
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1217): warning C4251: 'Magick::DrawablePolygon::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolygon'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1237): warning C4251: 'Magick::DrawablePolyline::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolyline'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1321): warning C4251: 'Magick::DrawablePushPattern::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushPattern'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1923): warning C4251: 'Magick::DrawableText::_text' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1924): warning C4251: 'Magick::DrawableText::_encoding' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2255): warning C4251: 'Magick::PathArcAbs::_coordinates' : class 'std::list<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcAbs'
+                 with
+                 [
+                     _Ty=Magick::PathArcArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2277): warning C4251: 'Magick::PathArcRel::_coordinates' : class 'std::list<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcRel'
+                 with
+                 [
+                     _Ty=Magick::PathArcArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2428): warning C4251: 'Magick::PathCurvetoAbs::_args' : class 'std::list<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::PathCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2451): warning C4251: 'Magick::PathCurvetoRel::_args' : class 'std::list<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::PathCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2475): warning C4251: 'Magick::PathSmoothCurvetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2500): warning C4251: 'Magick::PathSmoothCurvetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2609): warning C4251: 'Magick::PathQuadraticCurvetoAbs::_args' : class 'std::list<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::PathQuadraticCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2633): warning C4251: 'Magick::PathQuadraticCurvetoRel::_args' : class 'std::list<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::PathQuadraticCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2657): warning C4251: 'Magick::PathSmoothQuadraticCurvetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2681): warning C4251: 'Magick::PathSmoothQuadraticCurvetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2709): warning C4251: 'Magick::PathLinetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2733): warning C4251: 'Magick::PathLinetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2875): warning C4251: 'Magick::PathMovetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2899): warning C4251: 'Magick::PathMovetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\exception.h(31): warning C4251: 'Magick::Exception::_what' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Exception'
+     1>d:\work\renderer\additionalincludes\magick++\coderinfo.h(65): warning C4251: 'Magick::CoderInfo::_name' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+     1>d:\work\renderer\additionalincludes\magick++\coderinfo.h(66): warning C4251: 'Magick::CoderInfo::_description' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(90): warning C4251: 'Magick::Montage::_fileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(92): warning C4251: 'Magick::Montage::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(95): warning C4251: 'Magick::Montage::_label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(99): warning C4251: 'Magick::Montage::_texture' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(101): warning C4251: 'Magick::Montage::_title' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(134): warning C4251: 'Magick::annotateImage::_text' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::annotateImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(213): warning C4251: 'Magick::cdlImage::_cdl' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::cdlImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(273): warning C4251: 'Magick::commentImage::_comment' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::commentImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(385): warning C4251: 'Magick::drawImage::_drawableList' : class 'std::list<Magick::Drawable,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::drawImage'
+                 with
+                 [
+                     _Ty=Magick::Drawable
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(651): warning C4251: 'Magick::labelImage::_label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::labelImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1299): warning C4251: 'Magick::backgroundTextureImage::_backgroundTexture' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::backgroundTextureImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1474): warning C4251: 'Magick::fileNameImage::_fileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fileNameImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1498): warning C4251: 'Magick::fontImage::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fontImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1558): warning C4251: 'Magick::magickImage::_magick' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::magickImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1817): warning C4251: 'Magick::tileNameImage::_tileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::tileNameImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1854): warning C4251: 'Magick::viewImage::_view' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::viewImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1867): warning C4251: 'Magick::x11DisplayImage::_display' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
          Generating Code...
          Compiling...
+         DiffuseMaterial.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(456): warning C4251: 'Magick::DrawableBezier::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableBezier'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(498): warning C4251: 'Magick::DrawablePushClipPath::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushClipPath'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(526): warning C4251: 'Magick::DrawableClipPath::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableClipPath'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(959): warning C4251: 'Magick::DrawableFont::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(960): warning C4251: 'Magick::DrawableFont::_family' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1128): warning C4251: 'Magick::DrawablePath::_path' : class 'std::list<Magick::VPath,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePath'
+                 with
+                 [
+                     _Ty=Magick::VPath
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1217): warning C4251: 'Magick::DrawablePolygon::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolygon'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1237): warning C4251: 'Magick::DrawablePolyline::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolyline'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1321): warning C4251: 'Magick::DrawablePushPattern::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushPattern'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1923): warning C4251: 'Magick::DrawableText::_text' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1924): warning C4251: 'Magick::DrawableText::_encoding' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2255): warning C4251: 'Magick::PathArcAbs::_coordinates' : class 'std::list<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcAbs'
+                 with
+                 [
+                     _Ty=Magick::PathArcArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2277): warning C4251: 'Magick::PathArcRel::_coordinates' : class 'std::list<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcRel'
+                 with
+                 [
+                     _Ty=Magick::PathArcArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2428): warning C4251: 'Magick::PathCurvetoAbs::_args' : class 'std::list<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::PathCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2451): warning C4251: 'Magick::PathCurvetoRel::_args' : class 'std::list<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::PathCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2475): warning C4251: 'Magick::PathSmoothCurvetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2500): warning C4251: 'Magick::PathSmoothCurvetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2609): warning C4251: 'Magick::PathQuadraticCurvetoAbs::_args' : class 'std::list<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::PathQuadraticCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2633): warning C4251: 'Magick::PathQuadraticCurvetoRel::_args' : class 'std::list<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::PathQuadraticCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2657): warning C4251: 'Magick::PathSmoothQuadraticCurvetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2681): warning C4251: 'Magick::PathSmoothQuadraticCurvetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2709): warning C4251: 'Magick::PathLinetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2733): warning C4251: 'Magick::PathLinetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2875): warning C4251: 'Magick::PathMovetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2899): warning C4251: 'Magick::PathMovetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\exception.h(31): warning C4251: 'Magick::Exception::_what' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Exception'
+     1>d:\work\renderer\additionalincludes\magick++\coderinfo.h(65): warning C4251: 'Magick::CoderInfo::_name' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+     1>d:\work\renderer\additionalincludes\magick++\coderinfo.h(66): warning C4251: 'Magick::CoderInfo::_description' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(90): warning C4251: 'Magick::Montage::_fileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(92): warning C4251: 'Magick::Montage::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(95): warning C4251: 'Magick::Montage::_label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(99): warning C4251: 'Magick::Montage::_texture' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(101): warning C4251: 'Magick::Montage::_title' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(134): warning C4251: 'Magick::annotateImage::_text' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::annotateImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(213): warning C4251: 'Magick::cdlImage::_cdl' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::cdlImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(273): warning C4251: 'Magick::commentImage::_comment' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::commentImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(385): warning C4251: 'Magick::drawImage::_drawableList' : class 'std::list<Magick::Drawable,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::drawImage'
+                 with
+                 [
+                     _Ty=Magick::Drawable
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(651): warning C4251: 'Magick::labelImage::_label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::labelImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1299): warning C4251: 'Magick::backgroundTextureImage::_backgroundTexture' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::backgroundTextureImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1474): warning C4251: 'Magick::fileNameImage::_fileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fileNameImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1498): warning C4251: 'Magick::fontImage::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fontImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1558): warning C4251: 'Magick::magickImage::_magick' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::magickImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1817): warning C4251: 'Magick::tileNameImage::_tileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::tileNameImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1854): warning C4251: 'Magick::viewImage::_view' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::viewImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1867): warning C4251: 'Magick::x11DisplayImage::_display' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
+         ShapeGenerator.cpp
+     1>d:\work\renderer\tutorials\common\vertex.h(8): warning C4099: 'Vertex' : type name first seen using 'class' now seen using 'struct'
+                 d:\work\renderer\tutorials\common\shapegenerator.h(13) : see declaration of 'Vertex'
+     1>d:\work\renderer\tutorials\common\geometry\premitives\teapotdata.h(202): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(421): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(422): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(486): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(841): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(1022): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(1050): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(1102): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(1116): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(1129): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\shapegenerator.cpp(1154): warning C4018: '<' : signed/unsigned mismatch
+         GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+         Lights.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+         Mesh.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>d:\work\renderer\tutorials\common\geometry\premitives\plane.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\common\geometry\premitives\teapotdata.h(202): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\common\geometry\mesh.cpp(26): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\geometry\mesh.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\geometry\mesh.cpp(53): warning C4018: '<' : signed/unsigned mismatch
+         GameObj.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>d:\work\renderer\tutorials\common\gameobj\gameobj.cpp(15): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\gameobj\gameobj.cpp(21): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\gameobj\gameobj.cpp(55): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\gameobj\gameobj.cpp(65): warning C4018: '<' : signed/unsigned mismatch
          Electron.cpp
      1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
                  d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
@@ -144,14 +423,180 @@
      1>d:\work\renderer\additionalincludes\magick++\stl.h(1854): warning C4251: 'Magick::viewImage::_view' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::viewImage'
      1>d:\work\renderer\additionalincludes\magick++\stl.h(1867): warning C4251: 'Magick::x11DisplayImage::_display' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
      1>d:\work\renderer\tutorials\common\electron.cpp(59): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\work\renderer\tutorials\common\electron.cpp(89): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\tutorials\common\electron.cpp(87): warning C4018: '<' : signed/unsigned mismatch
+         DebugUtils.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+         CameraTest.cpp
+     1>d:\work\renderer\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\renderer\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(23): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\cameracontroller.h(51): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\cameracontroller.h(52): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\work\renderer\tutorials\cameracontroller.h(82): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\cameracontroller.h(88): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(24): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\common\geometry\premitives\plane.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\common\geometry\premitives\teapotdata.h(202): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\common\renderer\basicmeshrenderer.h(164): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(456): warning C4251: 'Magick::DrawableBezier::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableBezier'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(498): warning C4251: 'Magick::DrawablePushClipPath::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushClipPath'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(526): warning C4251: 'Magick::DrawableClipPath::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableClipPath'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(959): warning C4251: 'Magick::DrawableFont::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(960): warning C4251: 'Magick::DrawableFont::_family' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1128): warning C4251: 'Magick::DrawablePath::_path' : class 'std::list<Magick::VPath,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePath'
+                 with
+                 [
+                     _Ty=Magick::VPath
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1217): warning C4251: 'Magick::DrawablePolygon::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolygon'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1237): warning C4251: 'Magick::DrawablePolyline::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolyline'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1321): warning C4251: 'Magick::DrawablePushPattern::_id' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushPattern'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1923): warning C4251: 'Magick::DrawableText::_text' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(1924): warning C4251: 'Magick::DrawableText::_encoding' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2255): warning C4251: 'Magick::PathArcAbs::_coordinates' : class 'std::list<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcAbs'
+                 with
+                 [
+                     _Ty=Magick::PathArcArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2277): warning C4251: 'Magick::PathArcRel::_coordinates' : class 'std::list<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcRel'
+                 with
+                 [
+                     _Ty=Magick::PathArcArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2428): warning C4251: 'Magick::PathCurvetoAbs::_args' : class 'std::list<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::PathCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2451): warning C4251: 'Magick::PathCurvetoRel::_args' : class 'std::list<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::PathCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2475): warning C4251: 'Magick::PathSmoothCurvetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2500): warning C4251: 'Magick::PathSmoothCurvetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2609): warning C4251: 'Magick::PathQuadraticCurvetoAbs::_args' : class 'std::list<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::PathQuadraticCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2633): warning C4251: 'Magick::PathQuadraticCurvetoRel::_args' : class 'std::list<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::PathQuadraticCurvetoArgs
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2657): warning C4251: 'Magick::PathSmoothQuadraticCurvetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2681): warning C4251: 'Magick::PathSmoothQuadraticCurvetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2709): warning C4251: 'Magick::PathLinetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2733): warning C4251: 'Magick::PathLinetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2875): warning C4251: 'Magick::PathMovetoAbs::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoAbs'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\drawable.h(2899): warning C4251: 'Magick::PathMovetoRel::_coordinates' : class 'std::list<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoRel'
+                 with
+                 [
+                     _Ty=Magick::Coordinate
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\exception.h(31): warning C4251: 'Magick::Exception::_what' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Exception'
+     1>d:\work\renderer\additionalincludes\magick++\coderinfo.h(65): warning C4251: 'Magick::CoderInfo::_name' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+     1>d:\work\renderer\additionalincludes\magick++\coderinfo.h(66): warning C4251: 'Magick::CoderInfo::_description' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(90): warning C4251: 'Magick::Montage::_fileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(92): warning C4251: 'Magick::Montage::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(95): warning C4251: 'Magick::Montage::_label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(99): warning C4251: 'Magick::Montage::_texture' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\montage.h(101): warning C4251: 'Magick::Montage::_title' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(134): warning C4251: 'Magick::annotateImage::_text' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::annotateImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(213): warning C4251: 'Magick::cdlImage::_cdl' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::cdlImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(273): warning C4251: 'Magick::commentImage::_comment' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::commentImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(385): warning C4251: 'Magick::drawImage::_drawableList' : class 'std::list<Magick::Drawable,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::drawImage'
+                 with
+                 [
+                     _Ty=Magick::Drawable
+                 ]
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(651): warning C4251: 'Magick::labelImage::_label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::labelImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1299): warning C4251: 'Magick::backgroundTextureImage::_backgroundTexture' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::backgroundTextureImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1474): warning C4251: 'Magick::fileNameImage::_fileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fileNameImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1498): warning C4251: 'Magick::fontImage::_font' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fontImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1558): warning C4251: 'Magick::magickImage::_magick' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::magickImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1817): warning C4251: 'Magick::tileNameImage::_tileName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::tileNameImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1854): warning C4251: 'Magick::viewImage::_view' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::viewImage'
+     1>d:\work\renderer\additionalincludes\magick++\stl.h(1867): warning C4251: 'Magick::x11DisplayImage::_display' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(31): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(32): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(250): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(271): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\work\renderer\tutorials\camera\cameratest.cpp(282): warning C4305: 'argument' : truncation from 'double' to 'float'
+         GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
          Generating Code...
-         Skipping... (no relevant changes detected)
-         DiffuseMaterial.cpp
-         Material.cpp
-         Lights.cpp
-     1>Done Building Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" (Build target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Work\Renderer\Debug\Tutorials.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\Work\Renderer\\AdditionalLibs /LIBPATH:D:\Work\Renderer\\package\lib glew32.lib freeglut.lib CORE_DB_Magick++_.lib CORE_RL_Magick++_.lib assimp.lib "libboost_filesystem-vc120-mt-gd-1_57.lib" "libboost_system-vc120-mt-gd-1_57.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Work\Renderer\Debug\Tutorials.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\Renderer\Debug\Tutorials.lib" /MACHINE:X86 Debug\Camera.obj
+         Debug\CameraController.obj
+         Debug\CameraTest.obj
+         Debug\DebugUtils.obj
+         Debug\Electron.obj
+         Debug\GameComponent.obj
+         Debug\GameObj.obj
+         Debug\Transform.obj
+         Debug\Mesh.obj
+         Debug\Lights.obj
+         Debug\Material.obj
+         Debug\MaterialsList.obj
+         Debug\ShaderLoader.obj
+         Debug\ShapeGenerator.obj
+         Debug\DiffuseMaterial.obj
+         Debug\MathUtils.obj
+         Debug\ogldev_util.obj
+         Debug\MeshData.obj
+         Debug\Quaternion.obj
+         Debug\Shader.obj
+         Debug\ShaderData.obj
+         Debug\Texture.obj
+         Debug\TextureData.obj
+         Debug\TypeUtils.obj
+         Debug\StringUtils.obj
+         Tutorials.vcxproj -> D:\Work\Renderer\Debug\Tutorials.exe
+     1>Done Building Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:04.15
+Time Elapsed 00:00:18.52

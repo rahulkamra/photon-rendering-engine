@@ -1,5 +1,6 @@
 #include "StringUtils.h"
-
+#include <boost\lexical_cast.hpp>
+#include <boost/algorithm/string/predicate.hpp>
 
 StringUtils::StringUtils()
 {
@@ -35,4 +36,10 @@ std::vector<std::string> StringUtils::Split(const std::string& s, char delim)
 	}
 
 	return elems;
+}
+
+
+bool StringUtils::startsWith(const std::string &source, const std::string &startsWith)
+{
+	return boost::starts_with(source, startsWith);
 }

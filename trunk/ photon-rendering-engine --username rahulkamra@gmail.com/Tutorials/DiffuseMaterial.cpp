@@ -36,7 +36,7 @@ DiffuseMaterial::DiffuseMaterial(Texture* diffuseTexture, float specularPower, f
 	this->specularIntensity = specularIntensity;
 
 	this->shader = new Shader(MaterialsList::DIFFUSE_MATERIAL);
-	this->AddTexture("diffuse", diffuseTexture);
+	this->AddTexture("diffuse", this->diffuseTexture);
 	
 
 }
@@ -47,13 +47,11 @@ void DiffuseMaterial::updateUniforms(Transform transform, Shader* shader)
 	
 }
 
-
 void DiffuseMaterial::updateLightUniforms()
 {
 	if (Electron::activeLight)
 	{
 		Electron::activeLight->shader->addFloat("specularPower", specularPower);
 		Electron::activeLight->shader->addFloat("specularIntensity", specularIntensity);
-		Electron::activeLight->shader->addVec3("cameraWorld", Camera::getCamera()->transform.getPosition());
 	}
 }
