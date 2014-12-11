@@ -18,7 +18,6 @@ public:
 
 	glm::vec3 color;
 	void addedToGameObj();
-	void virtual bind();
 	virtual void addedToStage();
 	Shader* shader;
 	

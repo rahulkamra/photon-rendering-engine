@@ -3,6 +3,7 @@
 #include "Electron.h"
 #include "Common\Lights\Lights.h"
 #include <DiffuseMaterial.h>
+#include <Shader.h>
 class Material;
 
 class MeshRenderingComponent : public GameComponent
@@ -33,8 +34,10 @@ public:
 		Electron::addRenderingComponent(this);
 	}
 
-	virtual void draw(Shader* shader)
-	{		
+	virtual void draw(Shader* shader,RenderSupport* renderSupport)
+	{	
+		renderSupport->useShader(shader);
+		shader->updateObjectUniforms(material, &(parent->transform));
 		mesh->draw(parent->transform);
 	}
 

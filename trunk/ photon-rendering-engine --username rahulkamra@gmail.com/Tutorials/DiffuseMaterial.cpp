@@ -8,11 +8,6 @@
 
 Texture* DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE = NULL;
 
-void DiffuseMaterial::bind()
-{
-	Material::bind();
-}
-
 DiffuseMaterial::DiffuseMaterial(Texture* diffuseTexture, float specularPower, float specularIntensity)
 {
 	if (DiffuseMaterial::DEFAULT_DIFFUSE_TEXTURE == NULL)
@@ -42,16 +37,7 @@ DiffuseMaterial::DiffuseMaterial(Texture* diffuseTexture, float specularPower, f
 }
 void DiffuseMaterial::updateUniforms(Transform transform, Shader* shader)
 {
-	this->shader->addTexture("diffuse", this->diffuseTexture);
 	Material::updateUniforms(transform, shader);
-	
-}
-
-void DiffuseMaterial::updateLightUniforms()
-{
-	if (Electron::activeLight)
-	{
-		Electron::activeLight->shader->addFloat("specularPower", specularPower);
-		Electron::activeLight->shader->addFloat("specularIntensity", specularIntensity);
-	}
+	this->addFloat("specularPower", specularPower);
+	this->addFloat("specularIntensity", specularIntensity);
 }

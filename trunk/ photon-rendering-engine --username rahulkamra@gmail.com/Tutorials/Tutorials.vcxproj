@@ -87,6 +87,7 @@
     <ClCompile Include="ogldev_util.cpp" />
     <ClCompile Include="MeshData.cpp" />
     <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="RenderSupport.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderData.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -130,6 +131,7 @@
     <ClInclude Include="MeshRenderingComponent.h" />
     <ClInclude Include="MyClass.h" />
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="RenderSupport.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderData.h" />
     <ClInclude Include="Texture.h" />

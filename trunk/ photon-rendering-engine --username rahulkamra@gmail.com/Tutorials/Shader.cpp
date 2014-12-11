@@ -43,13 +43,11 @@ void Shader::updateObjectUniforms(Material* material, Transform* transform)
 
 	for (int count = 0; count < shaderData->uniforms.size(); count ++)
 	{
-		cout << count << shaderData->uniforms.size();
 		std::string eachUniform = shaderData->uniforms[count];
 		int eachUniformType = shaderData->getUniformType(eachUniform);
 
 		if (eachUniform == "diffuse")
 		{
-			cout << material->GetTexture("diffuse");
 			this->addTexture("diffuse",material->GetTexture("diffuse"));
 		}
 		else if (eachUniform == "mvp")
@@ -85,7 +83,6 @@ void Shader::updateObjectUniforms(Material* material, Transform* transform)
 		else
 		{
 			addMaterialUniforms(material, eachUniform, eachUniformType);
-			cout << "Cannot  Update Uniform " << eachUniform << "\n";
 		}
 	}
 }
@@ -94,26 +91,25 @@ void Shader::addMaterialUniforms(Material* material,std::string name, int type)
 {
 	switch (type)
 	{
+		case GL_FLOAT:
+		{
+			float floatVal = material->getFloat(name);
+			this->addFloat(name, floatVal);
+			break;
+		}
 
-	case GL_FLOAT:
-	{
-		float floatVal = material->getFloat(name);
-		this->addFloat(name, floatVal);
-		break;
-	}
+		case GL_FLOAT_VEC3:
+		{
+			glm::vec3 vec3Val = material->getVec3(name);
+			this->addVec3(name, vec3Val);
+			break;
+		}
 
-	case GL_FLOAT_VEC3:
-	{
-		glm::vec3 vec3Val = material->getVec3(name);
-		this->addVec3(name, vec3Val);
-		break;
-	}
-
-	default:
-	{
-
-		break;
-	}
+		default:
+		{
+			cout << "Cannot  Update Uniform " << name << "\n";
+			break;
+		}
 		
 	}
 }
@@ -155,7 +151,9 @@ void Shader::updateDirectionalLightUniform(DirectionalLight* pointLight)
 
 
 
-void Shader::bind()
+
+
+ShaderData* Shader::getShaderData()
 {
-	glUseProgram(shaderData->shaderProgram);
+	return shaderData;
 }

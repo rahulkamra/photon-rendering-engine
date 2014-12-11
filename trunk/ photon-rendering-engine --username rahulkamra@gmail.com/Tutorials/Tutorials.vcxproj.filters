@@ -156,6 +156,9 @@
     <ClCompile Include="MathUtils.cpp">
       <Filter>Source Files\common\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="RenderSupport.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h">
@@ -282,6 +285,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSupport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
