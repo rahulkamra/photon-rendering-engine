@@ -8,6 +8,7 @@
 #include <Common\Lights\Lights.h>
 #include <Common\Materials\Material.h>
 
+
 class Shader
 {
 
@@ -21,7 +22,7 @@ public:
 	void addFloat(std::string name, float value);
 	void addTexture(std::string name, Texture* texture);
 
-	GLuint getShaderId();
+	ShaderData* getShaderData();
 
 	void updateObjectUniforms(Material* material, Transform* transform);
 	void updatePointLightUniform(PointLight* pointLight);

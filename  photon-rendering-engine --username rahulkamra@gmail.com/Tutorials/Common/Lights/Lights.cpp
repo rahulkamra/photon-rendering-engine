@@ -21,12 +21,6 @@ void BaseLight::addedToStage()
 	Electron::lights.push_back(this);
 }
 
-void BaseLight::bind()
-{
-	shader->bind();
-}
-
-
 /*
 
 */
@@ -41,9 +35,6 @@ DirectionalLight::DirectionalLight(glm::vec3 color) :BaseLight(color)
 void DirectionalLight::updateUniforms()
 {
 	BaseLight::updateUniforms();
-	shader->addVec3("directionalLight.direction", parent->transform.forward());
-	shader->addVec3("directionalLight.light.color", color);
-	//shader->addVec3("ambientLight", Electron::ambientLight);
 }
 
 
@@ -57,16 +48,7 @@ PointLight::PointLight(Attenuation attenuation, glm::vec3 color, float range) :B
 
 void PointLight::updateUniforms()
 {
-	shader->addVec3("pointLight.position", parent->transform.getPosition());
-	shader->addVec3("pointLight.light.color", color);
-
-	shader->addFloat("pointLight.attenuation.constant", attenuation.constant);
-	shader->addFloat("pointLight.attenuation.linear", attenuation.linear);
-	shader->addFloat("pointLight.attenuation.quadratic", attenuation.quadratic);
-
-	shader->addFloat("pointLight.range", this->range);
-	shader->addVec3("ambientLight", Electron::ambientLight);
-
+	BaseLight::updateUniforms();
 }
 
 
@@ -78,18 +60,5 @@ SpotLight::SpotLight(Attenuation attenuation, glm::vec3 color, float range, floa
 
 void SpotLight::updateUniforms()
 {
-	shader->addVec3("spotLight.position", parent->transform.getPosition());
-	shader->addVec3("spotLight.light.color", color);
-
-	shader->addFloat("spotLight.attenuation.constant", attenuation.constant);
-	shader->addFloat("spotLight.attenuation.linear", attenuation.linear);
-	shader->addFloat("spotLight.attenuation.quadratic", attenuation.quadratic);
-	
-	glm::vec3 forw = parent->transform.forward();
-
-	shader->addVec3("spotLight.direction", parent->transform.forward());
-
-	shader->addFloat("spotLight.cutoff", this->cutoff);
-
-	shader->addFloat("spotLight.range", this->range);
+	BaseLight::updateUniforms();
 }

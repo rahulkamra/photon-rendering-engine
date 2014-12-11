@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <Common\GameObj\GameObj.h>
+#include <RenderSupport.h>
 
 class BasicMeshRenderer;
 class BaseLight;
@@ -11,6 +12,7 @@ class Electron
 
 private:
 	static void drawPhase(vector<MeshRenderingComponent*> renderingComponents, Material* material = nullptr);
+	static RenderSupport* renderSupport;
 
 public:
 

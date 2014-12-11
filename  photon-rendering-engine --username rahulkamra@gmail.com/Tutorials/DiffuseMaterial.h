@@ -11,7 +11,6 @@ private:
 public:
 	DiffuseMaterial(Texture* diffuseTexture = NULL,float specularPower = 8.0,float specularIntensity = 1.0);
 	void updateUniforms(Transform transform, Shader* shader);
-	void updateLightUniforms();
 	void bind();
 
 };

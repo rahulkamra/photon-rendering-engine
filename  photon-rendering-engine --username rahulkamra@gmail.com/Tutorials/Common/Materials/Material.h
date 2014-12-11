@@ -11,12 +11,14 @@ private:
 	std::map<std::string, float> floatMap;
 	std::map<std::string, glm::vec3> vec3Map;
 
-	void addFloat(std::string name , float value);
-	void addVec3(std::string name, glm::vec3 value);
+	
 	
 
 protected :
 	void AddTexture(const std::string& name, Texture* value);
+	void addFloat(std::string name, float value);
+	void addVec3(std::string name, glm::vec3 value);
+
 
 public:
 	Material();
@@ -31,7 +33,6 @@ public:
 
 	Shader* shader;
 	virtual void updateUniforms(Transform transform, Shader* shader);
-	virtual void bind();
 
 };
 

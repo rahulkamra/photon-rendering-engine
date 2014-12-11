@@ -13,7 +13,7 @@
 const int Electron::PHASE_FORWARD_RENDERING = 100;
 const int Electron::PHASE_DEFFERED_RENDERING = 200;
 const int Electron::PHASE_WIDGETS_RENDERING = 300;
-
+RenderSupport* Electron::renderSupport;
 
 glm::vec3 Electron::ambientLight(1.0f, 1.0f, 1.0f);
 
@@ -30,7 +30,6 @@ vector<MeshRenderingComponent*> Electron::widgetsRenderingComponents;
 
 GameObj* Electron::root;
 int Electron::currentPhaseRendering;
-
 
 
 void Electron::render()
@@ -59,8 +58,6 @@ void Electron::render()
 	for (int count = 0; count < lights.size(); count++)
 	{
 		activeLight = lights.at(count);
-		activeLight->bind();
-		activeLight->updateUniforms();
 		drawPhase(forwardRenderingComponents);
 	}
 	
@@ -96,24 +93,11 @@ void Electron::drawPhase(vector<MeshRenderingComponent*> renderingComponents , M
 		}
 		else
 		{
-			eachComponent->getMaterial()->bind();
 			shader = eachComponent->getMaterial()->shader;
-
 		}
-
-		if (shader)
-		{
-			shader->updateObjectUniforms(eachComponent->getMaterial(), &eachComponent->getParent()->transform);		
-		}
-			
-
+	
 		DiffuseMaterial* material = dynamic_cast<DiffuseMaterial*> (eachComponent->getMaterial());
-		if (material != NULL)
-		{
-			material->updateLightUniforms();
-		}
-
-		eachComponent->draw(shader);
+		eachComponent->draw(shader,renderSupport);
 	}
 }
 
@@ -155,4 +139,5 @@ void Electron::addLight(BaseLight* light)
 void Electron::init()
 {
 	root = new GameObj();
+	renderSupport = new RenderSupport();
 }

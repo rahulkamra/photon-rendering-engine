@@ -47,11 +47,6 @@ Texture* Material::GetTexture(const std::string& name)
 	return 0;
 }
 
-
-void Material::bind()
-{
-	shader->bind();
-}
 Material::~Material()
 {
 }
