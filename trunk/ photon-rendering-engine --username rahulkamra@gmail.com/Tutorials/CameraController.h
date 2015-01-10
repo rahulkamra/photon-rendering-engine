@@ -5,8 +5,8 @@
 #include <glm\gtx\transform.hpp>
 #include <Camera.h>
 #include <stdio.h>
+#include <SDL.h>
 #include <iostream>
-#include <GL/freeglut.h>
 
 
 
@@ -36,7 +36,7 @@ public :
 		vec2 delta = vec2(previousX, previousY) - vec2(x, y);
 
 		Camera* camera = Camera::getCamera();
-		if (currentDownButton == GLUT_RIGHT_BUTTON)
+		if (currentDownButton == SDL_BUTTON_RIGHT)
 		{
 			float speed = 0.1f;
 
@@ -46,7 +46,7 @@ public :
 			camera->transform.quaterion = Quaternion(glm::vec3(previousRotationX, previousRotationY,0));
 		}
 
-		else if (currentDownButton == GLUT_MIDDLE_BUTTON)
+		else if (currentDownButton == SDL_BUTTON_MIDDLE)
 		{
 			camera->moveRight(delta.x*0.01);
 			camera->moveDown(delta.y*0.01);

@@ -1,11 +1,7 @@
-
-#define WIN32 1
-
 #include <GL/glew.h>
 #include <assert.h>
 #include <ogldev_util.h>
 #include <ogldev_types.h>
-#include <GL/freeglut.h>
 #include <iostream>
 #include <stdio.h>
 #include <math_3d.h>
@@ -17,7 +13,7 @@
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 #include <vector>
-
+#include <SDL.h>
 #include <Common\GameObj\GameObj.h>
 #include <Camera.h>
 #include "CameraController.h";
@@ -66,23 +62,6 @@ float CameraController::previousRotationY = 0;
 
 bool CameraController::_isMouseDown = false;
 
-static void enterFrame()
-{
-	glutPostRedisplay();
-	
-}
-
-
-static void InitializeGlutCallbacks()
-{
-	glutIdleFunc(enterFrame);
-	glutDisplayFunc(Electron::render);
-	//glutDisplayFunc(draw);
-	
-}
-
-
-
 void mouseMove(int x, int y)
 {
 	CameraController::updateMouse(x,y);
@@ -96,13 +75,13 @@ void updateMousePosition(int x, int y)
 
 void mouseDownUp(int button, int state, int x, int y)
 {
-	if (state == GLUT_DOWN)
+	if (state == SDL_PRESSED)
 	{
 		CameraController::handleDown(button);
 	}
 
 
-	if (state == GLUT_UP)
+	if (state == SDL_RELEASED)
 	{
 		CameraController::handleUp();
 	}
@@ -113,27 +92,27 @@ void keySpecialUp(int key, int x, int y)
 {
 	switch (key)
 	{
-	case GLUT_KEY_LEFT:
+	case SDLK_LEFT:
 		Camera::getCamera()->moveLeft(0.2f);
 		break;
 
-	case GLUT_KEY_RIGHT:
+	case SDLK_RIGHT:
 		Camera::getCamera()->moveRight(0.2f);
 		break;
 
-	case GLUT_KEY_UP:
+	case SDLK_UP:
 		Camera::getCamera()->moveForward(0.2f);
 		break;
 
-	case GLUT_KEY_DOWN:
+	case SDLK_DOWN:
 		Camera::getCamera()->moveBackward(0.2f);
 		break;
 
-	case GLUT_KEY_PAGE_UP:
+	case SDLK_PAGEUP:
 		Camera::getCamera()->moveUp(0.2f);
 		break;
 
-	case GLUT_KEY_PAGE_DOWN:
+	case SDLK_PAGEDOWN:
 		Camera::getCamera()->moveDown(0.2f);
 			break;
 
@@ -142,7 +121,7 @@ void keySpecialUp(int key, int x, int y)
 }
 
 
-void mouseWheel(int button, int dir, int x, int y)
+void mouseWheel(int dir)
 {
 	if (dir > 0)
 	{
@@ -156,38 +135,20 @@ void mouseWheel(int button, int dir, int x, int y)
 	return;
 }
 
-static GameObj* arrow;
-int main(int argc, char** argv)
+void init()
 {
-	
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowSize(width, height);
-	glutInitWindowPosition(100, 100);
-
-	glutCreateWindow("Tutorial 01");
 	glEnable(GL_DEPTH_TEST);
-	InitializeGlutCallbacks();
-
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-
 	Camera* camera = new Camera();
 	Camera::setCamera(camera);
+	Camera::getCamera()->transform.rotate(Quaternion(glm::vec3(10.0f, 0.0f, 0.0f)));
 
-	glutMotionFunc(mouseMove);
-	glutPassiveMotionFunc(updateMousePosition);
-	glutMouseFunc(mouseDownUp);
-	glutMouseWheelFunc(mouseWheel);
-
-
-	glutSpecialUpFunc(keySpecialUp);
 
 	GLenum res = glewInit();
 	if (res != GLEW_OK)
 	{
 		fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
 		while (1);
-		return 1;
+		return;
 	}
 
 	Electron::init();
@@ -201,13 +162,12 @@ int main(int argc, char** argv)
 	//Cube cube;
 	//Electron::add(cube);
 
+
 	GameObj* arrow = new GameObj();
 	arrow->transform.translate(vec3(0, -2.0f, -6.0f));
 	arrow->addComponent(new MeshRenderingComponent(new Arrow(), new DiffuseMaterial()));
 	Electron::add(arrow);
 
-
-	
 	GameObj* plane = new GameObj();
 	plane->showAxis();
 	plane->transform.translate(vec3(0, -2.0f, -6.0f));
@@ -238,7 +198,7 @@ int main(int argc, char** argv)
 
 
 	GameObj* torus = new GameObj();
-	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial(NULL,8.0f,3.0f)));
+	torus->addComponent(new MeshRenderingComponent(new Torus(), new DiffuseMaterial(NULL, 8.0f, 3.0f)));
 	torus->transform.translate(vec3(-3.5f, -1.8f, -6.0f));
 	torus->transform.scale(vec3(0.5f, 0.5f, 0.5f));
 	Electron::add(torus);
@@ -246,7 +206,7 @@ int main(int argc, char** argv)
 	Electron::ambientLight = vec3(0.1f, 0.1f, 0.1f);
 
 	GameObj* pointLightGreen = new GameObj();
-	pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0),10));
+	pointLightGreen->addComponent(new PointLight(Attenuation(), glm::vec3(0, 1, 0), 10));
 
 	pointLightGreen->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
 	//pointLightGreen->showAxis();
@@ -287,6 +247,7 @@ int main(int argc, char** argv)
 	Electron::add(directionalLightYellow);
 
 
+
 	GameObj* triangle = new GameObj();
 	//directionalLightYellow->addComponent(new DirectionalLight(glm::vec3(0.5, 0.5, 0.5)));
 	//directionalLightYellow->addComponent(new WidgetRenderingComponent(new LineMesh(ShapeGenerator::createDirectionalWidget(0.2, 50, 5))));
@@ -294,7 +255,7 @@ int main(int argc, char** argv)
 	triangle->transform.scale(vec3(0.1f, 0.1f, 0.1f));
 	//triangle->transform.rotate(Quaternion(glm::vec3(45, 0, 0)));
 
-	
+
 	TextureData* textureData = new TextureData("res/textures/test.png");
 	textureData->load();
 
@@ -308,9 +269,10 @@ int main(int argc, char** argv)
 	Electron::add(triangle);
 
 	Transform trans;
-	trans.translate(glm::vec3(100,100,0));
-	
+	trans.translate(glm::vec3(100, 100, 0));
+
 	trans.rotate(Quaternion(glm::vec3(90, 180, -270)));
+
 
 
 	EMap<int, int> emap;
@@ -332,9 +294,94 @@ int main(int argc, char** argv)
 
 	//cout << emap1.get(3);
 
-	glutMainLoop();
+
 
 }
+
+
+static GameObj* arrow;
+int main(int argc, char** argv)
+{
+	
+	SDL_Init(SDL_INIT_VIDEO);
+	SDL_Window *window = SDL_CreateWindow("Hello",
+		100,
+		100,
+		1024,
+		768, SDL_WINDOW_OPENGL);
+
+	if (window == NULL) {
+		// In the event that the window could not be made...
+		printf("Could not create window: %s\n", SDL_GetError());
+		return 1;
+	}
+
+	
+	// The window is open: enter program loop (see SDL_PollEvent)
+
+	bool done = false;
+	SDL_Event event;
+	Electron::init();
+	glClearColor(0, 1, 0, 1);
+
+	
+
+	SDL_GLContext maincontext; /* Our opengl context handle */
+	maincontext = SDL_GL_CreateContext(window);
+
+	GLint GlewInitResult = glewInit();
+	if (GLEW_OK != GlewInitResult)
+	{
+		printf("ERROR: %s\n", glewGetErrorString(GlewInitResult));
+		exit(EXIT_FAILURE);
+	}
+
+	
+	init();
+	
+	
+
+	while (!done)
+	{
+		while (SDL_PollEvent(&event))
+		{
+			if (event.type == SDL_QUIT)
+			{
+				done = true;
+			}
+			else if (event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP)
+			{
+				mouseDownUp(event.button.button, event.button.state, 0, 0);
+			}
+			else if (event.type == SDL_MOUSEMOTION)
+			{
+				updateMousePosition(event.button.x, event.button.y);
+				mouseMove(event.button.x, event.button.y);
+			}
+			else if (event.type == SDL_MOUSEWHEEL)
+			{
+				mouseWheel(event.wheel.y);
+			}
+			else if (event.type == SDL_KEYDOWN)
+			{
+				keySpecialUp(event.key.keysym.sym, 0, 0);
+				
+			}
+
+
+			Electron::render();
+			SDL_GL_SwapWindow(window);
+		}
+	}
+	// Close and destroy the window
+	SDL_DestroyWindow(window);
+
+	// Clean up
+	SDL_Quit();
+	return 0;
+
+}
+
 
 
 
@@ -357,4 +404,10 @@ void testForInverseMatrix()
 	int index = 3;
 	cout << transfomationInverse[index].x << "   " << transfomationInverse[index].y << " " << transfomationInverse[index].z << "\n";
 	cout << realInverse[index].x << " " << realInverse[index].y << " " << realInverse[index].z;
+}
+
+
+void testForFowardVector()
+{
+
 }

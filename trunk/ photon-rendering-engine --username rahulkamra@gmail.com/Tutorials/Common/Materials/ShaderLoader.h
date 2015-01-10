@@ -3,7 +3,6 @@
 #include <iostream>
 #include <GL/glew.h>
 #include <map>
-#include <GL\glut.h>
 #include <ShaderData.h>
 
 using namespace std;

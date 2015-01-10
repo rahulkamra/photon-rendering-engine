@@ -1,9 +1,59 @@
-﻿Build started 12/11/2014 11:09:05 AM.
-     1>Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         Tutorials.vcxproj -> D:\Work\Renderer\Debug\Tutorials.exe
-     1>Done Building Project "D:\Work\Renderer\Tutorials\Tutorials.vcxproj" (Build target(s)).
+﻿Build started 1/10/2015 1:13:15 PM.
+     1>Project "F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Tutorials\Tutorials.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\SDL2-2.0.3\include" /I"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\AdditionalIncludes" /I"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\package\include" /I"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Tutorials\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera\CameraTest.cpp
+         CameraTest.cpp
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\common\shapegenerator.h(13): warning C4099: 'Vertex' : type name first seen using 'struct' now seen using 'class'
+                 f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\common\vertex.h(8) : see declaration of 'Vertex'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\mathdefine.h(1): warning C4005: 'M_PI' : macro redefinition
+                 f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\sdl2-2.0.3\include\sdl_stdinc.h(350) : see previous definition of 'M_PI'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(19): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\cameracontroller.h(51): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\cameracontroller.h(52): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\cameracontroller.h(82): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\cameracontroller.h(88): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(20): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\common\geometry\premitives\plane.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\common\geometry\premitives\teapotdata.h(202): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\common\renderer\basicmeshrenderer.h(164): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(27): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(211): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(222): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(232): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\renderer\ photon-rendering-engine --username rahulkamra@gmail.com\tutorials\camera\cameratest.cpp(243): warning C4305: 'argument' : truncation from 'double' to 'float'
+         GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\Tutorials.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\SDL2-2.0.3\lib\x86" /LIBPATH:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\AdditionalLibs" /LIBPATH:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\package\lib" SDL2.lib SDL2main.lib SDL2test.lib opengl32.lib glew32.lib CORE_DB_Magick++_.lib CORE_RL_Magick++_.lib assimp.lib "libboost_filesystem-vc120-mt-gd-1_57.lib" "libboost_system-vc120-mt-gd-1_57.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\Tutorials.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\Tutorials.lib" /MACHINE:X86 Debug\Camera.obj
+         Debug\CameraController.obj
+         Debug\CameraTest.obj
+         Debug\DebugUtils.obj
+         Debug\Electron.obj
+         Debug\GameComponent.obj
+         Debug\GameObj.obj
+         Debug\Transform.obj
+         Debug\Mesh.obj
+         Debug\Lights.obj
+         Debug\Material.obj
+         Debug\MaterialsList.obj
+         Debug\ShaderLoader.obj
+         Debug\ShapeGenerator.obj
+         Debug\DiffuseMaterial.obj
+         Debug\MathUtils.obj
+         Debug\ogldev_util.obj
+         Debug\MeshData.obj
+         Debug\Quaternion.obj
+         Debug\RenderSupport.obj
+         Debug\Shader.obj
+         Debug\ShaderData.obj
+         Debug\Texture.obj
+         Debug\TextureData.obj
+         Debug\TypeUtils.obj
+         Debug\StringUtils.obj
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Tutorials.vcxproj -> F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\Tutorials.exe
+     1>Done Building Project "F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Tutorials\Tutorials.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.09
+Time Elapsed 00:00:02.75
