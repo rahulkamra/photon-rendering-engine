@@ -2,7 +2,6 @@
 #include <Common\Renderer\BasicMeshRenderer.h>
 #include "Common\Renderer\NormalsRenderer.h"
 #include <vector>
-#include <GL/freeglut.h>
 #include <Common\Geometry\Premitives\Cube.h>
 #include <Common\Materials\MaterialsList.h>
 #include <Common\Materials\ShaderLoader.h>
@@ -73,7 +72,7 @@ void Electron::render()
 	
 
 	glClear(GL_DEPTH_BUFFER_BIT);
-	glutSwapBuffers();
+	//glutSwapBuffers();
 	
 }
 

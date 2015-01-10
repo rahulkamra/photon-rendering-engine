@@ -3,8 +3,6 @@
 #include <iostream>
 #include "Magick++.h"
 #include <GL/glew.h>
-#include <GL/freeglut.h>
-
 class TextureData
 {
 private :

@@ -1,7 +1,6 @@
 ﻿#include "ShaderLoader.h"
 #include <vector>
 #include <GL/glew.h>
-#include <GL/freeglut.h>
 #include <ogldev_util.h>
 #include <fstream>
 #include <Utils\StringUtils.h>
