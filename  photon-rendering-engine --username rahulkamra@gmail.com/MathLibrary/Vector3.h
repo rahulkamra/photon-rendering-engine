@@ -1,10 +1,11 @@
 #pragma once
+#include "MathDefine.h"
 struct Vector3
 {
 public:
-	float x;
-	float y;
-	float z;
+	#include "MathDefine.h" x;
+	efloat y;
+	efloat z;
 
 	
 };

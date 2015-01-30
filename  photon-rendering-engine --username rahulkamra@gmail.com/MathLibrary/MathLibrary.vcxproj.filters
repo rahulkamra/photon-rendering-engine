@@ -21,5 +21,8 @@
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Vector2.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\MathDefine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

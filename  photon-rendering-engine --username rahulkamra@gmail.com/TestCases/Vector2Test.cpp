@@ -52,3 +52,14 @@ TEST(Vector2, Divide)
 
 	EXPECT_TRUE(result.x == result1.x && result.y == result1.y);
 }
+
+
+TEST(Vector2, Dot)
+{
+	Vector2 vec1(1, 2);
+	Vector2 vec2(2, 1);
+	float result = vec1.dot(&vec2);
+	float result1 = 1 * 2 + 2 * 1;
+	
+	EXPECT_TRUE(result == result1);
+}
