@@ -40,6 +40,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetExt>.dll</TargetExt>
+    <IncludePath>$(ProjectDir)/;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -66,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\MathDefine.h" />
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Vector2.h" />
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Vector3.h" />
   </ItemGroup>
