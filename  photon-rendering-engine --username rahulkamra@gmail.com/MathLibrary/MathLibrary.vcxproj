@@ -68,8 +68,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\MathDefine.h" />
-    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Vector2.h" />
-    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Vector3.h" />
+    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Vector3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

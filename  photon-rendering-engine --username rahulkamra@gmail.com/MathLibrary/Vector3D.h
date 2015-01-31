@@ -1,6 +1,6 @@
 #pragma once
 #include "MathDefine.h"
-struct Vector3
+struct Vector3D
 {
 public:
 	#include "MathDefine.h" x;

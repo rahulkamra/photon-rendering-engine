@@ -69,6 +69,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ETime.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraController.h" />
     <ClCompile Include="Camera\CameraTest.cpp" />
@@ -98,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\Tutorials\MathDefine.h" />
+    <ClInclude Include="ETime.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Common\Debug\DebugUtils.h" />
     <ClInclude Include="Common\GameObj\GameComponent.h" />
