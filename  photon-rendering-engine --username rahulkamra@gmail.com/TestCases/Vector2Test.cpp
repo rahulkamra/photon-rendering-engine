@@ -2,6 +2,8 @@
 #include <gtest\gtest.h>
 #include <Vector2D.h>
 
+using namespace math;
+
 TEST(Vector2D , Add)
 {
 	Vector2D vec1(2, 5);
@@ -94,7 +96,8 @@ TEST(Vector2D, AssignmentMinusEqual)
 	Vector2D vec2(2, 1);
 
 	vec2 -= vec1;
-
 	EXPECT_TRUE(vec2.x == 1 && vec2.y == -1);
 
 }
+
+

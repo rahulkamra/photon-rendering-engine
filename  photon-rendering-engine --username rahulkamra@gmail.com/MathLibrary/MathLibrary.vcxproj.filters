@@ -24,5 +24,8 @@
     <ClInclude Include="Vector3D.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Matrix2D.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
