@@ -66,6 +66,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\TestCases\MainTest.cpp" />
+    <ClCompile Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\TestCases\Matrix2dTest.cpp" />
     <ClCompile Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\TestCases\Vector2Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -68,6 +68,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\MathDefine.h" />
+    <ClInclude Include="..\..\ photon-rendering-engine --username rahulkamra%40gmail.com\MathLibrary\Matrix2D.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vector3D.h" />
   </ItemGroup>
