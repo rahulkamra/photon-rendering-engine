@@ -20,6 +20,11 @@ namespace math
 
 	inline Vector2D operator*(const Matrix2D& lhs, const Vector2D& rhs)
 	{
-		return Vector2D();
+
+		return Vector2D
+			(
+				lhs.a*rhs.x + lhs.b*rhs.y ,  
+				lhs.c*rhs.x + lhs.d*rhs.y 
+			);
 	}
 }
