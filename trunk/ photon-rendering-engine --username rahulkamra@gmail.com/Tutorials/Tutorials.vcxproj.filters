@@ -159,6 +159,9 @@
     <ClCompile Include="RenderSupport.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
+    <ClCompile Include="ETime.cpp">
+      <Filter>Source Files\common\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h">
@@ -288,6 +291,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RenderSupport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ETime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
