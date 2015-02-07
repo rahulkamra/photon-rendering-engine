@@ -1,15 +1,5 @@
-﻿Build started 1/31/2015 11:45:19 PM.
-     1>Project "F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\TestCases\TestCases.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\MathLibrary\\" /I"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\\gtest\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\ photon-rendering-engine --username rahulkamra@gmail.com\TestCases\Matrix2dTest.cpp"
-         Matrix2dTest.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\TestCases.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\TestCases.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\TestCases.lib" /MACHINE:X86 Debug\MainTest.obj
-         Debug\Matrix2dTest.obj
-         Debug\Vector2Test.obj
-         TestCases.vcxproj -> F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\Debug\TestCases.exe
-     1>Done Building Project "F:\Work\Renderer\ photon-rendering-engine --username rahulkamra@gmail.com\TestCases\TestCases.vcxproj" (Build target(s)).
+﻿Build started 2/7/2015 2:24:05 PM.
 
 Build succeeded.
 
-Time Elapsed 00:00:00.96
+Time Elapsed 00:00:00.02
