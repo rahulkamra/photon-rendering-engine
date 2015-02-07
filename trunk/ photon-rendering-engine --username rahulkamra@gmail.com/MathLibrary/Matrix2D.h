@@ -1,6 +1,7 @@
 #pragma once
 #include "MathDefine.h"
 #include <Vector2D.h>
+#include <math.h>
 
 namespace math
 {
@@ -12,6 +13,19 @@ namespace math
 
 		explicit Matrix2D(efloat a = 1.0f, efloat b = 0.0f, efloat c = 0.0f, efloat d = 1.0f) :a(a), b(b), c(c), d(d)
 		{
+		}
+
+		inline static Matrix2D createRotateMatrix(efloat angle)
+		{
+			efloat cosTheta = cos(angle);
+			efloat sinTheta = sin(angle);
+
+			return Matrix2D
+				(
+					cosTheta,-sinTheta,
+					sinTheta,cosTheta
+
+				);
 		}
 
 	};
